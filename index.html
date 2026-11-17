@@ -1034,6 +1034,32 @@ body:not(.work-mode) #work{display:none}
 .feed-head span{color:var(--muted);font-size:14px}
 
 #accGrid[hidden]{display:none!important}
+
+/* v17 */
+.contact-row{margin-top:32px!important}
+.contact-row2{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px}
+.contact-row2 .mail{font-family:var(--mono);font-size:15px;padding:10px 14px;border:1.5px dashed rgba(255,255,255,.6);color:#fff}
+.btn-mail{display:inline-flex!important;align-items:center;gap:10px}
+.btn-mail .gm{width:20px;height:20px}
+.logo-link{cursor:pointer;transition:transform .15s,box-shadow .15s}
+.sb-agencies .logo-link:hover,.sb-logos .logo-link:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.sb-agencies .logo-link::after{content:"↗";font-size:12px;margin-left:2px;opacity:.6}
+.sb-logos li.logo-link::after{content:"Open page ↗";font-size:11px;font-family:var(--mono);opacity:.6}
+.lgrow .logo-link,.lgrow.logo-link{cursor:pointer}
+.sb-tapes{pointer-events:auto}
+.sb-tape span.logo-link:hover{text-decoration:underline}
+.rec-dots{display:none}
+@media (max-width:760px){
+ .rec-grid{columns:auto!important;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 4px 14px;scrollbar-width:none}
+ .rec-grid::-webkit-scrollbar{display:none}
+ .rec-grid .rec{flex:0 0 86%;scroll-snap-align:center;margin:0;max-height:none}
+ .rec-grid .rec blockquote{display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical;overflow:hidden}
+ .rec-dots{display:flex;justify-content:center;gap:8px;margin-top:8px}
+ .rec-dots button{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;padding:0;transition:all .25s}
+ .rec-dots button[aria-current="true"]{width:22px;border-radius:6px;background:var(--ink)}
+}
+
+.sb-st.s1{position:relative}.sb-st.s1>u.tt{position:absolute;right:18px;top:24px;font-size:13px;color:var(--ink);font-weight:700}
 </style>
 </head>
 <body>
@@ -1092,7 +1118,7 @@ body:not(.work-mode) #work{display:none}
 
 <section class="wrap sb-proof" aria-label="Selected results">
   <a class="sb-st s1 wide" href="https://www.tiktok.com/@sahlpay" target="_blank" rel="noopener">
-    <span class="lgrow"><img src="brand-sahl.png" alt="" loading="lazy"><em>SahlPay</em><u>their TikTok ↗</u></span>
+    <span class="lgrow"><img src="brand-sahl.png" alt="" loading="lazy"><em>SahlPay</em></span><u class="tt">their TikTok ↗</u>
     <span class="nums"><span class="n"><b>2M</b><span>organic TikTok reach, engagement up 500%</span></span><span class="n"><b>5M+</b><span>reach for the <span class="ar">مع سهل كله سهل</span> campaign</span></span></span>
   </a>
   <div class="sb-st s2"><span class="lgrow"><img src="brand-velents.png" alt="" loading="lazy"><em>Velents.ai</em></span><b>+280%</b><span>organic engagement, “Star of the Quarter”</span></div>
@@ -1329,12 +1355,11 @@ body:not(.work-mode) #work{display:none}
       <p class="ct-label">I can help with</p>
       <ul class="ct-tags"><li>Launch campaigns</li><li>Positioning & messaging</li><li>Arabic copy that sounds local</li><li>Content systems</li><li>Community & webinars</li></ul>
       <div class="contact-row">
-        <a class="btn-mail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=salma.elananii@gmail.com&amp;su=Let%E2%80%99s%20work%20together" target="_blank" rel="noopener">Write to me ✉︎</a>
-        <span class="mail" id="mail">salma.elananii@gmail.com</span>
+        <a class="btn-mail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=salma.elananii@gmail.com&amp;su=Let%E2%80%99s%20work%20together" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="gm"><path fill="#fff" d="M2 6.5 12 13l10-6.5V18a2 2 0 0 1-2 2h-2.5V10.2L12 14.3 6.5 10.2V20H4a2 2 0 0 1-2-2z"/><path fill="#fff" opacity=".85" d="M4 4h16a2 2 0 0 1 1.6.8L12 11 2.4 4.8A2 2 0 0 1 4 4z"/></svg>Write to me</a>
         <a class="li-btn" href="https://www.linkedin.com/in/salmaelananii" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>LinkedIn ↗</a>
-        <button class="copy" id="copyBtn">Copy email</button>
         <a class="cv-btn" href="Salma-El-Ananii-CV.pdf" download>Download CV ↓</a>
       </div>
+      <div class="contact-row2"><span class="mail" id="mail">salma.elananii@gmail.com</span><button class="copy" id="copyBtn">Copy email</button></div>
     </div>
     <figure class="ct-photo"><img src="contact-me.webp" alt="3D avatar of Salma sitting cross-legged with a laptop covered in stickers, an egret on her shoulder" loading="lazy" width="900" height="900"><figcaption>Let’s talk ✍︎</figcaption></figure>
 </div>
@@ -1523,7 +1548,7 @@ buildFilters(); renderFeed();
  $('#favPoa').innerHTML=SAMPLES.filter(x=>x.brand==='Piece of Art').map(pcard).join('');}
 
 /* ---- account pages ---- */
-SAMPLES.push({n:901,type:'Video',brand:'TRU',ind:'Fintech',aud:'B2C',url:'https://www.facebook.com/reel/1761273875274714',pf:'Facebook',cap:'التقسيط الأكثر مرونة في مصر',title:'TRU TVC',img:'camp-tru.webp',ratio:[820,360],lang:'Arabic',camp:'التقسيط الأكثر مرونة في مصر'});
+SAMPLES.push({"n": 901, "type": "Post", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/photo.php?fbid=122142945746644848&set=pb.61569345461440.-2207520000&type=3", "pf": "Facebook", "cap": "غير مبلغ القسط على مزاجك بدوسة واحدة في أي وقت مع TRU! نزل الأبليكيشن دلوقتي من اللينك وقسط بشروطك وأحكامك.", "img": "tru-1.jpg", "ratio": [480, 600], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 902, "type": "Post", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/photo.php?fbid=122143417328644848&set=pb.61569345461440.-2207520000&type=3", "pf": "Facebook", "cap": "قلل مدة قسطك بعد ما تشتري بـTRU Control في أي وقت على مزاجك! نزل الأبليكيشن وقسط دلوقتي مع TRU.", "img": "tru-2.jpg", "ratio": [480, 600], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 903, "type": "Post", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/photo.php?fbid=122144114900644848&set=pb.61569345461440.-2207520000&type=3", "pf": "Facebook", "cap": "قسط تقلله، تتجزه، تخلصه في أي وقت بعد ما تشتري! من الآخر نزل TRU دلوقتي وقسط على مزاجك 😎", "img": "tru-3.jpg", "ratio": [480, 600], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 904, "type": "Reel", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/reel/1761273875274714", "pf": "Facebook", "cap": "التقسيط الأكثر مرونة في مصر. TVC للحملة.", "img": "tru-4.jpg", "ratio": [288, 360], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 905, "type": "Reel", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/reel/610118335226193", "pf": "Facebook", "cap": "تقسيط مع TRU = مرونة مش عادية!", "img": "tru-5.jpg", "ratio": [570, 626], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 906, "type": "Reel", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/reel/1463819167886933", "pf": "Facebook", "cap": "بكل مرونة هتقدر تقلل مبلغ القسط في أي وقت بعد ما تشتري بـTRU limit!", "img": "tru-6.jpg", "ratio": [570, 626], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"});
 const ACCOUNTS = [...new Set(SAMPLES.map(x=>x.brand))].map(b=>{const items=SAMPLES.filter(x=>x.brand===b);return {name:b,id:slug(b),items,ind:items[0].ind,aud:[...new Set(items.map(x=>x.aud))].join(' · ')};}).sort((a,b)=>b.items.length-a.items.length);
 const OTHER_LABEL={'Velents.ai':'Favourite work','SahlPay':'Tiktoks','Dawar Kitchen':'Dawar Kitchen Favourite posts'};
 const AOTW={brand:'Piece of Art',url:'https://www.adsoftheworld.com/campaigns/your-home-is-piece-of-art?fbclid=IwAR0_ABJTfi_p8JaEgrUU4ZtZEv1ql9J_1JrsmcqPZDAIUhoEkgs-DX-Zm5s'};
@@ -1649,7 +1674,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
 scenes.forEach(s=>{s.style.setProperty('--acc',s.dataset.acc);io.observe(s)});
 })();
 </script>
-<script>(()=>{const W=["Content strategy","Product marketing","Arabic copy","GTM content","UX writing","Reels & scripts","Community","SEO long-form"],B=[["telda","Telda"],["sahl","SahlPay"],["velents","Velents.ai"],["tactful","Tactful AI"],["bsocial","BSocial"],["tareknour","Tarek Nour"],["pieceofart","Piece of Art"],["beitelezz","Beit El-Ezz"],["dawar","Dawar Kitchen"],["motorone","Motor One"],["foodlover","Food Lover"],["champollion","Champollion"],["swimleague","The Swim League"],["cccj","CCCJ Studio"],["laff","Luxor African Film Festival"],["fayoum","Fayoum Film Festival"]];
+<script>(()=>{const W=["Content strategy","Product marketing","Arabic copy","GTM content","UX writing","Reels & scripts","Community","SEO long-form"],B=[["telda","Telda"],["sahl","SahlPay"],["velents","Velents.ai"],["tactful","Tactful AI"],["bsocial","BSocial"],["tareknour","Tarek Nour"],["pieceofart","Piece of Art"],["beitelezz","Beit El-Ezz"],["dawar","Dawar Kitchen"],["motorone","Motor One"],["foodlover","Food Lover"],["champollion","Champollion"],["swimleague","The Swim League"],["cccj","CCCJ Studio"],["laff","Luxor African Film Festival"],["fayoum","Fayoum Film Festival"],["oxi","Oxi"],["tekeya","Tekeya"],["ibag","IBAG × Western Union"],["tru","TRU"]];
 const a=W.map(w=>`<span>${w}</span>`).join(''),b=B.map(x=>`<span><img src="brand-${x[0]}.png" alt="">${x[1]}</span>`).join('');const A=document.getElementById('tapeA'),Bb=document.getElementById('tapeB');if(A)A.innerHTML=a+a+a;if(Bb)Bb.innerHTML=b+b;})();</script>
 <script>(()=>{const W=["get it.","trust it.","buy it.","love it."];let i=0;const el=document.getElementById('hxWord');
 if(el&&!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(()=>{el.classList.add('out');setTimeout(()=>{i=(i+1)%W.length;el.textContent=W[i];el.classList.remove('out')},350)},2400);
@@ -1687,6 +1712,37 @@ document.querySelectorAll('.hx [data-drag]').forEach(st=>{let sx,sy,ox=0,oy=0;co
    if(any){ok=!a.special&&a.items.some(x=>["type","ind","lang","aud"].every(g=>!fstate[g].size||fstate[g].has(x[g])));}
    f.hidden=!ok;});};
  updFolders();
+})();
+</script>
+
+<script>
+(function(){
+ const L2A={sahl:'sahlpay',velents:'velents-ai',tru:'tru',oxi:'oxi',tekeya:'tekeya',ibag:'ibag-western-union',pieceofart:'piece-of-art',beitelezz:'beit-el-ezz',dawar:'dawar-kitchen',motorone:'motor-one',foodlover:'food-lover',champollion:'champollion-nile-cruise',swimleague:'the-swim-league',cccj:'cccj-studio',laff:'film-festivals',fayoum:'film-festivals'};
+ const ids=new Set(ACCOUNTS.map(a=>a.id));
+ document.querySelectorAll('img[src*="brand-"]').forEach(img=>{
+  if(img.closest('#accView,.pf-folder,.acc-card,.fest'))return;
+  const k=(img.getAttribute('src').match(/brand-([a-z]+)\./)||[])[1]; if(!k)return;
+  const host=img.closest('.sb-agencies span,.lgrow,.sb-tape span,.sb-logos li')||img;
+  if(L2A[k]&&ids.has(L2A[k])){host.dataset.acc=L2A[k];host.classList.add('logo-link');host.setAttribute('role','button');host.setAttribute('title','Open the '+L2A[k].replace(/-/g,' ')+' page');}
+  else if(k==='telda'){host.dataset.goto='favourites';host.classList.add('logo-link');host.setAttribute('role','button');host.setAttribute('title','Read the Telda comics');}
+ });
+ document.addEventListener('click',e=>{const g=e.target.closest('[data-goto]');if(!g)return;e.preventDefault();const t=document.getElementById(g.dataset.goto);if(t)t.scrollIntoView({behavior:'smooth'});});
+ // recommendations slider on mobile
+ const grid=document.getElementById('recGrid'); if(!grid)return;
+ const dots=document.createElement('div');dots.className='rec-dots';grid.after(dots);
+ let timer=null,idx=0;
+ const cards=()=>[...grid.children].filter(c=>c.classList.contains('rec')&&c.offsetParent!==null);
+ const mobile=()=>matchMedia('(max-width:760px)').matches;
+ function drawDots(){const n=cards().length;dots.innerHTML=mobile()?Array.from({length:n},(_,i)=>`<button aria-label="Recommendation ${i+1}" aria-current="${i===idx}"></button>`).join(''):'';}
+ function go(i){const c=cards();if(!c.length)return;idx=(i+c.length)%c.length;grid.scrollTo({left:c[idx].offsetLeft-grid.offsetLeft-(grid.clientWidth-c[idx].clientWidth)/2,behavior:'smooth'});drawDots();}
+ function start(){stop();if(mobile()&&!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>go(idx+1),5000);}
+ function stop(){if(timer)clearInterval(timer);timer=null;}
+ grid.addEventListener('scroll',()=>{if(!mobile())return;const c=cards();let best=0,bd=1e9;c.forEach((el,i)=>{const d=Math.abs(el.getBoundingClientRect().left+el.clientWidth/2-innerWidth/2);if(d<bd){bd=d;best=i}});if(best!==idx){idx=best;drawDots();}},{passive:true});
+ grid.addEventListener('touchstart',stop,{passive:true});grid.addEventListener('touchend',()=>setTimeout(start,4000));
+ dots.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;stop();go([...dots.children].indexOf(b));start();});
+ new MutationObserver(()=>{idx=0;grid.scrollLeft=0;drawDots();}).observe(grid,{childList:true});
+ addEventListener('resize',()=>{drawDots();start();});
+ drawDots();start();
 })();
 </script>
 
