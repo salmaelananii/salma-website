@@ -973,6 +973,44 @@ body:not(.work-mode) #work{display:none}
 .sb-doors3 .d4{background:var(--surface);color:var(--ink)}
 .nav-cv{border:2px solid var(--ink);padding:5px 12px!important;font-weight:800;background:var(--yellow);color:#0d0b1a!important;text-decoration:none}
 .cv-btn{display:inline-flex;align-items:center;background:#ff98d4;color:#0d0b1a!important;font-family:var(--display);font-weight:900;padding:14px 20px;text-decoration:none;border:2px solid #ffffff;box-shadow:5px 5px 0 #ffe600}
+
+/* v14 */
+.tour-cta .wwm{display:inline-flex;align-items:center;background:var(--blue);color:#fff;font-family:var(--display);font-weight:800;padding:16px 26px;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);text-decoration:none}
+.mag-hint{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin:4px 0 16px;font-size:14px}
+.mag-hint b{font-family:var(--display);font-weight:900;margin-right:4px}
+.mag-hint span{border:1.5px solid var(--ink);padding:5px 10px;border-radius:999px;background:var(--surface)}
+.acc-filters{border:2px solid var(--ink);background:var(--surface);padding:14px 16px;display:grid;gap:12px;margin-bottom:24px}
+.af-row{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start}
+.af-row>span{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:8px}
+.af-chips{display:flex;flex-wrap:wrap;gap:8px}
+.af-chip{font:inherit;font-size:13.5px;font-weight:700;padding:6px 12px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;border-radius:999px}
+.af-chip small{font-family:var(--mono);font-weight:400;opacity:.7;margin-left:4px}
+.af-chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.af-chip.name:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+@media (max-width:640px){.af-row{grid-template-columns:1fr;gap:6px}.af-row>span{padding-top:0}}
+.wp-end{background:#0d0b1a;color:#f2f1fa;padding:clamp(48px,7vw,96px) 0}
+.wp-end-in{display:flex;flex-wrap:wrap;gap:28px;align-items:end;justify-content:space-between}
+.wp-end .eyebrow{color:#ff98d4}
+.wp-end h2{font-family:var(--display);font-weight:900;font-size:clamp(36px,5.5vw,72px);color:#fff;margin:10px 0 12px;line-height:1}
+.wp-end h2 span{color:#00a5ea}
+.wp-end p{color:#d9d7ea;max-width:46ch}
+.wp-end-btns{display:flex;flex-wrap:wrap;gap:12px}
+.wp-b1,.wp-b2{display:inline-flex;align-items:center;font-family:var(--display);font-weight:900;padding:15px 22px;text-decoration:none;border:2px solid #fff}
+.wp-b1{background:#00a5ea;color:#fff!important;box-shadow:5px 5px 0 #ff98d4}
+.wp-b2{background:transparent;color:#fff!important;box-shadow:5px 5px 0 #00a5ea}
+/* contact: less yellow */
+.ct-tags li,.ct-tags li:nth-child(odd){background:transparent!important;color:#fff!important;border:1.5px solid rgba(255,255,255,.7)!important;border-radius:999px}
+.ct-tags li::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff98d4;margin-right:8px;vertical-align:1px}
+.ct-tags li:nth-child(even)::before{background:#00a5ea}
+.btn-mail{background:#00a5ea!important;color:#fff!important;border-color:#00a5ea!important;box-shadow:5px 5px 0 #ff98d4!important}
+.contact .copy{background:transparent!important;color:#fff!important;border:2px solid #fff!important;box-shadow:none!important}
+.cv-btn{background:transparent!important;color:#fff!important;box-shadow:5px 5px 0 #ff98d4!important}
+.ct-photo img{box-shadow:12px 12px 0 #ff98d4!important}
+.li-btn{box-shadow:5px 5px 0 #ff98d4!important}
+/* mobile nav CV */
+.nav-cv{white-space:nowrap;display:inline-flex!important;align-items:center;gap:4px;line-height:1}
+@media (max-width:560px){.nav ul{gap:12px!important}.nav-cv{padding:5px 9px!important;font-size:13px}}
+@media (max-width:400px){.nav a[href="#egret"]{display:none}}
 </style>
 </head>
 <body>
@@ -1005,7 +1043,6 @@ body:not(.work-mode) #work{display:none}
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h11v8H8l-4 3z"/><path d="M15 9h5v8l-3-2h-6v-2"/></svg><span><b>2</b> Arabic dialects + English</span></li>
       </ul>
       <div class="sb-doors3">
-        <a href="#contact" class="d1">Work with me →</a>
         <a href="#work" class="d2">Look at my work →</a>
         <a href="#egret" class="d3">Read Egret <em>soon</em></a>
         <a href="Salma-El-Ananii-CV.pdf" class="d4" download>Download CV ↓</a>
@@ -1200,6 +1237,7 @@ body:not(.work-mode) #work{display:none}
 
     <article class="fav fav-comic" style="--k:#ff2300">
       <header class="fav-head"><span class="fav-no">01</span><div><p class="eyebrow">Telda · Instagram stories · Ramadan</p><h3>Telda Comics</h3><p class="fav-desc">A serialized comic told through Instagram stories, where every tap was the next frame and some frames asked the reader to choose what happens next. Four weekly issues. Pick one and read it like a magazine.</p></div></header>
+      <div class="mag-hint"><b>How to read it</b><span>① Pick an issue</span><span>② Flip with the arrows, swipe, or drag the slider</span><span>③ Read right to left, like an Arabic comic</span></div>
       <div class="mag" id="mag">
         <div class="mag-issues" role="tablist" aria-label="Comic issues"></div>
         <div class="mag-stage"><button class="mag-nav prev" id="magPrev" aria-label="Previous page">→</button><div class="mag-book" id="magBook"></div><button class="mag-nav next" id="magNext" aria-label="Next page">←</button></div>
@@ -1219,7 +1257,7 @@ body:not(.work-mode) #work{display:none}
       </div>
       <button class="btn ghost fav-more" data-acc="film-festivals">See every edition →</button>
     </article>
-    <div class="tour-cta"><a href="#work" class="btn primary tour-btn">Let’s take a tour →</a><span>the full journey: every brand, every post</span></div>
+    <div class="tour-cta"><a href="#work" class="btn primary tour-btn">Let’s take a tour →</a><a href="#contact" class="tour-btn wwm">Work with me →</a><span>the full journey: every brand, every post</span></div>
   </div>
 </section>
 <section class="block sb-egret-sec" id="egret" aria-labelledby="egH">
@@ -1287,6 +1325,10 @@ body:not(.work-mode) #work{display:none}
       <div><p class="eyebrow">My work</p><h2 style="margin-top:12px">My Beloved Journey</h2></div>
       <p class="sub" style="max-width:46ch;color:var(--muted)">Around 100 brands, 10+ industries and more than 1,000 pieces of content later, these are my lovely ones. Open any of them and have a look.</p>
     </div>
+    <div class="acc-filters" id="accFilters">
+      <div class="af-row"><span>Accounts</span><div class="af-chips" id="afNames"></div></div>
+      <div class="af-row"><span>Industry</span><div class="af-chips" id="afInd"></div></div>
+    </div>
     <div class="acc-grid" id="accGrid"></div>
   </div>
 </section>
@@ -1313,6 +1355,12 @@ body:not(.work-mode) #work{display:none}
     </div>
     <div class="grid" id="feed"></div>
     <div class="feed-more"><button class="btn ghost" id="feedMore" hidden>Show more</button></div>
+  </div>
+</section>
+<section class="wp-end">
+  <div class="wrap wp-end-in">
+    <div><p class="eyebrow">Liked what you saw?</p><h2>Let’s work <span>together.</span></h2><p>Tell me what your product does and who still doesn’t get it. I’ll bring the words.</p></div>
+    <div class="wp-end-btns"><a href="#contact" class="wp-b1">Work with me →</a><a href="Salma-El-Ananii-CV.pdf" class="wp-b2" download>Download my CV ↓</a></div>
   </div>
 </section>
 </div>
@@ -1481,6 +1529,12 @@ function accCard(a){
   return `<button class="acc-card" style="--bc:${bc}" data-acc="${a.id}" aria-label="Open ${esc(a.name)} account page"><div class="acc-mosaic">${a.name===AOTW.brand?'<span class="aotw-ribbon"><img src="aotw.png" alt="Featured on Ads of the World"></span>':''}${imgs.map(x=>`<img src="${x.img}" alt="" loading="lazy">`).join('')}</div><div class="acc-meta"><div class="row"><b>${esc(a.name)}</b><em>${a.items.length}</em></div><span>${esc(a.ind)} · ${esc(fmts)}</span><span>${camps?camps+' campaign folder'+(camps>1?'s':''):'Always-on content'}</span></div></button>`;
 }
 $('#accGrid').innerHTML=ACCOUNTS.map(accCard).join('');
+{const indOf=a=>(a.ind||'Other').split(/\s*\/\s*/)[0];const inds=[...new Set(ACCOUNTS.map(indOf))];let cur=null;
+ $('#afNames').innerHTML=ACCOUNTS.map(a=>`<button class="af-chip name" data-acc="${a.id}">${esc(a.name)}</button>`).join('');
+ const draw=()=>{$('#afInd').innerHTML=`<button class="af-chip" data-ind="" aria-pressed="${cur===null}">All <small>${ACCOUNTS.length}</small></button>`+inds.map(n=>`<button class="af-chip" data-ind="${esc(n)}" aria-pressed="${cur===n}">${esc(n)} <small>${ACCOUNTS.filter(a=>indOf(a)===n).length}</small></button>`).join('');
+   document.querySelectorAll('#accGrid .acc-card').forEach(c=>{const a=ACCOUNTS.find(x=>x.id===c.dataset.acc);c.style.display=(cur===null||indOf(a)===cur)?'':'none';});
+   document.querySelectorAll('#afNames .af-chip').forEach(c=>{const a=ACCOUNTS.find(x=>x.id===c.dataset.acc);c.style.display=(cur===null||indOf(a)===cur)?'':'none';});};
+ draw(); $('#afInd').addEventListener('click',e=>{const b=e.target.closest('[data-ind]');if(!b)return;cur=b.dataset.ind||null;draw();});}
 
 const av={id:null,camp:null,type:new Set(),lang:new Set(),q:""};
 function chipsFor(items,g){const vals=[...new Set(items.map(x=>x[g]))];if(vals.length<2)return'';return `<div class="frow"><span>${g==='type'?'Format':'Language'}</span><div class="chips">${vals.map(v=>`<button class="chip" data-avg="${g}" data-v="${esc(v)}" aria-pressed="${av[g].has(v)}">${esc(v)} <small>${items.filter(x=>x[g]===v).length}</small></button>`).join('')}</div></div>`;}
