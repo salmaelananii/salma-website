@@ -1011,6 +1011,29 @@ body:not(.work-mode) #work{display:none}
 .nav-cv{white-space:nowrap;display:inline-flex!important;align-items:center;gap:4px;line-height:1}
 @media (max-width:560px){.nav ul{gap:12px!important}.nav-cv{padding:5px 9px!important;font-size:13px}}
 @media (max-width:400px){.nav a[href="#egret"]{display:none}}
+
+/* v15 projects slider */
+.pf-row{align-items:center}
+.pf-wrap{position:relative;display:flex;align-items:center;gap:8px;min-width:0}
+.pf-slider{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 12px;scrollbar-width:thin;min-width:0;flex:1}
+.pf-folder{flex:0 0 auto;scroll-snap-align:start;width:112px;display:grid;justify-items:center;gap:4px;background:none;border:0;cursor:pointer;color:var(--ink);font:inherit;padding:0}
+.pf-folder[hidden]{display:none}
+.pf-tab{justify-self:start;width:42px;height:10px;background:var(--bc);border:2px solid var(--ink);border-bottom:0;border-radius:6px 6px 0 0;margin-left:6px}
+.pf-body{width:100%;height:76px;display:grid;place-items:center;background:var(--bc);border:2px solid var(--ink);border-radius:0 8px 8px 8px;box-shadow:3px 3px 0 var(--ink);transition:transform .2s}
+.pf-body img{width:46px;height:46px;object-fit:contain;background:#fff;border-radius:8px;padding:3px}
+.pf-folder:hover .pf-body{transform:translateY(-4px)}
+.pf-folder b{font-size:12.5px;font-weight:800;line-height:1.15;text-align:center;max-width:110px}
+.pf-folder small{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.pf-arrow{flex:0 0 auto;width:34px;height:34px;border:2px solid var(--ink);background:var(--surface);color:var(--ink);font-weight:900;cursor:pointer;border-radius:50%}
+.pf-arrow:hover{background:var(--ink);color:var(--bg)}
+@media (max-width:640px){.pf-arrow{display:none}.pf-folder{width:96px}.pf-body{height:66px}}
+#accounts{padding-bottom:16px!important}
+#samples{padding-top:8px!important}
+.feed-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin:8px 0 18px}
+.feed-head h2{font-family:var(--display);font-weight:900;font-size:clamp(24px,3vw,36px)}
+.feed-head span{color:var(--muted);font-size:14px}
+
+#accGrid[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -1325,20 +1348,8 @@ body:not(.work-mode) #work{display:none}
       <div><p class="eyebrow">My work</p><h2 style="margin-top:12px">My Beloved Journey</h2></div>
       <p class="sub" style="max-width:46ch;color:var(--muted)">Around 100 brands, 10+ industries and more than 1,000 pieces of content later, these are my lovely ones. Open any of them and have a look.</p>
     </div>
-    <div class="acc-filters" id="accFilters">
-      <div class="af-row"><span>Accounts</span><div class="af-chips" id="afNames"></div></div>
-      <div class="af-row"><span>Industry</span><div class="af-chips" id="afInd"></div></div>
-    </div>
-    <div class="acc-grid" id="accGrid"></div>
-  </div>
-</section>
-<section class="block feed" id="samples">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><p class="eyebrow">Work samples · the published pieces</p><h2 style="margin-top:12px">The work, post by post</h2></div>
-      <p class="sub">158 pieces across 13 brands, as they went live. Filter by format, industry, language or audience, and open any card to see the original post.</p>
-    </div>
     <div class="fbar" id="fbar">
+      <div class="frow pf-row"><span>Projects</span><div class="pf-wrap"><button class="pf-arrow l" type="button" aria-label="Scroll projects left">←</button><div class="pf-slider" id="pfSlider"></div><button class="pf-arrow r" type="button" aria-label="Scroll projects right">→</button></div></div>
       <div class="frow"><span>Format</span><div class="chips" data-g="type"></div></div>
       <div class="frow"><span>Industry</span><div class="chips" data-g="ind"></div></div>
       <div class="frow"><span>Language</span><div class="chips" data-g="lang"></div></div>
@@ -1353,6 +1364,12 @@ body:not(.work-mode) #work{display:none}
         <div style="display:flex;gap:12px;align-items:center"><span class="count" id="fCount"></span><button class="clear" id="fClear" hidden>Clear filters</button></div>
       </div>
     </div>
+    <div class="acc-grid" id="accGrid" hidden></div>
+  </div>
+</section>
+<section class="block feed" id="samples">
+  <div class="wrap">
+    <div class="feed-head"><h2>The work, post by post</h2><span>open any card to see the original post</span></div>
     <div class="grid" id="feed"></div>
     <div class="feed-more"><button class="btn ghost" id="feedMore" hidden>Show more</button></div>
   </div>
@@ -1482,6 +1499,7 @@ function pcard(x){
   return `<article class="post" style="--bc:${bc}">${vis}<div class="pbody"><div class="ptop"><button class="brandlink" data-acc="${slug(x.brand)}">${esc(x.brand)}</button><span>${x.camp?`<span class="ctag">📁 ${esc(x.camp)}</span> · `:""}#${x.n}</span></div>${capHtml}<div class="pfoot"><div class="tags"><span>${esc(x.ind)}</span><span>${esc(x.lang)}</span><span>${esc(x.aud)}</span></div><a class="open-link" href="${href}" target="_blank" rel="noopener">${pf==='Google Drive'?'Watch':'View on '+esc(pf)} ↗</a></div></div></article>`;
 }
 function renderFeed(){
+  if(window.updFolders)setTimeout(updFolders,0);
   const list=SAMPLES.filter(matches);
   const any=["type","ind","lang","aud"].some(g=>fstate[g].size)||fstate.brand||fstate.q;
   $('#fCount').innerHTML=`<b>${list.length}</b> of ${SAMPLES.length}`;
@@ -1529,12 +1547,6 @@ function accCard(a){
   return `<button class="acc-card" style="--bc:${bc}" data-acc="${a.id}" aria-label="Open ${esc(a.name)} account page"><div class="acc-mosaic">${a.name===AOTW.brand?'<span class="aotw-ribbon"><img src="aotw.png" alt="Featured on Ads of the World"></span>':''}${imgs.map(x=>`<img src="${x.img}" alt="" loading="lazy">`).join('')}</div><div class="acc-meta"><div class="row"><b>${esc(a.name)}</b><em>${a.items.length}</em></div><span>${esc(a.ind)} · ${esc(fmts)}</span><span>${camps?camps+' campaign folder'+(camps>1?'s':''):'Always-on content'}</span></div></button>`;
 }
 $('#accGrid').innerHTML=ACCOUNTS.map(accCard).join('');
-{const indOf=a=>(a.ind||'Other').split(/\s*\/\s*/)[0];const inds=[...new Set(ACCOUNTS.map(indOf))];let cur=null;
- $('#afNames').innerHTML=ACCOUNTS.map(a=>`<button class="af-chip name" data-acc="${a.id}">${esc(a.name)}</button>`).join('');
- const draw=()=>{$('#afInd').innerHTML=`<button class="af-chip" data-ind="" aria-pressed="${cur===null}">All <small>${ACCOUNTS.length}</small></button>`+inds.map(n=>`<button class="af-chip" data-ind="${esc(n)}" aria-pressed="${cur===n}">${esc(n)} <small>${ACCOUNTS.filter(a=>indOf(a)===n).length}</small></button>`).join('');
-   document.querySelectorAll('#accGrid .acc-card').forEach(c=>{const a=ACCOUNTS.find(x=>x.id===c.dataset.acc);c.style.display=(cur===null||indOf(a)===cur)?'':'none';});
-   document.querySelectorAll('#afNames .af-chip').forEach(c=>{const a=ACCOUNTS.find(x=>x.id===c.dataset.acc);c.style.display=(cur===null||indOf(a)===cur)?'':'none';});};
- draw(); $('#afInd').addEventListener('click',e=>{const b=e.target.closest('[data-ind]');if(!b)return;cur=b.dataset.ind||null;draw();});}
 
 const av={id:null,camp:null,type:new Set(),lang:new Set(),q:""};
 function chipsFor(items,g){const vals=[...new Set(items.map(x=>x[g]))];if(vals.length<2)return'';return `<div class="frow"><span>${g==='type'?'Format':'Language'}</span><div class="chips">${vals.map(v=>`<button class="chip" data-avg="${g}" data-v="${esc(v)}" aria-pressed="${av[g].has(v)}">${esc(v)} <small>${items.filter(x=>x[g]===v).length}</small></button>`).join('')}</div></div>`;}
@@ -1661,6 +1673,20 @@ document.querySelectorAll('.hx [data-drag]').forEach(st=>{let sx,sy,ox=0,oy=0;co
  const f=document.getElementById('egForm');if(f)f.addEventListener('submit',e=>{e.preventDefault();const m=document.getElementById('egMail').value;
    location.href='mailto:salma.elananii@gmail.com?subject='+encodeURIComponent('Egret launch list')+'&body='+encodeURIComponent('Add me to the Egret launch list: '+m);
    document.getElementById('egMsg').textContent='تمام! هيوصلك أول عدد أول ما يطلع.';});
+})();
+</script>
+
+<script>
+(function(){const LOGO={"Film Festivals": "brand-laff.png", "Velents.ai": "brand-velents.png", "SahlPay": "brand-sahl.png", "Piece of Art": "brand-pieceofart.png", "Oxi": "brand-oxi.png", "IBAG × Western Union": "brand-ibag.png", "Dawar Kitchen": "brand-dawar.png", "Tekeya": "brand-tekeya.png", "Beit El-Ezz": "brand-beitelezz.png", "CCCJ Studio": "brand-cccj.png", "Motor One": "brand-motorone.png", "Champollion Nile Cruise": "brand-champollion.png", "The Swim League": "brand-swimleague.png", "Food Lover": "brand-foodlover.png", "TRU": "brand-tru.png"};
+ const sl=document.getElementById('pfSlider'); if(!sl) return;
+ sl.innerHTML=ACCOUNTS.map(a=>{const [bc]=BRAND_COLOR[a.name]||['#00a5ea'];const n=a.special?FESTIVALS.reduce((t,f)=>t+f.eds.length,0):a.items.length;
+  return `<button class="pf-folder" style="--bc:${a.special?'#2a8c82':bc}" data-acc="${a.id}" data-name="${esc(a.name)}" aria-label="Open ${esc(a.name)}"><span class="pf-tab"></span><span class="pf-body"><img src="${LOGO[a.name]||'logo.svg'}" alt="" loading="lazy"></span><b>${esc(a.name)}</b><small>${n} ${a.special?'editions':'pieces'}</small></button>`}).join('');
+ document.querySelectorAll('.pf-arrow').forEach(btn=>btn.addEventListener('click',()=>sl.scrollBy({left:(btn.classList.contains('l')?-1:1)*sl.clientWidth*0.8,behavior:'smooth'})));
+ window.updFolders=function(){const any=fstate.ind.size||fstate.type.size||fstate.lang.size||fstate.aud.size;
+  sl.querySelectorAll('.pf-folder').forEach(f=>{const a=ACCOUNTS.find(x=>x.id===f.dataset.acc);let ok=true;
+   if(any){ok=!a.special&&a.items.some(x=>["type","ind","lang","aud"].every(g=>!fstate[g].size||fstate[g].has(x[g])));}
+   f.hidden=!ok;});};
+ updFolders();
 })();
 </script>
 
