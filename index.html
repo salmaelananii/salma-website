@@ -2380,9 +2380,12 @@ document.querySelectorAll('.hx [data-drag]').forEach(st=>{let sx,sy,ox=0,oy=0;co
    const subj=`Project brief: ${v('fCo')||v('fName')}`;document.getElementById('fPre').textContent='Subject: '+subj+'\n\n'+body;
    document.getElementById('fGo').href='https://mail.google.com/mail/?view=cm&fs=1&to=salma.elananii@gmail.com&su='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
    document.getElementById('fOut').classList.add('show');});
- const f=document.getElementById('egForm');if(f)f.addEventListener('submit',e=>{e.preventDefault();const m=document.getElementById('egMail').value;
-   location.href='mailto:salma.elananii@gmail.com?subject='+encodeURIComponent('Egret launch list')+'&body='+encodeURIComponent('Add me to the Egret launch list: '+m);
-   document.getElementById('egMsg').textContent='تمام! هيوصلك أول عدد أول ما يطلع.';});
+ const f=document.getElementById('egForm');if(f)f.addEventListener('submit',async e=>{e.preventDefault();const inp=document.getElementById('egMail'),msg=document.getElementById('egMsg'),btn=f.querySelector('button');const m=inp.value.trim();if(!m)return;
+   btn.disabled=true;msg.textContent='ثانية واحدة…';
+   try{const fd=new FormData();fd.append('entry.1587344432',m);await fetch('https://docs.google.com/forms/d/e/1FAIpQLScXGLFMRu6tr3LQDPiMtWpVS4QJdxLDd_d8EmPXP8aYGQES9w/formResponse',{method:'POST',mode:'no-cors',body:fd});
+     msg.textContent='تمام! اتسجلت، وهيوصلك أول عدد أول ما يطلع.';inp.value='';f.classList.add('done');}
+   catch(err){msg.textContent='حصلت مشكلة في الاتصال. جرّب تاني بعد شوية.';}
+   btn.disabled=false;});
 })();
 </script>
 
