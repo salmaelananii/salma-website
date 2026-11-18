@@ -1427,6 +1427,10 @@ body.page-mode main>.subpage.pg-on{display:block}
 @media (max-width:520px){.dd-menu{left:-40px}}
 :root[data-theme="dark"] .sp .step .lab{color:#ff98d4!important}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sp .step .lab{color:#ff98d4!important}}
+.poa-one{display:grid;gap:16px;justify-items:start}
+.poa-img{display:block;max-width:420px;width:100%;border:2px solid var(--ink);box-shadow:6px 6px 0 #e9c467;transition:transform .2s}
+.poa-img:hover{transform:translate(-3px,-3px)}
+.poa-img img{display:block;width:100%;height:auto}
 </style>
 </head>
 <body>
@@ -1497,9 +1501,6 @@ body.page-mode main>.subpage.pg-on{display:block}
     <span class="eyebrow">Before the work · the story</span>
     <h2 id="stH">Grab a coffee.<br><span>Let me tell you my story.</span></h2>
     <p>Before the cases and the numbers, here’s how I got here: a family that loved words and pictures, a quiet year that changed everything, then four markets and one writer. Scroll and read it like a storybook.</p>
-    <ol class="si-map">
-      <li><a href="#origin">Where it started</a></li><li><a href="#y2020">2020</a></li><li><a href="#agency">Agency kid</a></li><li><a href="#fintech">Fintech voice</a></li><li><a href="#riyadh">Riyadh chapter</a></li><li><a href="#now">Product marketer</a></li>
-    </ol>
     <a class="si-go" href="#origin"><span>Start reading</span><i aria-hidden="true">↓</i></a>
   </div>
 </section>
@@ -1693,7 +1694,7 @@ body.page-mode main>.subpage.pg-on{display:block}
     <article class="fav" style="--k:#e9c467">
       <header class="fav-head"><span class="fav-no">02</span><div><p class="eyebrow">Piece of Art · BSocial Egypt · Oct 2021</p><h3>Your Home Is Piece Of Art</h3><p class="fav-desc">People stop in front of old paintings to study the details. So we placed the furniture inside classic paintings: the pieces are as finely crafted as the art around them. The campaign was published on Ads of the World.</p></div></header>
       <a class="aotw-strap" href="https://www.adsoftheworld.com/campaigns/your-home-is-piece-of-art?fbclid=IwAR0_ABJTfi_p8JaEgrUU4ZtZEv1ql9J_1JrsmcqPZDAIUhoEkgs-DX-Zm5s" target="_blank" rel="noopener"><span class="aotw-kicker">Featured on</span><img src="aotw.png" alt="Ads of the World by Clios"><span class="aotw-txt"><b>“Your Home Is Piece Of Art”</b><small>Agency: BSocial Egypt · Published in Egypt, October 2021</small></span><span class="aotw-go">View the campaign ↗</span></a>
-      <div class="fav-strip" id="favPoa"></div>
+      <div class="poa-one"><a class="poa-img" href="#acc-piece-of-art" data-acc="piece-of-art" data-camp="خلي بيتك Piece of Art"><img src="57.jpg" alt="Piece of Art campaign post: furniture placed inside a classic painting" loading="lazy"></a><button class="btn primary" data-acc="piece-of-art" data-camp="خلي بيتك Piece of Art">See the whole campaign →</button></div>
       
     </article>
     <article class="fav fav-fest" style="--k:#2a8c82">
@@ -2223,7 +2224,7 @@ function showBrand(brand){for(const g of ["type","ind","lang","aud"])fstate[g].c
 buildFilters(); renderFeed();
 {const sahl=SAMPLES.filter(x=>x.brand==='SahlPay'&&x.camp==='مع سهل كله سهل'&&x.img&&/كهرب|كهربا|الكهرباء/.test((x.cap||'')));
  {const fs=$('#favSahl'); if(fs) fs.innerHTML=sahl.map(pcard).join('');}
- $('#favPoa').innerHTML=SAMPLES.filter(x=>x.brand==='Piece of Art').map(pcard).join('');}
+ if($('#favPoa'))$('#favPoa').innerHTML=SAMPLES.filter(x=>x.brand==='Piece of Art').map(pcard).join('');}
 
 /* ---- account pages ---- */
 SAMPLES.push({"n": 901, "type": "Post", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/photo.php?fbid=122142945746644848&set=pb.61569345461440.-2207520000&type=3", "pf": "Facebook", "cap": "غير مبلغ القسط على مزاجك بدوسة واحدة في أي وقت مع TRU! نزل الأبليكيشن دلوقتي من اللينك وقسط بشروطك وأحكامك.", "img": "tru-1.jpg", "ratio": [480, 600], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 902, "type": "Post", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/photo.php?fbid=122143417328644848&set=pb.61569345461440.-2207520000&type=3", "pf": "Facebook", "cap": "قلل مدة قسطك بعد ما تشتري بـTRU Control في أي وقت على مزاجك! نزل الأبليكيشن وقسط دلوقتي مع TRU.", "img": "tru-2.jpg", "ratio": [480, 600], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 903, "type": "Post", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/photo.php?fbid=122144114900644848&set=pb.61569345461440.-2207520000&type=3", "pf": "Facebook", "cap": "قسط تقلله، تتجزه، تخلصه في أي وقت بعد ما تشتري! من الآخر نزل TRU دلوقتي وقسط على مزاجك 😎", "img": "tru-3.jpg", "ratio": [480, 600], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 904, "type": "Reel", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/reel/1761273875274714", "pf": "Facebook", "cap": "التقسيط الأكثر مرونة في مصر. TVC للحملة.", "img": "tru-4.jpg", "ratio": [288, 360], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 905, "type": "Reel", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/reel/610118335226193", "pf": "Facebook", "cap": "تقسيط مع TRU = مرونة مش عادية!", "img": "tru-5.jpg", "ratio": [570, 626], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"},{"n": 906, "type": "Reel", "brand": "TRU", "ind": "Fintech", "aud": "B2C", "url": "https://www.facebook.com/reel/1463819167886933", "pf": "Facebook", "cap": "بكل مرونة هتقدر تقلل مبلغ القسط في أي وقت بعد ما تشتري بـTRU limit!", "img": "tru-6.jpg", "ratio": [570, 626], "lang": "Arabic", "camp": "التقسيط الأكثر مرونة في مصر"});
