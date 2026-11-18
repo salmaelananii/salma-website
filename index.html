@@ -1411,7 +1411,22 @@ body.page-mode main>.subpage.pg-on{display:block}
 .wpc span{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;color:var(--muted)}
 .wpc b{font-family:var(--display);font-weight:900;font-size:14px;line-height:1.15}
 @media (max-width:520px){.nav .wrap{gap:8px}.nav .logo.svg{flex:none;width:84px}.nav ul{gap:9px!important}.nav ul a{font-size:13px}.theme-btn{flex:none}}
-@media (max-width:380px){.nav ul li:has(.nav-cases){display:none}}
+
+
+/* v22 */
+.sp .step p{color:var(--ink)!important;opacity:.88}
+.nav-dd{position:relative;display:flex;align-items:center;gap:2px}
+.dd-tg{all:unset;cursor:pointer;font-size:11px;padding:4px 3px;color:var(--muted);transition:transform .2s}
+.nav-dd:hover .dd-tg,.nav-dd:focus-within .dd-tg{transform:rotate(180deg)}
+.dd-menu{list-style:none;margin:0;padding:8px;position:absolute;top:calc(100% + 10px);left:-10px;min-width:230px;background:var(--surface);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--yellow);display:grid!important;gap:4px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:60}
+.dd-menu::before{content:"";position:absolute;left:0;right:0;top:-14px;height:14px}
+.nav-dd:hover .dd-menu,.nav-dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:none}
+.dd-menu a{display:grid;gap:2px;padding:9px 10px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px!important}
+.dd-menu a small{font-family:var(--mono);font-weight:400;font-size:10.5px;color:var(--muted)}
+.dd-menu a:hover{background:var(--yellow);color:#0d0b1a}.dd-menu a:hover small{color:#3b3852}
+@media (max-width:520px){.dd-menu{left:-40px}}
+:root[data-theme="dark"] .sp .step .lab{color:#ff98d4!important}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .sp .step .lab{color:#ff98d4!important}}
 </style>
 </head>
 <body>
@@ -1421,8 +1436,8 @@ body.page-mode main>.subpage.pg-on{display:block}
   <div class="wrap">
     <a href="#top" class="logo svg" aria-label="Salma El-Ananii, home"><img src="logo.svg" alt="Salma El-Ananii" width="544" height="170"></a>
     <ul>
-      <li><a href="#work" class="nav-work">Work</a></li>
-      <li><a href="#cases" class="nav-cases">Cases</a></li>
+      <li class="nav-dd"><a href="#work" class="nav-work">Work</a><button class="dd-tg" type="button" aria-label="Show work pages" aria-haspopup="true">▾</button>
+        <ul class="dd-menu"><li><a href="#work">All work<small>every brand, every post</small></a></li><li><a href="#cases" class="nav-cases">Campaign cases<small>the idea behind 7 campaigns</small></a></li></ul></li>
       <li><a href="#egret">Egret</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="Salma-El-Ananii-CV.pdf" class="nav-cv" download>CV ↓</a></li>
@@ -2218,7 +2233,7 @@ const AOTW={brand:'Piece of Art',url:'https://www.adsoftheworld.com/campaigns/yo
 const FESTIVALS=[
  {name:'Luxor African Film Festival',short:'LAFF',logo:'brand-laff.png',color:'#2a8c82',fb:'https://www.facebook.com/luxoraff',ig:'https://www.instagram.com/luxorafricanfilmfestival/',site:'https://www.luxorafricanfilmfestival.com/en',
   eds:[['15th edition','Mar 30 – Apr 5, 2026','fest-lux-15.webp'],['13th edition','Feb 9 – 15, 2024','fest-lux-13.webp'],['12th edition','Feb 4 – 10, 2023','fest-lux-12.webp'],['11th edition','Mar 4 – 10, 2022','fest-lux-11.webp'],['10th edition · 10 Years of Imagination','Mar 26 – 31, 2021','fest-lux-10.webp']]},
- {name:'Fayoum International Film Festival',short:'FIEFF',logo:'brand-fayoum.png',color:'#5b7fa8',fb:'https://www.facebook.com/profile.php?id=61551407467324',ig:'',site:'https://www.fieff.com/',
+ {name:'Fayoum International Film Festival',short:'FIEFF',logo:'brand-fayoum.png',color:'#5b7fa8',fb:'https://www.facebook.com/profile.php?id=61551407467324',ig:'https://www.instagram.com/fayoumfilmfestival/',site:'https://www.fieff.com/',
   eds:[['3rd edition','2026 · in progress','fest-fay-3.webp'],['2nd edition','Nov 25 – 30, 2025','fest-fay-2.webp'],['1st edition','Nov 25 – 30, 2024','fest-fay-1.webp']]}];
 {const pin=['Velents.ai','SahlPay','Piece of Art','Oxi','IBAG × Western Union'];const head=pin.map(n=>ACCOUNTS.find(a=>a.name===n)).filter(Boolean);const rest=ACCOUNTS.filter(a=>!pin.includes(a.name));ACCOUNTS.length=0;ACCOUNTS.push(...head,...rest);}
 ACCOUNTS.unshift({name:'Film Festivals',id:'film-festivals',special:'fest',items:[],ind:'Film & culture',aud:'B2C'});
