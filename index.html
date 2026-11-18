@@ -1431,6 +1431,14 @@ body.page-mode main>.subpage.pg-on{display:block}
 .poa-img{display:block;max-width:420px;width:100%;border:2px solid var(--ink);box-shadow:6px 6px 0 #e9c467;transition:transform .2s}
 .poa-img:hover{transform:translate(-3px,-3px)}
 .poa-img img{display:block;width:100%;height:auto}
+.cal-band{display:grid;gap:18px}
+.cal-h h3{font-family:var(--display);font-weight:900;font-size:clamp(26px,3.4vw,42px);color:#fff;margin:0}
+.cal-h h3 span{color:#ffe600}
+.cal-h p{color:#cfcce3;margin:8px 0 0;max-width:60ch}
+.cal-frame{background:#fff;border:2px solid #fff;box-shadow:8px 8px 0 #ff98d4;overflow:hidden}
+.cal-frame iframe{display:block;width:100%;height:720px;border:0}
+@media (max-width:760px){.cal-frame iframe{height:1050px}}
+.cal-alt{color:#fff;font-size:14px;justify-self:start}
 </style>
 </head>
 <body>
@@ -1767,27 +1775,10 @@ body.page-mode main>.subpage.pg-on{display:block}
     <li><span class="num">03</span><h4>We start</h4><p>Once you approve the proposal, we kick off and I start writing.</p></li>
   </ol>
 
-  <div class="dark-band">
-    <h3>Tell me about your <span>product.</span></h3>
-    <p>Send a short brief and it opens in Gmail, ready to send. I reply with a time for our first meeting.</p>
-    <form class="form" id="brief" novalidate>
-      <label>Your name<input id="fName" required placeholder="Nour Hassan"></label>
-      <label>Company<input id="fCo" placeholder="Brand or startup name"></label>
-      <label class="full">What does your product do?<input id="fProd" required placeholder="e.g. a payments app for small shops"></label>
-      <div class="full" style="display:grid;gap:6px"><span style="font-size:13px;font-weight:600">What do you need?</span>
-        <div class="need" id="fNeed">
-          <label><input type="checkbox" value="Launch campaign">Launch campaign</label>
-          <label><input type="checkbox" value="Positioning & messaging">Positioning &amp; messaging</label>
-          <label><input type="checkbox" value="Arabic content">Arabic content</label>
-          <label><input type="checkbox" value="Content system">Content system</label>
-          <label><input type="checkbox" value="Community & webinars">Community &amp; webinars</label>
-        </div></div>
-      <label>When do you want to start?<select id="fWhen"><option>This month</option><option>Next month</option><option>Just exploring</option></select></label>
-      <label>Market<select id="fMkt"><option>Egypt</option><option>Saudi Arabia</option><option>Gulf</option><option>MENA</option></select></label>
-      <label class="full">Anything else?<textarea id="fMsg" placeholder="Links, goals, deadlines"></textarea></label>
-      <div class="full" style="display:flex;flex-wrap:wrap;gap:12px"><button class="btn blue2" type="submit">Let’s talk</button><span id="fErr" role="alert" style="color:var(--pink);font-size:14px;align-self:center"></span></div>
-      <div class="full out" id="fOut" aria-live="polite"><pre id="fPre"></pre><a class="btn pink" id="fGo" href="#" target="_blank" rel="noopener">Open in Gmail ↗</a></div>
-    </form>
+  <div class="cal-band">
+    <div class="cal-h"><h3>Pick a time that <span>works for you.</span></h3><p>30 minutes on a call. Choose the day and time, add a line about your product, and you’ll get the invite on your email.</p></div>
+    <div class="cal-frame"><iframe id="calFrame" title="Book a 30-minute meeting with Salma on Calendly" data-src="https://calendly.com/salma-elananii/30min?hide_gdpr_banner=1&amp;primary_color=00a5ea" loading="lazy"></iframe></div>
+    <a class="cal-alt" href="https://calendly.com/salma-elananii/30min" target="_blank" rel="noopener">Open it in Calendly ↗</a>
   </div>
 </div>
 </section>
@@ -2150,7 +2141,7 @@ try{const t=localStorage.getItem('theme'); if(t) document.documentElement.datase
 
 /* copy */
 {const mb=$('#mailBtn'),mr=$('#mailReveal'),cm=$('#copiedMsg');mb.addEventListener('click',async()=>{mr.hidden=false;const t=$('#mail').textContent;let ok=false;try{await navigator.clipboard.writeText(t);ok=true}catch(e){try{const r=document.createRange();r.selectNodeContents($('#mail'));const s=getSelection();s.removeAllRanges();s.addRange(r);ok=document.execCommand('copy')}catch(_){}}cm.textContent=ok?'✓ Copied to your clipboard':'Select and copy it';mr.classList.remove('pop');void mr.offsetWidth;mr.classList.add('pop');});
- const fb=$('#flBtn'),fp=$('#freelance');const openFl=()=>{fp.hidden=false;fb.setAttribute('aria-expanded','true');requestAnimationFrame(()=>fp.scrollIntoView({behavior:'smooth',block:'start'}))};fb.addEventListener('click',()=>{if(fp.hidden)openFl();else{fp.hidden=true;fb.setAttribute('aria-expanded','false')}});
+ const fb=$('#flBtn'),fp=$('#freelance');const openFl=()=>{fp.hidden=false;const cf=$('#calFrame');if(cf&&!cf.src)cf.src=cf.dataset.src;fb.setAttribute('aria-expanded','true');requestAnimationFrame(()=>fp.scrollIntoView({behavior:'smooth',block:'start'}))};fb.addEventListener('click',()=>{if(fp.hidden)openFl();else{fp.hidden=true;fb.setAttribute('aria-expanded','false')}});
  if(location.hash==='#freelance')openFl();}
 
 
