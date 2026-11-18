@@ -1347,6 +1347,67 @@ body.page-mode main>.subpage.pg-on{display:block}
 .hx-stk.s2{top:4%!important;right:-1%!important}
 @media (max-width:900px){.hx-stk.s2{max-width:52%;right:-4%!important;top:2%!important;padding:8px 12px}.hx-stk.s2 .me{font-size:11.5px}.hx-stk.s3{bottom:12%!important;right:-2%!important}}
 @media (max-width:700px){.cert-stk{max-width:calc(100% - 14px)}}
+
+/* ===== v20 ===== */
+[hidden]{display:none!important}
+.hx-h{font-size:clamp(32px,4.2vw,62px)!important}
+.hx-grid{align-items:center!important}
+.hx-stage{align-self:center;justify-self:center!important;margin-inline:auto}
+.hx-arch{left:14%!important;right:14%!important}
+.hx-blob{inset:6% 4% 2% 4%!important}
+@media (max-width:900px){.hx-stage{width:min(88%,380px)!important}}
+.hx-stats li{opacity:0;transform:translateY(10px) scale(.96)}
+.hx-stats li.in{animation:statIn .55s cubic-bezier(.2,.8,.2,1.2) both}
+@keyframes statIn{to{opacity:1;transform:none}}
+.hx-stats li:hover svg{animation:wig .5s ease}
+@keyframes wig{0%,100%{transform:rotate(0)}30%{transform:rotate(-14deg)}60%{transform:rotate(10deg)}}
+@media (prefers-reduced-motion:reduce){.hx-stats li{opacity:1;transform:none}}
+.cert-stk.aw{background:#fffdf3}
+.aw-ic{width:46px;height:46px;flex:none;display:grid;place-items:center;background:var(--k);border:2px solid #0d0b1a;border-radius:50%}
+.aw-ic svg{width:28px;height:28px;animation:trBob 2.6s ease-in-out infinite}
+.story-intro{padding-block:clamp(56px,8vw,110px) clamp(10px,2vw,20px);text-align:center}
+.si-in{display:grid;gap:18px;justify-items:center;max-width:820px}
+.story-intro h2{font-family:var(--display);font-weight:900;font-size:clamp(34px,5vw,64px);line-height:1;margin:0}
+.story-intro h2 span{color:var(--blue);font-family:"Caveat",var(--display);font-weight:700;font-size:1.05em;display:inline-block;transform:rotate(-2deg)}
+.story-intro p{font-size:clamp(16px,1.4vw,19px);color:var(--muted);max-width:58ch;margin:0}
+.si-map{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;counter-reset:si}
+.si-map li{counter-increment:si}
+.si-map a{display:inline-flex;gap:6px;align-items:center;border:2px solid var(--ink);padding:6px 12px;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;background:var(--surface)}
+.si-map a::before{content:counter(si,decimal-leading-zero);font-family:var(--mono);font-size:11px;color:var(--muted)}
+.si-map a:hover{background:var(--yellow);color:#0d0b1a}
+.si-go{display:grid;justify-items:center;gap:4px;color:var(--ink);text-decoration:none;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
+.si-go i{font-style:normal;width:44px;height:44px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:20px;background:var(--yellow);color:#0d0b1a;animation:siBob 1.6s ease-in-out infinite}
+@keyframes siBob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.fav-tabs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px}
+.fav-tabs [role=tab]{display:inline-flex;gap:8px;align-items:center;font:inherit;font-weight:800;font-size:15px;padding:10px 14px;border:2px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}
+.fav-tabs [role=tab] b{font-family:var(--display);font-weight:900;color:var(--red)}
+.fav-tabs [role=tab][aria-selected=true]{background:var(--ink);color:var(--bg)}
+.fav-tabs [role=tab][aria-selected=true] b{color:var(--yellow)}
+.fav-arrows{margin-left:auto;display:flex;gap:8px}
+.fav-arr{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:var(--yellow);color:#0d0b1a;font-weight:900;font-size:18px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+.fav-view{overflow:hidden;padding:0 12px 0 0;margin-right:-12px;transition:height .45s ease}
+.fav-track{display:flex;align-items:flex-start;transition:transform .55s cubic-bezier(.65,0,.35,1)}
+.fav-track>.fav{flex:0 0 calc(100% - 12px);margin:0 12px 0 0!important;min-width:0}
+@media (max-width:620px){.fav-arrows{margin-left:0;width:100%;justify-content:flex-end}.fav-tabs [role=tab]{font-size:13px;padding:8px 10px}}
+.said-h{position:relative}
+.said-b{display:inline-block;background:var(--pink);color:#0d0b1a;padding:0 .22em .06em;border:3px solid var(--ink);border-radius:.35em .35em .35em .05em;transform:rotate(-3deg);box-shadow:5px 5px 0 var(--ink);animation:saidPop 3.2s ease-in-out infinite}
+@keyframes saidPop{0%,85%,100%{transform:rotate(-3deg) scale(1)}90%{transform:rotate(2deg) scale(1.08)}}
+.said-n{display:block;font-family:"Caveat",var(--body);font-weight:700;font-size:clamp(18px,1.8vw,24px);color:var(--red);margin-top:10px;transform:rotate(-1.5deg);letter-spacing:0}
+.case-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:-6px 0 18px;padding:12px 14px;border:2px dashed var(--ink)}
+.case-links .eyebrow{flex-basis:100%}
+.case-link{font-family:var(--display);font-weight:900;font-size:14px;color:#0d0b1a;background:var(--yellow);border:2px solid var(--ink);padding:8px 12px;text-decoration:none;box-shadow:3px 3px 0 var(--ink)}
+.wp-cases{border:2px solid var(--ink);background:var(--surface);padding:16px;margin:18px 0 22px;box-shadow:6px 6px 0 var(--yellow);display:grid;gap:12px}
+.wpc-h{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+.wpc-h b{font-family:var(--display);font-weight:900;font-size:20px}
+.wpc-h a{margin-left:auto;font-weight:800;color:var(--ink)}
+.wpc-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin}
+.wpc{flex:0 0 170px;scroll-snap-align:start;display:grid;gap:4px;text-decoration:none;color:var(--ink);border:2px solid var(--ink);background:var(--bg);padding:6px 6px 10px;transition:transform .15s}
+.wpc:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.wpc img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1.5px solid var(--ink)}
+.wpc span{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;color:var(--muted)}
+.wpc b{font-family:var(--display);font-weight:900;font-size:14px;line-height:1.15}
+@media (max-width:520px){.nav .wrap{gap:8px}.nav .logo.svg{flex:none;width:84px}.nav ul{gap:9px!important}.nav ul a{font-size:13px}.theme-btn{flex:none}}
+@media (max-width:380px){.nav ul li:has(.nav-cases){display:none}}
 </style>
 </head>
 <body>
@@ -1357,6 +1418,7 @@ body.page-mode main>.subpage.pg-on{display:block}
     <a href="#top" class="logo svg" aria-label="Salma El-Ananii, home"><img src="logo.svg" alt="Salma El-Ananii" width="544" height="170"></a>
     <ul>
       <li><a href="#work" class="nav-work">Work</a></li>
+      <li><a href="#cases" class="nav-cases">Cases</a></li>
       <li><a href="#egret">Egret</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="Salma-El-Ananii-CV.pdf" class="nav-cv" download>CV ↓</a></li>
@@ -1372,15 +1434,10 @@ body.page-mode main>.subpage.pg-on{display:block}
       <div class="hx-pills"><span class="b">Product Marketing Associate</span><span>Content strategist</span><span>Cairo ↔ Riyadh</span></div>
       <h1 class="hx-h">Your product does something brilliant.<span class="l2">People still need to <span class="hx-rot" aria-live="polite"><span id="hxWord">get it.</span></span></span></h1>
       <ul class="hx-stats">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><b>5+</b> years</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span><b>100+</b> brands</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9l5 3V9l5 3V5h4v16"/></svg><span><b>10+</b> industries</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h11v8H8l-4 3z"/><path d="M15 9h5v8l-3-2h-6v-2"/></svg><span><b>2</b> Arabic dialects + English</span></li>
-      </ul>
-      <ul class="hx-awards" aria-label="Awards">
-        <li style="--k:var(--yellow)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#f3d27a" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M10 13h4v4h-4zM8 20h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Star of the Quarter</b><small>Velents.ai · +280% organic engagement</small></span></li>
-        <li style="--k:var(--pink)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#f3d27a" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M10 13h4v4h-4zM8 20h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Jack of All Trades</b><small>Velents.ai · 2024</small></span></li>
-        <li style="--k:#e9c467"><a href="https://www.adsoftheworld.com/campaigns/your-home-is-piece-of-art" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#f3d27a" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M10 13h4v4h-4zM8 20h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Featured on Ads of the World</b><small>Piece of Art · 2021 ↗</small></span></a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><b data-count="5">5+</b> years</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span><b data-count="100">100+</b> brands</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9l5 3V9l5 3V5h4v16"/></svg><span><b data-count="10">10+</b> industries</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h11v8H8l-4 3z"/><path d="M15 9h5v8l-3-2h-6v-2"/></svg><span><b data-count="2" data-plain>2</b> Arabic dialects + English</span></li>
       </ul>
       <div class="sb-doors3">
         <a href="#work" class="d2">Look at my work →</a>
@@ -1416,6 +1473,17 @@ body.page-mode main>.subpage.pg-on{display:block}
   <div class="sb-st s3"><span class="lgrow"><span class="ico">✍︎</span><em>Across 100+ brands</em></span><b>1,000+</b><span>pieces of content written, in Arabic and English</span></div>
 </section>
 
+<section class="story-intro" id="tell" aria-labelledby="stH">
+  <div class="wrap si-in">
+    <span class="eyebrow">Before the work · the story</span>
+    <h2 id="stH">Grab a coffee.<br><span>Let me tell you my story.</span></h2>
+    <p>Before the cases and the numbers, here’s how I got here: a family that loved words and pictures, a quiet year that changed everything, then four markets and one writer. Scroll and read it like a storybook.</p>
+    <ol class="si-map">
+      <li><a href="#origin">Where it started</a></li><li><a href="#y2020">2020</a></li><li><a href="#agency">Agency kid</a></li><li><a href="#fintech">Fintech voice</a></li><li><a href="#riyadh">Riyadh chapter</a></li><li><a href="#now">Product marketer</a></li>
+    </ol>
+    <a class="si-go" href="#origin"><span>Start reading</span><i aria-hidden="true">↓</i></a>
+  </div>
+</section>
 <div class="wrap sb-book" id="book">
   <svg id="sbPath" aria-hidden="true"><path id="sbBase"/><path id="sbDraw"/></svg>
 
@@ -1488,7 +1556,7 @@ body.page-mode main>.subpage.pg-on{display:block}
       <a class="sb-photo" href="#acc-beit-el-ezz" data-acc="beit-el-ezz"><img src="18.jpg" alt="Beit El-Ezz post" loading="lazy"><span>Beit El-Ezz ↗</span></a>
     </div>
     <div class="idea-cta"><span class="eyebrow">See the idea behind a campaign</span><a href="#case-poa">Piece of Art: brief, insight, idea →</a></div>
-    <div class="cert-stks"><div class="cert-stk" style="--k:#ffe600;--r:2deg"><img src="logo-udacity.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Jun 2021</span><b>Advanced Digital Marketing</b><small>Udacity</small><small class="cs-sub">Google Analytics · SEO</small><a href="https://drive.google.com/file/d/1T-yQKtaVMvCZuVaZHsRz9Eqx6CyZEvKP/view" target="_blank" rel="noopener">Show credential ↗</a></div></div><div class="cert-stk" style="--k:#48298f;--r:-2deg"><img src="logo-knowledgeofficer.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Aug 2021</span><b>Marketing Career Accelerator-plus Program</b><small>Knowledge Officer</small><small class="cs-sub">Google Analytics · Customer experience</small><a href="https://drive.google.com/file/d/1t8fUERIVtA4wRnSwjAlA6Ap6eXp-yuAS/view" target="_blank" rel="noopener">Show credential ↗</a></div></div></div>
+    <div class="cert-stks"><div class="cert-stk aw" style="--k:#e9c467;--r:-2deg"><span class="aw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#f3d27a" stroke="#0d0b1a" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M10 13h4v4h-4zM8 20h8" fill="none" stroke="#0d0b1a" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><span class="cs-tag">🏆 Award · Oct 2021</span><b>Featured on Ads of the World</b><small>Piece of Art · BSocial Egypt</small><small class="cs-sub">“Your Home Is Piece Of Art”, published by Clios</small><a href="https://www.adsoftheworld.com/campaigns/your-home-is-piece-of-art" target="_blank" rel="noopener">View the campaign ↗</a></div></div><div class="cert-stk" style="--k:#ffe600;--r:2deg"><img src="logo-udacity.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Jun 2021</span><b>Advanced Digital Marketing</b><small>Udacity</small><small class="cs-sub">Google Analytics · SEO</small><a href="https://drive.google.com/file/d/1T-yQKtaVMvCZuVaZHsRz9Eqx6CyZEvKP/view" target="_blank" rel="noopener">Show credential ↗</a></div></div><div class="cert-stk" style="--k:#48298f;--r:-2deg"><img src="logo-knowledgeofficer.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Aug 2021</span><b>Marketing Career Accelerator-plus Program</b><small>Knowledge Officer</small><small class="cs-sub">Google Analytics · Customer experience</small><a href="https://drive.google.com/file/d/1t8fUERIVtA4wRnSwjAlA6Ap6eXp-yuAS/view" target="_blank" rel="noopener">Show credential ↗</a></div></div></div>
   </section>
 
   <section class="sb-scene sb-market" id="fintech" data-ch="02 · Fintech voice" data-acc="var(--blue)">
@@ -1535,7 +1603,8 @@ body.page-mode main>.subpage.pg-on{display:block}
       <a class="sb-photo" href="#acc-velents-ai" data-acc="velents-ai" data-camp="Velents Buddy launch"><img src="118.jpg" alt="Velents Buddy launch reel" loading="lazy"><span>Velents Buddy launch ↗</span></a>
       <a class="sb-photo" href="#acc-velents-ai" data-acc="velents-ai"><img src="111.jpg" alt="Product marketing post" loading="lazy"><span>Product Marketing ↗</span></a>
     </div>
-    <div class="cert-stks"><div class="cert-stk" style="--k:#ff2300;--r:-2deg"><img src="logo-productschool.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Mar 2024</span><b>Product Launches Micro-Certification (PRLC)™</b><small>Product School</small><a href="https://drive.google.com/file/d/1NPAXfP1NdsYz_cQWs9rR2XKhpdJPUPcO/view" target="_blank" rel="noopener">Show credential ↗</a></div></div><div class="cert-stk" style="--k:#00a5ea;--r:2deg"><img src="logo-dmi.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Oct 2024</span><b>Certified Digital Marketing Associate</b><small>Digital Marketing Institute</small><small class="cs-sub">Credential ID 117281546</small><a href="https://certs.digitalmarketinginstitute.com/05ba950a-8c75-4a1c-b7df-45520226c248" target="_blank" rel="noopener">Show credential ↗</a></div></div></div>
+    <div class="idea-cta"><span class="eyebrow">See the idea behind a campaign</span><a href="#case-buddy">Velents Buddy →</a><a href="#case-agent">Agent.sa →</a><a href="#case-ats">ATS feature series →</a></div>
+  <div class="cert-stks"><div class="cert-stk aw" style="--k:#ffe600;--r:-3deg"><span class="aw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#f3d27a" stroke="#0d0b1a" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M10 13h4v4h-4zM8 20h8" fill="none" stroke="#0d0b1a" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><span class="cs-tag">🏆 Award · 2024</span><b>Star of the Quarter</b><small>Velents.ai</small><small class="cs-sub">For a 280% organic increase in engagement rate</small></div></div><div class="cert-stk aw" style="--k:#ff98d4;--r:3deg"><span class="aw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#f3d27a" stroke="#0d0b1a" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M10 13h4v4h-4zM8 20h8" fill="none" stroke="#0d0b1a" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><span class="cs-tag">🏆 Award · End of 2024</span><b>Jack of All Trades</b><small>Velents.ai</small><small class="cs-sub">For taking part in many projects beyond my role, and leading several</small></div></div><div class="cert-stk" style="--k:#ff2300;--r:-2deg"><img src="logo-productschool.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Mar 2024</span><b>Product Launches Micro-Certification (PRLC)™</b><small>Product School</small><a href="https://drive.google.com/file/d/1NPAXfP1NdsYz_cQWs9rR2XKhpdJPUPcO/view" target="_blank" rel="noopener">Show credential ↗</a></div></div><div class="cert-stk" style="--k:#00a5ea;--r:2deg"><img src="logo-dmi.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Oct 2024</span><b>Certified Digital Marketing Associate</b><small>Digital Marketing Institute</small><small class="cs-sub">Credential ID 117281546</small><a href="https://certs.digitalmarketinginstitute.com/05ba950a-8c75-4a1c-b7df-45520226c248" target="_blank" rel="noopener">Show credential ↗</a></div></div></div>
   </section>
 
   <section class="sb-scene sb-market" id="now" data-ch="04 · Product marketer" data-acc="var(--blue)">
@@ -1588,6 +1657,11 @@ body.page-mode main>.subpage.pg-on{display:block}
   <div class="wrap">
     <div class="sec-head"><div><p class="eyebrow">My favourites</p><h2 style="margin-top:12px">The ones I’d frame</h2></div><p class="sub" style="max-width:44ch;color:var(--muted)">Three pieces I’m proudest of: a comic series, a furniture campaign that made it to Ads of the World, and eight editions of two film festivals.</p></div>
 
+    <div class="fav-tabs" role="tablist" aria-label="My favourites">
+      <button role="tab" data-f="0" aria-selected="true"><b>01</b>Telda Comics</button><button role="tab" data-f="1" aria-selected="false"><b>02</b>Piece of Art</button><button role="tab" data-f="2" aria-selected="false"><b>03</b>Film Festivals</button>
+      <span class="fav-arrows"><button class="fav-arr" data-d="-1" aria-label="Previous favourite">←</button><button class="fav-arr" data-d="1" aria-label="Next favourite">→</button></span>
+    </div>
+    <div class="fav-view"><div class="fav-track" id="favTrack">
     <article class="fav fav-comic" style="--k:#ff2300">
       <header class="fav-head"><span class="fav-no">01</span><div><p class="eyebrow">Telda · Instagram stories · Ramadan</p><h3>Telda Comics</h3><p class="fav-desc">A serialized comic told through Instagram stories, where every tap was the next frame and some frames asked the reader to choose what happens next. Four weekly issues. Pick one and read it like a magazine.</p></div></header>
             <div class="mag" id="mag">
@@ -1610,6 +1684,7 @@ body.page-mode main>.subpage.pg-on{display:block}
       </div>
       <button class="btn ghost fav-more" data-acc="film-festivals">See every edition →</button>
     </article>
+    </div></div>
     <div class="tour-cta"><a href="#work" class="btn primary tour-btn">Let’s take a tour →</a><a href="#contact" class="tour-btn wwm">Work with me →</a><span>the full journey: every brand, every post</span></div>
   </div>
 </section>
@@ -1633,7 +1708,7 @@ body.page-mode main>.subpage.pg-on{display:block}
 <section class="block recs" id="recommendations">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Recommendations · from LinkedIn</p><h2 style="margin-top:12px">They said about me</h2></div>
+      <div><p class="eyebrow">Recommendations · 18 people on LinkedIn</p><h2 class="said-h" style="margin-top:12px">They <span class="said-b">said</span> about me<span class="said-n">not my words. theirs ✍︎</span></h2></div>
       <div class="filters" id="recFilters" role="group" aria-label="Filter recommendations">
         <button class="chip" data-g="all" aria-pressed="true">All <small>18</small></button>
         <button class="chip" data-g="mgr" aria-pressed="false">Managers <small>9</small></button>
@@ -1698,7 +1773,7 @@ body.page-mode main>.subpage.pg-on{display:block}
 </section>
 
 <div class="subpage sp" id="cxlf">
-  <div class="wrap wp-top"><a href="#now" class="wp-back">← Back home</a></div>
+  <div class="wrap wp-top"><a href="#top" class="wp-back">← Back</a></div>
   <div class="wrap sp-view">
     <div class="sec-title"><span class="eyebrow">Case study · Tactful AI</span><h2>CX Leaders Forum</h2></div>
     <div class="case-hero">
@@ -1770,14 +1845,17 @@ body.page-mode main>.subpage.pg-on{display:block}
   </div>
 </div>
 <div class="subpage sp" id="cases">
-  <div class="wrap wp-top"><a href="#fintech" class="wp-back">← Back to the story</a></div>
+  <div class="wrap wp-top"><a href="#top" class="wp-back">← Back</a></div>
   <div class="wrap sp-view">
-    <div class="sec-title"><span class="eyebrow">Campaign stories</span><h2>The idea behind the posts</h2></div>
+    <div class="sec-title"><span class="eyebrow">Campaign cases · 7 campaigns</span><h2>The idea behind the posts</h2></div>
     <div class="camp-nav" role="group" aria-label="Choose a campaign">
     <button type="button" data-c="sahl" aria-pressed="true">SahlPay</button>
     <button type="button" data-c="tru" aria-pressed="false">TRU</button>
     <button type="button" data-c="poa" aria-pressed="false">Piece of Art</button>
     <button type="button" data-c="telda" aria-pressed="false">Telda Comics</button>
+    <button type="button" data-c="buddy" aria-pressed="false">Velents Buddy</button>
+    <button type="button" data-c="agent" aria-pressed="false">Agent.sa</button>
+    <button type="button" data-c="ats" aria-pressed="false">Velents ATS</button>
   </div>
 
   <article class="cs" data-case="sahl" style="--k:#3b5bff;--k3:#3b5bff">
@@ -1830,7 +1908,7 @@ body.page-mode main>.subpage.pg-on{display:block}
       <figure><img src="tru-3.jpg" alt="Leg on the kitchen counter key visual" loading="lazy"><figcaption>Change it any time</figcaption></figure>
       <figure><img src="tru-5.jpg" alt="Reel frame of the TRU Ctrl screen" loading="lazy"><figcaption>TRU Ctrl reel</figcaption></figure>
     </div>
-    <div class="results"><div class="res q"><b>?</b><span>Results: reach, views, downloads. محتاجين الأرقام منك</span></div></div>
+    <div class="results"><div class="res" style="--k:#f2f2f2"><b>1</b><span>TVC</span></div><div class="res" style="--k:#f2f2f2"><b>3</b><span>key visuals, one per feature</span></div><div class="res" style="--k:#f2f2f2"><b>2</b><span>product reels</span></div></div>
       <div class="sp-cta"><a class="btn primary see-camp" href="#acc-tru" data-acc="tru">See the campaign →</a></div>
   </article>
 
@@ -1879,18 +1957,82 @@ body.page-mode main>.subpage.pg-on{display:block}
     <div class="results"><div class="res" style="--k:#ffc2b5"><b>+100%</b><span>Instagram Stories engagement in Ramadan</span></div></div>
       <div class="sp-cta"><a class="btn primary see-camp" href="#favourites">Read the comic →</a></div>
   </article>
+  <article class="cs" data-case="buddy" hidden style="--k:#c9b8ff;--k3:#48298f">
+    <div class="cs-hero">
+      <div class="txt">
+        <span class="eyebrow">Velents.ai · Saudi B2B SaaS · Launch</span>
+        <h3>Make some noise before you say a word</h3>
+        <p class="tag ar" style="text-align:left">نصنع ضجيجاً في عالم التكنولوجيا</p>
+        <div class="meta"><span>Teaser → reveal → proof</span><span>Instagram · LinkedIn</span></div>
+      </div>
+      <div class="media"><img src="116.jpg" alt="Teaser: the year’s first surprise" loading="lazy"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="lab">Brief</span><p>Launch Velents Buddy, an AI voice agent that runs hiring calls, to HR and business leaders in Saudi Arabia.</p></div>
+      <div class="step"><span class="lab">Insight</span><p>B2B buyers scroll past “new feature” posts. They stop for a secret, and they trust a product only when someone they respect already uses it.</p></div>
+      <div class="step"><span class="lab">Idea</span><p>Don’t announce, tease. Two weeks of mystery posts that promised “noise in tech”, then the reveal, then proof from the Ministry of Human Resources and 5+ companies.</p></div>
+    </div>
+    <p class="big-quote ar" style="text-align:right">يستحق الضجة؟!</p>
+    <div class="card"><h4>Execution</h4><ul><li>Teaser post and reel: “What surprise do we start the year with?”</li><li>Reveal reel sending people to the website</li><li>Proof video: human-like calls, endorsed by the Ministry of HR and 5+ companies, saving up to 80% of operating costs</li></ul></div>
+    <div class="exec"><figure><img src="116.jpg" alt="Teaser: the year’s first surprise" loading="lazy"><figcaption>Teaser: the year’s first surprise</figcaption></figure><figure><img src="117.jpg" alt="Teaser: making noise in tech" loading="lazy"><figcaption>Teaser: making noise in tech</figcaption></figure><figure><img src="118.jpg" alt="Reveal: worth the noise?" loading="lazy"><figcaption>Reveal: worth the noise?</figcaption></figure><figure><img src="119.jpg" alt="Proof: calls that sound human" loading="lazy"><figcaption>Proof: calls that sound human</figcaption></figure></div>
+    <div class="results"><div class="res" style="--k:#c9b8ff"><b>4</b><span>pieces: teaser, reveal and proof</span></div><div class="res" style="--k:#c9b8ff"><b>5+</b><span>companies and the Ministry of HR as proof</span></div><div class="res" style="--k:#c9b8ff"><b>80%</b><span>operating cost saved, the launch claim</span></div></div>
+    <div class="sp-cta"><a class="btn primary see-camp" href="#acc-velents-ai" data-acc="velents-ai" data-camp="Velents Buddy launch">See the campaign →</a></div>
+  </article>
+  <article class="cs" data-case="agent" hidden style="--k:#a8e6ff;--k3:#007bb0">
+    <div class="cs-hero">
+      <div class="txt">
+        <span class="eyebrow">Agent.sa · AI employee · Launch</span>
+        <h3>Ask people what they’d hand over</h3>
+        <p class="tag ar" style="text-align:left">لو عندك موظف بالذكاء الاصطناعي.. هتخليه يعمل إيه؟</p>
+        <div class="meta"><span>Street-interview reels</span><span>Instagram · TikTok</span></div>
+      </div>
+      <div class="media"><img src="125.jpg" alt="Street interview, part one" loading="lazy"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="lab">Brief</span><p>Launch Agent.sa, an AI employee for small businesses that answers, reminds, summarizes emails and pays bills, 24 hours a day.</p></div>
+      <div class="step"><span class="lab">Insight</span><p>Nobody wants “an AI agent”. Everybody has a list of boring tasks they would happily give away.</p></div>
+      <div class="step"><span class="lab">Idea</span><p>Start from the list, not the product. We asked people on the street what they’d make an AI employee do, then showed Agent.sa doing exactly that.</p></div>
+    </div>
+    <p class="big-quote ar" style="text-align:right">سيب الشغل الروتيني على موظّف Agent.sa</p>
+    <div class="card"><h4>Execution</h4><ul><li>Two street-interview reels: “If you had an AI employee, what would you make it do?”</li><li>Short task reels: reminders, email summaries, bills</li><li>Offer reels: a 7-day free trial and a 24-hour employee</li></ul></div>
+    <div class="exec"><figure><img src="125.jpg" alt="Street interview, part one" loading="lazy"><figcaption>Street interview, part one</figcaption></figure><figure><img src="124.jpg" alt="Street interview, part two" loading="lazy"><figcaption>Street interview, part two</figcaption></figure><figure><img src="123.jpg" alt="Reminders, emails, bills" loading="lazy"><figcaption>Reminders, emails, bills</figcaption></figure><figure><img src="121.jpg" alt="7 days free" loading="lazy"><figcaption>7 days free</figcaption></figure></div>
+    <div class="results"><div class="res" style="--k:#a8e6ff"><b>6</b><span>launch reels</span></div><div class="res" style="--k:#a8e6ff"><b>24h</b><span>the employee who never logs off</span></div><div class="res" style="--k:#a8e6ff"><b>7</b><span>free days to try it</span></div></div>
+    <div class="sp-cta"><a class="btn primary see-camp" href="#acc-velents-ai" data-acc="velents-ai" data-camp="Agent.sa launch">See the campaign →</a></div>
+  </article>
+  <article class="cs" data-case="ats" hidden style="--k:#ffe08a;--k3:#b38600">
+    <div class="cs-hero">
+      <div class="txt">
+        <span class="eyebrow">Velents ATS · Product marketing · Series</span>
+        <h3>Features that never end</h3>
+        <p class="tag ar" style="text-align:left">مزايا فيلينتس ATS ما تخلص!</p>
+        <div class="meta"><span>Numbered feature series</span><span>Instagram · LinkedIn</span></div>
+      </div>
+      <div class="media"><img src="112.jpg" alt="Feature No. 7: CV Justification" loading="lazy"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="lab">Brief</span><p>Show HR teams how deep the Velents ATS goes, without one long feature list nobody reads.</p></div>
+      <div class="step"><span class="lab">Insight</span><p>A long feature list feels like noise. One feature at a time, numbered, feels like there’s always one more to find.</p></div>
+      <div class="step"><span class="lab">Idea</span><p>A numbered series, one feature per post, from Feature No. 7 to No. 64, each answering a real recruiter frustration.</p></div>
+    </div>
+    <p class="big-quote ar" style="text-align:right">مزايا فيلينتس ATS ما تخلص!</p>
+    <div class="card"><h4>Execution</h4><ul><li>One feature per post: CV Justification (No. 7), Candidate Profile (No. 35), Filter by Stage (No. 64)</li><li>Each post opens with the recruiter’s problem, then the feature that fixes it</li><li>Ran alongside launch posts for the CV parser and team comments</li></ul></div>
+    <div class="exec"><figure><img src="112.jpg" alt="Feature No. 7: CV Justification" loading="lazy"><figcaption>Feature No. 7: CV Justification</figcaption></figure><figure><img src="113.jpg" alt="Feature No. 35: Candidate Profile" loading="lazy"><figcaption>Feature No. 35: Candidate Profile</figcaption></figure><figure><img src="111.jpg" alt="Feature No. 64: Filter by Stage" loading="lazy"><figcaption>Feature No. 64: Filter by Stage</figcaption></figure></div>
+    <div class="results"><div class="res" style="--k:#ffe08a"><b>64+</b><span>features in the series</span></div><div class="res" style="--k:#ffe08a"><b>1</b><span>feature per post</span></div></div>
+    <div class="sp-cta"><a class="btn primary see-camp" href="#acc-velents-ai" data-acc="velents-ai" data-camp="ATS feature series">See the campaign →</a></div>
+  </article>
 
     <div class="sp-cta"><a class="btn" href="#contact">Work with me →</a><a class="btn ghost" href="#work">See all the work</a></div>
   </div>
 </div>
 <div class="workpage subpage" id="work">
-  <div class="wrap wp-top"><a href="#top" class="wp-back">← Back home</a></div>
+  <div class="wrap wp-top"><a href="#top" class="wp-back">← Back</a></div>
 <section class="block accounts" id="accounts">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">My work</p><h2 style="margin-top:12px">My Beloved Journey</h2></div>
       <p class="sub" style="max-width:46ch;color:var(--muted)">Around 100 brands, 10+ industries and more than 1,000 pieces of content later, these are my lovely ones. Open any of them and have a look.</p>
     </div>
+    <div class="wp-cases"><div class="wpc-h"><span class="eyebrow">Campaign cases</span><b>The idea behind the posts</b><a href="#cases">See all 7 →</a></div><div class="wpc-row"><a class="wpc" href="#case-sahl"><img src="camp-sahl.webp" alt="" loading="lazy"><span>SahlPay</span><b>Everything is easy with Sahl</b></a><a class="wpc" href="#case-tru"><img src="tru-1.jpg" alt="" loading="lazy"><span>TRU</span><b>The most flexible installments</b></a><a class="wpc" href="#case-poa"><img src="57.jpg" alt="" loading="lazy"><span>Piece of Art</span><b>Your home is a piece of art</b></a><a class="wpc" href="#case-telda"><img src="c-1_1.jpg" alt="" loading="lazy"><span>Telda</span><b>Telda Comics</b></a><a class="wpc" href="#case-buddy"><img src="118.jpg" alt="" loading="lazy"><span>Velents</span><b>Velents Buddy launch</b></a><a class="wpc" href="#case-agent"><img src="125.jpg" alt="" loading="lazy"><span>Agent.sa</span><b>The AI employee launch</b></a><a class="wpc" href="#case-ats"><img src="111.jpg" alt="" loading="lazy"><span>Velents ATS</span><b>Features that never end</b></a></div></div>
     <div class="fbar" id="fbar">
       <div class="frow pf-row"><span>Projects</span><div class="pf-wrap"><button class="pf-arrow l" type="button" aria-label="Scroll projects left">←</button><div class="pf-slider" id="pfSlider"></div><button class="pf-arrow r" type="button" aria-label="Scroll projects right">→</button></div></div>
       <div class="frow"><span>Format</span><div class="chips" data-g="type"></div></div>
@@ -2092,6 +2234,9 @@ $('#accGrid').innerHTML=ACCOUNTS.map(accCard).join('');
 
 const av={id:null,camp:null,type:new Set(),lang:new Set(),q:""};
 function chipsFor(items,g){const vals=[...new Set(items.map(x=>x[g]))];if(vals.length<2)return'';return `<div class="frow"><span>${g==='type'?'Format':'Language'}</span><div class="chips">${vals.map(v=>`<button class="chip" data-avg="${g}" data-v="${esc(v)}" aria-pressed="${av[g].has(v)}">${esc(v)} <small>${items.filter(x=>x[g]===v).length}</small></button>`).join('')}</div></div>`;}
+const CASES={sahlpay:{'مع سهل كله سهل':['sahl','SahlPay: مع سهل كله سهل']},tru:{'*':['tru','TRU: the most flexible installments']},'piece-of-art':{'*':['poa','Piece of Art: your home is a piece of art']},'velents-ai':{'Velents Buddy launch':['buddy','Velents Buddy launch'],'Agent.sa launch':['agent','Agent.sa launch'],'ATS feature series':['ats','ATS feature series']}};
+function caseLinks(id,camp){const m=CASES[id];if(!m)return '';let l=[];if(camp&&m[camp])l=[m[camp]];else if(m['*'])l=[m['*']];else if(!camp||camp==='__all')l=Object.values(m);if(!l.length)return '';
+ return `<div class="case-links"><span class="eyebrow">📖 Campaign case</span>${l.map(([c,t])=>`<a class="case-link" href="#case-${c}">Read the idea behind ${esc(t)} →</a>`).join('')}</div>`;}
 function renderAccount(){
   const a=ACCOUNTS.find(x=>x.id===av.id); if(!a) return;
   if(a.special==='fest'){const i=ACC_ORDER.indexOf(a.id), prev=ACCOUNTS[(i-1+ACCOUNTS.length)%ACCOUNTS.length], next=ACCOUNTS[(i+1)%ACCOUNTS.length];const v=$('#accView');v.style.setProperty('--bc','#2a8c82');
@@ -2114,7 +2259,7 @@ function renderAccount(){
       <div class="av-stats"><div><b>${a.items.length}</b><span>Pieces</span></div><div><b>${new Set(a.items.map(x=>x.type)).size}</b><span>Formats</span></div><div><b>${camps.length}</b><span>Campaigns</span></div></div></header>
     ${a.name===AOTW.brand?`<a class="aotw-strap" href="${AOTW.url}" target="_blank" rel="noopener"><span class="aotw-kicker">Featured on</span><img src="aotw.png" alt="Ads of the World by Clios"><span class="aotw-txt"><b>“Your Home Is Piece Of Art”</b><small>Agency: BSocial Egypt · Published in Egypt, October 2021</small></span><span class="aotw-go">View the campaign ↗</span></a>`:''}
     ${camps.length?`<div class="folders-h"><p class="eyebrow">Campaign folders</p></div><div class="folders">${folder('__all','All work',a.items).replace('class="folder"','class="folder all"').replace(`aria-pressed="${av.camp==='__all'}"`,`aria-pressed="${av.camp===null}"`)}${camps.map(c=>folder(c,c,a.items.filter(x=>x.camp===c))).join('')}${loose&&camps.length?folder('__none',otherL,a.items.filter(x=>!x.camp)):''}</div>`:''}
-    <div class="camp-title"><h3 dir="${isAr(title)?'rtl':'ltr'}">${esc(title)}</h3><span>${list.length} of ${scope.length}</span></div>
+    <div class="camp-title"><h3 dir="${isAr(title)?'rtl':'ltr'}">${esc(title)}</h3><span>${list.length} of ${scope.length}</span></div>${caseLinks(a.id,av.camp)}
     <div class="av-filters">${chipsFor(scope,'type')}${chipsFor(scope,'lang')}<div class="ftools"><div class="left"><label for="avSearch" style="position:absolute;left:-9999px">Search captions</label><input id="avSearch" type="search" placeholder="Search ${esc(a.name)} captions…" value="${esc(av.q)}"></div></div></div>
     <div class="grid" style="padding-bottom:64px">${list.length?list.map(pcard).join(''):'<div class="empty"><b>Nothing matches</b>Clear a filter to see more.</div>'}</div>
   </div>`;
@@ -2203,16 +2348,18 @@ document.querySelectorAll('.hx [data-drag]').forEach(st=>{let sx,sy,ox=0,oy=0;co
 <script>
 (function(){
  const PG=h=>(h==='work'||h==='accounts'||h==='samples'||h.startsWith('acc-'))?'work':h==='cxlf'?'cxlf':(h==='cases'||h.startsWith('case-'))?'cases':null;
- function apply(){const h=location.hash.slice(1);const pg=PG(h);const was=document.body.classList.contains('page-mode');const prev=document.querySelector('.subpage.pg-on');
+ let homeY=0;
+ function apply(){const h=location.hash.slice(1);const pg=PG(h);const was=document.body.classList.contains('page-mode');if(pg&&!was)homeY=scrollY;const prev=document.querySelector('.subpage.pg-on');
   document.querySelectorAll('.subpage').forEach(x=>x.classList.toggle('pg-on',x.id===pg));
   document.body.classList.toggle('page-mode',!!pg);document.body.classList.toggle('work-mode',pg==='work');
   if(pg==='cases'){const c=h.startsWith('case-')?h.slice(5):'sahl';document.querySelectorAll('#cases .camp-nav button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.c===c));document.querySelectorAll('#cases [data-case]').forEach(x=>x.hidden=x.dataset.case!==c);}
   if(pg&&(!was||(prev&&prev.id!==pg))){window.scrollTo({top:0,behavior:'instant'})}
   else if(!pg&&was&&h){const t=document.getElementById(h);if(t)requestAnimationFrame(()=>t.scrollIntoView({behavior:'instant'}))}
-  else if(!pg&&was){window.scrollTo({top:0,behavior:'instant'})}
+  else if(!pg&&was){window.scrollTo({top:homeY,behavior:'instant'})}
   window.dispatchEvent(new Event('resize'));}
  window.addEventListener('hashchange',()=>apply());apply();
  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const h=a.getAttribute('href').slice(1);
+   if(a.classList.contains('wp-back')&&document.body.classList.contains('page-mode')){e.preventDefault();history.pushState(null,'',location.pathname+location.search);apply();return;}
    if(document.body.classList.contains('page-mode')&&!PG(h)){e.preventDefault();history.pushState(null,'','#'+h);apply();const t=document.getElementById(h);if(h==='top'||!t)window.scrollTo({top:0,behavior:'instant'});else requestAnimationFrame(()=>t.scrollIntoView({behavior:'instant'}));}});
  const cn=document.querySelector('#cases .camp-nav');if(cn)cn.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;history.replaceState(null,'','#case-'+b.dataset.c);apply();});
  const bf=document.getElementById('brief');if(bf)bf.addEventListener('submit',e=>{e.preventDefault();const v=id=>document.getElementById(id).value.trim();const err=document.getElementById('fErr');
@@ -2284,6 +2431,26 @@ document.querySelectorAll('.hx [data-drag]').forEach(st=>{let sx,sy,ox=0,oy=0;co
  const mag=document.getElementById('mag');if(mag){const calm=()=>mag.classList.add('used');
   ['magNext','magPrev'].forEach(id=>{const b=document.getElementById(id);if(b)b.addEventListener('click',()=>mag.classList.add('nav-used'))});
   mag.querySelector('.mag-issues').addEventListener('click',e=>{if(e.target.closest('.mag-tab'))calm()});}
+})();
+</script>
+
+<script>
+(function(){
+ // close account overlay when jumping to a case
+ document.addEventListener('click',e=>{const c=e.target.closest('.case-link');if(!c)return;const v=document.getElementById('accView');if(v){v.hidden=true;document.body.style.overflow='';}},true);
+ // hero counters
+ const nums=[...document.querySelectorAll('.hx-stats b[data-count]')];
+ const run=()=>{nums.forEach((b,i)=>{const to=+b.dataset.count,plus=b.hasAttribute('data-plain')?'':'+';const li=b.closest('li');li.style.animationDelay=(i*.12)+'s';li.classList.add('in');
+   if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const t0=performance.now()+i*120,d=1100;b.textContent='0'+plus;
+   const f=t=>{const k=Math.min(1,Math.max(0,(t-t0)/d));const e=1-Math.pow(1-k,3);b.textContent=Math.round(to*e)+plus;if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f);});};
+ if(nums.length)new IntersectionObserver((es,o)=>{if(es.some(x=>x.isIntersecting)){run();o.disconnect()}}).observe(nums[0]);
+ // favourites slider
+ const tr=document.getElementById('favTrack');if(tr){const view=tr.parentElement,tabs=[...document.querySelectorAll('.fav-tabs [data-f]')],items=[...tr.children];let cur=0;
+  const fit=()=>{view.style.height=items[cur].offsetHeight+16+'px'};
+  const go=i=>{cur=(i+items.length)%items.length;tr.style.transform=`translateX(${-cur*100}%)`;tabs.forEach((t,k)=>t.setAttribute('aria-selected',k===cur));items.forEach((it,k)=>it.inert=k!==cur);fit();};
+  tabs.forEach(t=>t.addEventListener('click',()=>go(+t.dataset.f)));
+  document.querySelectorAll('.fav-arr').forEach(b=>b.addEventListener('click',()=>go(cur+ +b.dataset.d)));
+  new ResizeObserver(fit).observe(items[0]);items.forEach(it=>new ResizeObserver(()=>{if(it===items[cur])fit()}).observe(it));go(0);}
 })();
 </script>
 
