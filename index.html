@@ -1385,9 +1385,13 @@ body.page-mode main>.subpage.pg-on{display:block}
 .fav-tabs [role=tab][aria-selected=true] b{color:var(--yellow)}
 .fav-arrows{margin-left:auto;display:flex;gap:8px}
 .fav-arr{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:var(--yellow);color:#0d0b1a;font-weight:900;font-size:18px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
-.fav-view{overflow:hidden;padding:0 12px 0 0;margin-right:-12px;transition:height .45s ease}
-.fav-track{display:flex;align-items:flex-start;transition:transform .55s cubic-bezier(.65,0,.35,1)}
-.fav-track>.fav{flex:0 0 calc(100% - 12px);margin:0 12px 0 0!important;min-width:0}
+.fav-view{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 14px 14px 2px;margin:0 -14px 0 -2px}
+.fav-view::-webkit-scrollbar{display:none}
+.fav-track{display:flex;align-items:flex-start;gap:20px}
+.fav-track>.fav{flex:0 0 min(78%,1000px);margin:0!important;min-width:0;scroll-snap-align:start;transition:opacity .4s,transform .4s;opacity:.5;transform:scale(.97);transform-origin:left top;cursor:pointer}
+.fav-track>.fav.is-on{opacity:1;transform:none;cursor:auto}
+.fav-track>.fav:last-child{margin-right:22%!important}
+@media (max-width:760px){.fav-track>.fav{flex-basis:86%}.fav-track{gap:14px}}
 @media (max-width:620px){.fav-arrows{margin-left:0;width:100%;justify-content:flex-end}.fav-tabs [role=tab]{font-size:13px;padding:8px 10px}}
 .said-h{position:relative}
 .said-b{display:inline-block;background:var(--pink);color:#0d0b1a;padding:0 .22em .06em;border:3px solid var(--ink);border-radius:.35em .35em .35em .05em;transform:rotate(-3deg);box-shadow:5px 5px 0 var(--ink);animation:saidPop 3.2s ease-in-out infinite}
@@ -2445,12 +2449,18 @@ document.querySelectorAll('.hx [data-drag]').forEach(st=>{let sx,sy,ox=0,oy=0;co
    const f=t=>{const k=Math.min(1,Math.max(0,(t-t0)/d));const e=1-Math.pow(1-k,3);b.textContent=Math.round(to*e)+plus;if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f);});};
  if(nums.length)new IntersectionObserver((es,o)=>{if(es.some(x=>x.isIntersecting)){run();o.disconnect()}}).observe(nums[0]);
  // favourites slider
- const tr=document.getElementById('favTrack');if(tr){const view=tr.parentElement,tabs=[...document.querySelectorAll('.fav-tabs [data-f]')],items=[...tr.children];let cur=0;
-  const fit=()=>{view.style.height=items[cur].offsetHeight+16+'px'};
-  const go=i=>{cur=(i+items.length)%items.length;tr.style.transform=`translateX(${-cur*100}%)`;tabs.forEach((t,k)=>t.setAttribute('aria-selected',k===cur));items.forEach((it,k)=>it.inert=k!==cur);fit();};
-  tabs.forEach(t=>t.addEventListener('click',()=>go(+t.dataset.f)));
-  document.querySelectorAll('.fav-arr').forEach(b=>b.addEventListener('click',()=>go(cur+ +b.dataset.d)));
-  new ResizeObserver(fit).observe(items[0]);items.forEach(it=>new ResizeObserver(()=>{if(it===items[cur])fit()}).observe(it));go(0);}
+ const tr=document.getElementById('favTrack');if(tr){const view=tr.parentElement,tabs=[...document.querySelectorAll('.fav-tabs [data-f]')],items=[...tr.children];let cur=0,auto=null,touched=false;
+  const mark=()=>{tabs.forEach((t,k)=>t.setAttribute('aria-selected',k===cur));items.forEach((it,k)=>it.classList.toggle('is-on',k===cur));};
+  const go=i=>{cur=(i+items.length)%items.length;view.scrollTo({left:items[cur].offsetLeft-items[0].offsetLeft,behavior:'smooth'});mark();};
+  const stopAuto=()=>{touched=true;if(auto){clearInterval(auto);auto=null}};
+  tabs.forEach(t=>t.addEventListener('click',()=>{stopAuto();go(+t.dataset.f)}));
+  document.querySelectorAll('.fav-arr').forEach(b=>b.addEventListener('click',()=>{stopAuto();go(cur+ +b.dataset.d)}));
+  items.forEach((it,k)=>it.addEventListener('click',e=>{if(k!==cur){e.preventDefault();e.stopPropagation();stopAuto();go(k)}},true));
+  view.addEventListener('scroll',()=>{const x=view.scrollLeft;let best=0,bd=1e9;items.forEach((it,k)=>{const d=Math.abs(it.offsetLeft-items[0].offsetLeft-x);if(d<bd){bd=d;best=k}});if(best!==cur){cur=best;mark()}},{passive:true});
+  ['pointerdown','wheel','keydown'].forEach(ev=>view.addEventListener(ev,stopAuto,{passive:true}));
+  const start=()=>{if(touched||auto||matchMedia('(prefers-reduced-motion: reduce)').matches)return;auto=setInterval(()=>go(cur+1),4500)};
+  new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)start();else if(auto){clearInterval(auto);auto=null}}),{threshold:.35}).observe(view);
+  mark();}
 })();
 </script>
 
