@@ -848,8 +848,7 @@ img.rec-ava{padding:0;background:#fff}
 @media (prefers-reduced-motion:reduce){.sb-egret .egret-peek{animation:none}}
 
 /* v7 */
-body.work-mode main>*:not(#work){display:none!important}
-body:not(.work-mode) #work{display:none}
+
 .wp-top{padding-top:28px}.wp-back{font-family:var(--display);font-weight:800;color:var(--ink);text-decoration:none;border:2px solid var(--ink);padding:8px 14px;display:inline-block;box-shadow:4px 4px 0 var(--ink);background:var(--surface)}
 .tour-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:clamp(28px,4vw,48px)}
 .tour-btn{font-size:18px;padding:16px 26px}.tour-cta span{color:var(--muted)}
@@ -1060,6 +1059,219 @@ body:not(.work-mode) #work{display:none}
 }
 
 .sb-st.s1{position:relative}.sb-st.s1>u.tt{position:absolute;right:18px;top:24px;font-size:13px;color:var(--ink);font-weight:700}
+
+/* ===== v18 subpages (scoped) ===== */
+.sp{--line:color-mix(in srgb,var(--ink) 18%,transparent);--dark:#0d0b1a;--on-dark:#f2f1fa;--on-dark-muted:#cfcce3;--teal:#2a8c82;--body:inherit}
+.sp h2,.sp h3,.sp h4{font-family:var(--display);font-weight:900;line-height:1.05;margin:0;text-wrap:balance}
+.sp p{margin:0}
+.subpage{display:none}
+body.page-mode main>*:not(.pg-on){display:none!important}
+body.page-mode main>.subpage.pg-on{display:block}
+.sp-view{padding-block:32px 64px;display:grid;gap:40px}
+.sp :root{
+  --bg:#f6f6fa; --surface:#ffffff; --ink:#0d0b1a; --muted:#5b5872; --line:#d9d7e6;
+  --yellow:#ffe600; --blue:#00a5ea; --purple:#48298f; --pink:#ff98d4; --red:#ff2300; --teal:#2a8c82;
+  --dark:#0d0b1a; --on-dark:#f2f1fa; --on-dark-muted:#cfcce3;
+  --display:"Montserrat",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace; --ar:"Alexandria","Montserrat",system-ui,sans-serif;
+}
+.sp :root[data-theme="dark"]{--bg:#121021;--surface:#1b1830;--ink:#f2f1fa;--muted:#b3b0c9;--line:#34304d;color-scheme:dark}
+.sp h2,.sp h3,.sp h4{font-family:var(--display);font-weight:900;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.sp .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sp .ar{font-family:var(--ar);direction:rtl;unicode-bidi:isolate}
+.sp .draft{display:inline-block;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;background:var(--pink);color:#0d0b1a;padding:3px 8px;border:1.5px solid #0d0b1a}
+.sp .tabs a:focus-visible,.sp button:focus-visible,.sp input:focus-visible,.sp select:focus-visible,.sp textarea:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.sp .note{border:2px dashed var(--muted);padding:14px 16px;font-size:14.5px;color:var(--muted);max-width:80ch}
+.sp .note b{color:var(--ink)}
+.sp .box{background:var(--surface);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+.sp .sec-title{display:grid;gap:10px}
+.sp .sec-title h2{font-size:clamp(28px,4vw,44px)}
+.sp .chapter{padding:clamp(18px,3vw,32px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(18px,4vw,44px);align-items:center}
+.sp .chapter .av{background:color-mix(in srgb,var(--blue) 22%,var(--surface));border:2px solid var(--ink);border-radius:999px 999px 18px 18px;padding:18px 10px 0}
+.sp .era{font-size:clamp(40px,6vw,72px)}
+.sp .era em{font-style:normal;color:var(--blue)}
+.sp .chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.sp .chips li{border:1.5px solid var(--ink);border-radius:999px;padding:5px 12px;font-size:13.5px;font-weight:600}
+.sp .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.sp .stat{border:2px solid var(--ink);background:var(--bg);padding:12px 14px;display:grid;gap:2px}
+.sp .stat b{font-family:var(--display);font-weight:900;font-size:clamp(26px,3vw,36px);line-height:1;font-variant-numeric:tabular-nums}
+.sp .stat span{font-size:12.5px;color:var(--muted);line-height:1.35}
+.sp .stat:nth-child(1) b{color:var(--blue)}
+.sp .stat:nth-child(2) b{color:var(--purple)}
+.sp .stat:nth-child(3) b{color:var(--red)}
+.sp .stat:nth-child(4) b{color:var(--teal)}
+.sp .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:900;font-size:15px;padding:12px 18px;border:2px solid var(--ink);background:var(--blue);color:#fff;text-decoration:none;box-shadow:4px 4px 0 var(--ink);cursor:pointer}
+.sp .btn.ghost{background:var(--surface);color:var(--ink)}
+.sp .case-hero{display:grid;gap:14px;padding:clamp(20px,4vw,40px);background:var(--dark);color:var(--on-dark);border:2px solid var(--ink)}
+.sp .case-hero h3{font-size:clamp(30px,5vw,56px)}
+.sp .case-hero p{color:var(--on-dark-muted);max-width:62ch}
+.sp .case-hero .eyebrow{color:var(--pink)}
+.sp .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.sp .card{background:var(--surface);border:2px solid var(--ink);padding:18px 20px;display:grid;gap:10px;align-content:start;min-width:0}
+.sp .card h4{font-size:19px}
+.sp .card p,.sp .card li{font-size:15px;color:var(--muted)}
+.sp .card ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.sp .funnel{display:grid;gap:10px}
+.sp .fn{display:grid;grid-template-columns:150px minmax(0,1fr) 70px;gap:12px;align-items:center;font-size:14px}
+.sp .fn .bar{height:30px;border:2px solid var(--ink);background:var(--c)}
+.sp .fn b{font-family:var(--display);font-weight:900;font-variant-numeric:tabular-nums;text-align:right}
+.sp .tbl-wrap{overflow-x:auto;border:2px solid var(--ink);background:var(--surface)}
+.sp table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+.sp th,.sp td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.sp th{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.sp td.n{text-align:right;font-variant-numeric:tabular-nums}
+.sp tr.total td{font-weight:800;border-bottom:0;background:color-mix(in srgb,var(--yellow) 35%,var(--surface))}
+.sp .hl{background:color-mix(in srgb,var(--pink) 30%,var(--surface))}
+.sp .learn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sp .learn .card b{font-family:var(--display);font-weight:900;font-size:26px;color:var(--ink)}
+.sp .docs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sp .doc{background:var(--surface);border:2px solid var(--ink);padding:16px;display:grid;gap:8px;position:relative}
+.sp .doc::before{content:"";position:absolute;right:-2px;top:-2px;border-width:0 22px 22px 0;border-style:solid;border-color:var(--bg) var(--bg) var(--ink) var(--ink)}
+.sp .doc .t{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--purple)}
+.sp .doc b{font-family:var(--display);font-weight:800;font-size:16px;line-height:1.2}
+.sp .doc p{font-size:13.5px;color:var(--muted)}
+.sp .camp-nav{display:flex;flex-wrap:wrap;gap:8px}
+.sp .camp-nav button{font:inherit;font-weight:700;font-size:14px;padding:8px 14px;border:2px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}
+.sp .camp-nav button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.sp .cs{display:grid;gap:22px}
+.sp .cs-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);border:2px solid var(--ink);box-shadow:8px 8px 0 var(--k);background:var(--surface)}
+.sp .cs-hero .txt{padding:clamp(20px,3vw,36px);display:grid;gap:12px;align-content:center}
+.sp .cs-hero h3{font-size:clamp(30px,4.6vw,54px)}
+.sp .cs-hero .tag{font-family:var(--ar);font-size:clamp(20px,2.4vw,28px);font-weight:700;color:var(--k2,var(--ink))}
+.sp .cs-hero .media{border-left:2px solid var(--ink);background:var(--k);min-height:260px}
+.sp .cs-hero .media img{width:100%;height:100%;object-fit:cover}
+.sp .meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.sp .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sp .step{background:var(--surface);border:2px solid var(--ink);padding:18px;display:grid;gap:8px;align-content:start}
+.sp .step .lab{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--k3,var(--purple));font-weight:600}
+.sp .step p{font-size:15px}
+.sp .big-quote{font-family:var(--display);font-weight:900;font-size:clamp(22px,3vw,32px);line-height:1.2;border-left:8px solid var(--k);padding-left:16px}
+.sp .exec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.sp .exec figure{margin:0;background:var(--surface);border:2px solid var(--ink);padding:6px 6px 0}
+.sp .exec img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.sp .exec figcaption{font-size:12.5px;padding:8px 2px;color:var(--muted)}
+.sp .results{display:flex;flex-wrap:wrap;gap:12px}
+.sp .res{background:var(--k);color:#0d0b1a;border:2px solid #0d0b1a;padding:12px 16px;display:grid}
+.sp .res b{font-family:var(--display);font-weight:900;font-size:30px;line-height:1}
+.sp .res span{font-size:13px}
+.sp .res.q{background:var(--surface);color:var(--muted);border-style:dashed}
+.sp .how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:2px solid var(--ink);background:var(--surface)}
+.sp .how li{list-style:none;padding:20px;display:grid;gap:8px;border-right:2px solid var(--ink);position:relative}
+.sp .how li:last-child{border-right:0}
+.sp .how .num{font-family:var(--display);font-weight:900;font-size:44px;line-height:1;color:var(--blue)}
+.sp .how li:nth-child(2) .num{color:var(--pink)}
+.sp .how li:nth-child(3) .num{color:var(--purple)}
+.sp .how h4{font-size:20px}
+.sp .how p{font-size:15px;color:var(--muted)}
+.sp .how ul{padding:0;margin:0}
+.sp .dark-band{background:var(--dark);color:var(--on-dark);border:2px solid var(--ink);padding:clamp(20px,4vw,40px);display:grid;gap:22px}
+.sp .dark-band h3{font-size:clamp(28px,4vw,48px);color:#fff}
+.sp .dark-band h3 span{color:var(--yellow)}
+.sp .dark-band p{color:var(--on-dark-muted)}
+.sp .form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.sp .form .full{grid-column:1/-1}
+.sp .form label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--on-dark)}
+.sp .form input,.sp .form select,.sp .form textarea{font:inherit;font-size:15px;padding:11px 12px;border:2px solid #f2f1fa;background:transparent;color:#fff;border-radius:0}
+.sp .form select option{color:#0d0b1a}
+.sp .form textarea{min-height:110px;resize:vertical}
+.sp .need{display:flex;flex-wrap:wrap;gap:8px}
+.sp .need label{display:inline-flex;align-items:center;gap:6px;border:1.5px solid rgba(255,255,255,.6);border-radius:999px;padding:6px 12px;font-weight:600;cursor:pointer}
+.sp .need input{accent-color:#ff98d4;width:auto;padding:0;border:0}
+.sp .out{display:none;gap:12px;border:2px dashed var(--pink);padding:14px;font-size:14px}
+.sp .out.show{display:grid}
+.sp .out pre{white-space:pre-wrap;font-family:var(--mono);font-size:12.5px;margin:0;color:var(--on-dark-muted)}
+.sp .cal{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.sp .btn.pink{background:var(--pink);color:#0d0b1a;border-color:#fff;box-shadow:4px 4px 0 var(--blue)}
+.sp .btn.blue2{border-color:#fff;box-shadow:4px 4px 0 var(--pink)}
+.sp .cv{background:#fff;color:#0d0b1a;border:2px solid #0d0b1a;box-shadow:8px 8px 0 #00a5ea;max-width:860px;display:grid;grid-template-columns:240px minmax(0,1fr)}
+.sp .cv aside{background:#0d0b1a;color:#f2f1fa;padding:24px 20px;display:grid;gap:18px;align-content:start}
+.sp .cv aside h5{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#ff98d4;margin:0 0 6px}
+.sp .cv aside p,.sp .cv aside li{font-size:12.5px;color:#cfcce3;line-height:1.5}
+.sp .cv aside ul{margin:0;padding-left:16px}
+.sp .cv main{padding:26px 28px;display:grid;gap:16px}
+.sp .cv .name{font-family:var(--display);font-weight:900;font-size:34px;line-height:1}
+.sp .cv .role{font-family:var(--display);font-weight:800;color:#00a5ea;font-size:15px}
+.sp .cv h6{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#48298f;margin:0;border-bottom:2px solid #0d0b1a;padding-bottom:4px}
+.sp .job{display:grid;gap:4px}
+.sp .job .h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+.sp .job .h b{font-family:var(--display);font-weight:800;font-size:14.5px}
+.sp .job .h span{font-family:var(--mono);font-size:11.5px;color:#5b5872}
+.sp .job ul{margin:0;padding-left:16px;display:grid;gap:3px}
+.sp .job li{font-size:12.8px;line-height:1.45;color:#2b2840}
+.sp .cv .sum{font-size:13.5px;line-height:1.55;color:#2b2840}
+.sp .qs{display:grid;gap:10px;max-width:860px}
+.sp .qs li{font-size:15px}
+@media (max-width:860px){.sp .chapter,.sp .cs-hero,.sp .grid2{grid-template-columns:minmax(0,1fr)}
+.sp .cs-hero .media{border-left:0;border-top:2px solid var(--ink)}
+.sp .stats,.sp .exec{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sp .learn,.sp .docs,.sp .steps{grid-template-columns:minmax(0,1fr)}
+.sp .how{grid-template-columns:minmax(0,1fr)}
+.sp .how li{border-right:0;border-bottom:2px solid var(--ink)}
+.sp .how li:last-child{border-bottom:0}
+.sp .form{grid-template-columns:minmax(0,1fr)}
+.sp .cv{grid-template-columns:minmax(0,1fr)}
+.sp .fn{grid-template-columns:110px minmax(0,1fr) 54px}}
+@media (prefers-reduced-motion:no-preference){.sp .fn .bar{animation:grow .9s ease-out both}
+@keyframes grow{from{transform:scaleX(.05);transform-origin:left}}}
+.sp .hero-stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.sp .hero-stats span{border:1.5px solid var(--on-dark);padding:6px 12px;font-size:14px;color:var(--on-dark)}
+.sp .hero-stats b{font-family:var(--display);font-weight:900;color:var(--yellow);font-size:18px;margin-right:4px}
+.sp .tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sp .tl li{background:var(--surface);border:2px solid var(--ink);border-top:10px solid var(--c);padding:18px;display:grid;gap:10px;align-content:start}
+.sp .tl .q{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sp .tl h4{font-size:21px}
+.sp .tl p{font-size:15px;color:var(--muted)}
+.sp .tl-tags{display:flex;flex-wrap:wrap;gap:6px}
+.sp .tl-tags span{font-size:12px;font-weight:600;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:3px 9px}
+.sp .wall{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+@media (max-width:1000px){.sp .wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sp .wb{display:grid;text-decoration:none;color:var(--ink);background:var(--surface);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--c);transition:transform .15s}
+.sp .wb:hover{transform:translate(-2px,-2px)}
+.sp .wb-cover{position:relative;aspect-ratio:1;border-bottom:2px solid var(--ink);overflow:hidden;background:var(--dark)}
+.sp .wb-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sp .wb-poster{position:absolute;inset:0;padding:14px;display:grid;align-content:space-between;background:var(--dark);color:var(--on-dark);border-left:10px solid var(--c)}
+.sp .wb-poster b{font-family:var(--display);font-weight:900;font-size:19px;line-height:1.1}
+.sp .wb-date{font-family:var(--mono);font-size:12px;color:var(--on-dark-muted)}
+.sp .wb-brand{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-muted)}
+.sp .wb-meta{padding:12px 14px;display:grid;gap:4px}
+.sp .wb-meta time{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.sp .wb-meta b{font-size:14.5px;line-height:1.3}
+.sp .wb-meta span{font-size:13px;color:var(--muted)}
+.sp .wb-meta em{font-style:normal;font-weight:700;font-size:13px;color:var(--blue)}
+.sp .run{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:2px solid var(--ink);background:var(--surface);counter-reset:r}
+.sp .run li{padding:14px 12px;display:grid;gap:6px;align-content:start;border-right:2px solid var(--ink);counter-increment:r}
+.sp .run li:last-child{border-right:0}
+.sp .run li::before{content:counter(r,decimal-leading-zero);font-family:var(--display);font-weight:900;font-size:26px;color:var(--blue)}
+.sp .run li:nth-child(even)::before{color:var(--pink)}
+.sp .run b{font-family:var(--display);font-weight:800;font-size:15px}
+.sp .run span{font-size:13px;color:var(--muted);line-height:1.4}
+@media (max-width:980px){.sp .run{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sp .run li{border-right:0;border-bottom:2px solid var(--ink)}
+.sp .tl{grid-template-columns:minmax(0,1fr)}}
+.sp .ep-wrap{display:flex;align-items:center;gap:10px;min-width:0}
+.sp .ep-slider{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 16px;flex:1;min-width:0;scrollbar-width:thin}
+.sp .ep{flex:0 0 340px;scroll-snap-align:start;background:var(--surface);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);display:grid;align-content:start}
+.sp .ep img{width:100%;aspect-ratio:16/9;object-fit:cover;border-bottom:2px solid var(--ink)}
+.sp .ep-meta{padding:12px 14px;display:grid;gap:4px}
+.sp .ep-no{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.sp .ep-meta b{font-size:15px;line-height:1.3}
+.sp .ep-meta>span:not(.ep-no){font-size:13px;color:var(--muted)}
+.sp .ep-meta em{font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--purple)}
+.sp .ep-links{display:flex;gap:8px;margin-top:6px}
+.sp .ep-links a{font-size:13px;font-weight:700;text-decoration:none;border:1.5px solid var(--ink);padding:5px 10px}
+.sp .ep-links a:last-child{background:var(--red);color:#fff;border-color:var(--red)}
+.sp .ep-arrow{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);background:var(--surface);color:var(--ink);font-weight:900;cursor:pointer}
+@media (max-width:640px){.sp .ep-arrow{display:none}
+.sp .ep{flex-basis:78%}}
+.sp [hidden]{display:none!important}
+.sp-cta{display:flex;flex-wrap:wrap;gap:12px}
+.st-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.st-card{display:grid;gap:6px;text-decoration:none;color:var(--ink);background:var(--surface);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--k);padding:8px 8px 14px;transition:transform .2s}
+.st-card:hover{transform:translate(-3px,-3px)}
+.st-card img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1.5px solid var(--ink)}
+.st-card b{font-family:var(--display);font-weight:900;font-size:17px;line-height:1.15}
+@media (max-width:860px){.st-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#now .sp .stats{margin:6px 0}
+.sp .form input,.sp .form select,.sp .form textarea{font-family:inherit}
 </style>
 </head>
 <body>
@@ -1082,7 +1294,7 @@ body:not(.work-mode) #work{display:none}
 <header class="hx" id="hero">
   <div class="wrap hx-grid">
     <div class="hx-copy">
-      <div class="hx-pills"><span class="b">Arabic Product Marketer</span><span>Content strategist</span><span>Cairo ↔ Riyadh</span></div>
+      <div class="hx-pills"><span class="b">Product Marketing Associate</span><span>Content strategist</span><span>Cairo ↔ Riyadh</span></div>
       <h1 class="hx-h">Your product does something brilliant.<span class="l2">People still need to <span class="hx-rot" aria-live="polite"><span id="hxWord">get it.</span></span></span></h1>
       <p class="hx-sub">I’m <b>Salma El-Ananii</b>. I write copy that touches hearts and speaks to minds.</p>
       <ul class="hx-stats">
@@ -1242,16 +1454,23 @@ body:not(.work-mode) #work{display:none}
   </section>
 
   <section class="sb-scene sb-market" id="now" data-ch="04 · Product marketer" data-acc="var(--blue)">
-    <div class="sb-ch"><span class="sb-pin"></span><span class="eyebrow">04 · 2026 – now · Tactful AI</span></div>
+    <div class="sb-ch"><span class="sb-pin"></span><span class="eyebrow">04 · Mar 2026 – now · Tactful AI</span></div>
     <div class="sb-two rev">
       <div class="sb-av-wrap"><img class="sb-av" data-speed="-.05" src="av3d-saas2.webp" alt="3D avatar of Salma in a lavender cardigan, presenting" loading="lazy" width="806" height="1000"></div>
       <div class="sb-col">
         <h3 class="sb-era">Product <em>marketer</em></h3>
         <p class="sb-ar-sub">صوت المنتج</p>
-        <p class="sb-lede">Back to SaaS from the product side: positioning and GTM content at Tactful AI, and building the CX Leaders Forum (CXLF), a community and webinar program where customer experience leaders share what actually works.</p>
+        <p class="sb-lede">Product Marketing Associate at Tactful AI. I run the <b>CX Leaders Forum (CXLF)</b>, the webinar-led community that brings CX and operations leaders from e-commerce brands to Tactful, and I turn every session into leads Sales can work.</p>
+        <div class="sp"><div class="stats">
+        <div class="stat"><b>9</b><span>webinars run in Q3 2026</span></div>
+        <div class="stat"><b>507</b><span>registrations, first 8 sessions</span></div>
+        <div class="stat"><b>38%</b><span>average attendance</span></div>
+        <div class="stat"><b>43</b><span>ICP-fit MQLs, target was 40–80</span></div>
+      </div>
+      </div>
         <div class="sb-agencies"><span><img src="brand-tactful.png" alt="" loading="lazy">Tactful AI</span><span class="txt">CX Leaders Forum</span></div>
-        <div class="sb-quote en"><p>“Numbers tell me which sentence worked.”</p><small>How I work</small></div>
-        <ul class="sb-chips"><li>Community building</li><li>Webinars</li><li>Positioning</li><li>GTM content</li></ul>
+        <ul class="sb-chips"><li>Demand gen</li><li>Community</li><li>Webinars</li><li>Lifecycle email</li><li>Sales handoff</li></ul>
+        <div><a class="btn primary" href="#cxlf">Read the CXLF case →</a></div>
       </div>
     </div>
   </section>
@@ -1309,6 +1528,18 @@ body:not(.work-mode) #work{display:none}
     <div class="tour-cta"><a href="#work" class="btn primary tour-btn">Let’s take a tour →</a><a href="#contact" class="tour-btn wwm">Work with me →</a><span>the full journey: every brand, every post</span></div>
   </div>
 </section>
+
+<section class="block sp stories" id="stories">
+  <div class="wrap" style="display:grid;gap:22px">
+    <div class="sec-head"><div><p class="eyebrow">Campaign stories</p><h2 style="margin-top:12px">The idea behind the posts</h2></div><p class="sub" style="max-width:44ch;color:var(--muted)">Four campaigns told the way agencies enter awards: the brief, the insight, the idea and what ran.</p></div>
+    <div class="st-grid">
+      <a class="st-card" href="#case-sahl" style="--k:#3b5bff"><img src="camp-sahl.webp" alt="" loading="lazy"><span class="eyebrow">SahlPay · 2023</span><b>Everything is easy with Sahl</b></a>
+      <a class="st-card" href="#case-tru" style="--k:#e9e9e9"><img src="tru-1.jpg" alt="" loading="lazy"><span class="eyebrow">TRU · 2025</span><b>The most flexible installments in Egypt</b></a>
+      <a class="st-card" href="#case-poa" style="--k:#f08a1c"><img src="57.jpg" alt="" loading="lazy"><span class="eyebrow">Piece of Art · 2021</span><b>Your home is a piece of art</b></a>
+      <a class="st-card" href="#case-telda" style="--k:#ff2300"><img src="c-1_1.jpg" alt="" loading="lazy"><span class="eyebrow">Telda · Ramadan</span><b>Telda Comics</b></a>
+    </div>
+  </div>
+</section>
 <section class="block sb-egret-sec" id="egret" aria-labelledby="egH">
   <div class="wrap">
     <div class="sb-egret">
@@ -1346,6 +1577,39 @@ body:not(.work-mode) #work{display:none}
     <h3 class="sub-h">Awards</h3><ul class="awards"><li class="award" style="--k:var(--yellow)"><div class="award-art"><svg class="trophy" viewBox="0 0 80 80" aria-hidden="true"><g class="tr-spark" style="--d:0s"><path transform="translate(14 16)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-spark" style="--d:.7s"><path transform="translate(66 22) scale(.7)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-bob"><path d="M24 14h32v14a16 16 0 0 1-32 0z" fill="#f3d27a" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><path d="M24 18h-8a8 8 0 0 0 8 12M56 18h8a8 8 0 0 1-8 12" fill="none" stroke="#0d0b1a" stroke-width="3" stroke-linecap="round"/><path d="M36 44h8v10h-8z" fill="#e0b250" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><rect x="26" y="54" width="28" height="9" rx="2" fill="#0d0b1a"/><path d="M40 20l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z" fill="#ffffff" stroke="#0d0b1a" stroke-width="1.5" stroke-linejoin="round"/></g></svg></div><div><span class="cert-date">Velents.ai</span><h3>Star of the Quarter</h3><p>For a 280% organic increase in engagement rate.</p></div></li><li class="award" style="--k:var(--pink)"><div class="award-art"><svg class="trophy" viewBox="0 0 80 80" aria-hidden="true"><g class="tr-spark" style="--d:0s"><path transform="translate(14 16)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-spark" style="--d:.7s"><path transform="translate(66 22) scale(.7)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-bob"><path d="M24 14h32v14a16 16 0 0 1-32 0z" fill="#f3d27a" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><path d="M24 18h-8a8 8 0 0 0 8 12M56 18h8a8 8 0 0 1-8 12" fill="none" stroke="#0d0b1a" stroke-width="3" stroke-linecap="round"/><path d="M36 44h8v10h-8z" fill="#e0b250" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><rect x="26" y="54" width="28" height="9" rx="2" fill="#0d0b1a"/><path d="M40 20l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z" fill="#ffffff" stroke="#0d0b1a" stroke-width="1.5" stroke-linejoin="round"/></g></svg></div><div><span class="cert-date">Velents.ai · End of 2024</span><h3>Jack of All Trades</h3><p>For taking part in many projects beyond my main role, and leading several of them.</p></div></li><li class="award" style="--k:#e9c467"><div class="award-art"><svg class="trophy" viewBox="0 0 80 80" aria-hidden="true"><g class="tr-spark" style="--d:0s"><path transform="translate(14 16)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-spark" style="--d:.7s"><path transform="translate(66 22) scale(.7)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-bob"><path d="M24 14h32v14a16 16 0 0 1-32 0z" fill="#f3d27a" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><path d="M24 18h-8a8 8 0 0 0 8 12M56 18h8a8 8 0 0 1-8 12" fill="none" stroke="#0d0b1a" stroke-width="3" stroke-linecap="round"/><path d="M36 44h8v10h-8z" fill="#e0b250" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><rect x="26" y="54" width="28" height="9" rx="2" fill="#0d0b1a"/><path d="M40 20l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z" fill="#ffffff" stroke="#0d0b1a" stroke-width="1.5" stroke-linejoin="round"/></g></svg></div><div><span class="cert-date">Piece of Art · BSocial Egypt · Oct 2021</span><h3>Featured on Ads of the World</h3><p>“Your Home Is Piece Of Art”, an agency campaign I wrote for, published on Ads of the World by Clios.</p><a class="cert-link" href="https://www.adsoftheworld.com/campaigns/your-home-is-piece-of-art?fbclid=IwAR0_ABJTfi_p8JaEgrUU4ZtZEv1ql9J_1JrsmcqPZDAIUhoEkgs-DX-Zm5s" target="_blank" rel="noopener">View the campaign ↗</a></div></li></ul><h3 class="sub-h">Certifications</h3><ol class="cert-list"><li class="cert" style="--k:#00a5ea"><span class="cert-logo"><img src="logo-dmi.png" alt="Digital Marketing Institute logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Oct 2024</span><h3>Certified Digital Marketing Associate</h3><p class="cert-org">Digital Marketing Institute</p><p class=cert-sub>Credential ID 117281546</p><a class="cert-link" href="https://certs.digitalmarketinginstitute.com/05ba950a-8c75-4a1c-b7df-45520226c248" target="_blank" rel="noopener">Show credential ↗</a></div></li><li class="cert" style="--k:#ff2300"><span class="cert-logo"><img src="logo-productschool.png" alt="Product School logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Mar 2024</span><h3>Product Launches Micro-Certification (PRLC)™</h3><p class="cert-org">Product School</p><a class="cert-link" href="https://drive.google.com/file/d/1NPAXfP1NdsYz_cQWs9rR2XKhpdJPUPcO/view" target="_blank" rel="noopener">Show credential ↗</a></div></li><li class="cert" style="--k:#ff98d4"><span class="cert-logo"><img src="logo-hubspot.png" alt="HubSpot logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Mar 2023</span><h3>Excel for Marketers</h3><p class="cert-org">HubSpot</p><p class=cert-sub>Data visualization · Data cleaning</p><span class="cert-link none">Listed on LinkedIn</span></div></li><li class="cert" style="--k:#48298f"><span class="cert-logo"><img src="logo-knowledgeofficer.png" alt="Knowledge Officer logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Aug 2021</span><h3>Marketing Career Accelerator-plus Program</h3><p class="cert-org">Knowledge Officer</p><p class=cert-sub>Google Analytics · Customer experience</p><a class="cert-link" href="https://drive.google.com/file/d/1t8fUERIVtA4wRnSwjAlA6Ap6eXp-yuAS/view" target="_blank" rel="noopener">Show credential ↗</a></div></li><li class="cert" style="--k:#ffe600"><span class="cert-logo"><img src="logo-udacity.png" alt="Udacity logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Jun 2021</span><h3>Advanced Digital Marketing</h3><p class="cert-org">Udacity</p><p class=cert-sub>Google Analytics · SEO</p><a class="cert-link" href="https://drive.google.com/file/d/1T-yQKtaVMvCZuVaZHsRz9Eqx6CyZEvKP/view" target="_blank" rel="noopener">Show credential ↗</a></div></li><li class="cert" style="--k:#00a5ea"><span class="cert-logo"><img src="logo-udacity.png" alt="Udacity logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Nov 2020</span><h3>Professional Digital Marketing</h3><p class="cert-org">Udacity</p><p class=cert-sub>Social media · Content creation</p><span class="cert-link none">Listed on LinkedIn</span></div></li></ol>
   </div>
 </section>
+
+<section class="block sp" id="freelance">
+  <div class="wrap" style="display:grid;gap:28px"><div class="sec-title"><span class="eyebrow">Freelance · how we work</span><h2>No package fits all</h2><p style="max-width:62ch;color:var(--muted)">So I don't sell fixed packages. We talk first, then I send a proposal built around what your product needs.</p></div>
+  <ol class="how" style="margin:0;padding:0">
+    <li><span class="num">01</span><h4>Meeting</h4><p>A short call about your product, your audience and what isn't working yet.</p></li>
+    <li><span class="num">02</span><h4>Proposal</h4><p>A strategy, an execution plan and the fees, written for your account.</p></li>
+    <li><span class="num">03</span><h4>We start</h4><p>Once you approve the proposal, we kick off and I start writing.</p></li>
+  </ol>
+
+  <div class="dark-band">
+    <h3>Tell me about your <span>product.</span></h3>
+    <p>Send a short brief and it opens in Gmail, ready to send. Or write to me directly below.</p>
+    <form class="form" id="brief" novalidate>
+      <label>Your name<input id="fName" required placeholder="Nour Hassan"></label>
+      <label>Company<input id="fCo" placeholder="Brand or startup name"></label>
+      <label class="full">What does your product do?<input id="fProd" required placeholder="e.g. a payments app for small shops"></label>
+      <div class="full" style="display:grid;gap:6px"><span style="font-size:13px;font-weight:600">What do you need?</span>
+        <div class="need" id="fNeed">
+          <label><input type="checkbox" value="Launch campaign">Launch campaign</label>
+          <label><input type="checkbox" value="Positioning & messaging">Positioning &amp; messaging</label>
+          <label><input type="checkbox" value="Arabic content">Arabic content</label>
+          <label><input type="checkbox" value="Content system">Content system</label>
+          <label><input type="checkbox" value="Community & webinars">Community &amp; webinars</label>
+        </div></div>
+      <label>When do you want to start?<select id="fWhen"><option>This month</option><option>Next month</option><option>Just exploring</option></select></label>
+      <label>Market<select id="fMkt"><option>Egypt</option><option>Saudi Arabia</option><option>Gulf</option><option>MENA</option></select></label>
+      <label class="full">Anything else?<textarea id="fMsg" placeholder="Links, goals, deadlines"></textarea></label>
+      <div class="full" style="display:flex;flex-wrap:wrap;gap:12px"><button class="btn blue2" type="submit">Let’s talk</button><span id="fErr" role="alert" style="color:var(--pink);font-size:14px;align-self:center"></span></div>
+      <div class="full out" id="fOut" aria-live="polite"><pre id="fPre"></pre><a class="btn pink" id="fGo" href="#" target="_blank" rel="noopener">Open in Gmail ↗</a></div>
+    </form>
+  </div>
+</div>
+</section>
 <section class="block contact" id="contact">
   <div class="wrap ct-grid">
     <div>
@@ -1365,7 +1629,190 @@ body:not(.work-mode) #work{display:none}
 </div>
   </div>
 </section>
-<div class="workpage" id="work">
+
+<div class="subpage sp" id="cxlf">
+  <div class="wrap wp-top"><a href="#now" class="wp-back">← Back home</a></div>
+  <div class="wrap sp-view">
+    <div class="sec-title"><span class="eyebrow">Case study · Tactful AI</span><h2>CX Leaders Forum</h2></div>
+    <div class="case-hero">
+    <span class="eyebrow">Tactful AI · Product marketing · Mar 2026 – now</span>
+    <h3>A webinar engine that hands Sales real leads</h3>
+    <p>Tactful sells AI customer-experience automation to e-commerce brands in Egypt and the Arab world. The buyers are CX managers, operations managers and e-commerce directors. I relaunched the company's Arabic community as CX Leaders Forum and ran it in two-week sprints, each with targets for registrations, attendance and ICP-fit leads.</p>
+  </div>
+
+  <ol class="tl">
+    <li style="--c:var(--pink)"><span class="q">Q2 · Mar – Jun 2026</span><h4>Relaunch the community</h4><p>Tagrobet El 3ameel became CX Leaders Forum, with a new identity, a content calendar of five posts a week and a six-pillar growth plan.</p></li>
+    <li style="--c:var(--blue)"><span class="q">Q3 · Jul – Sep 2026</span><h4>Build the webinar engine</h4><p>Launched the series on July 8 and ran 9 webinars in two-week sprints, from TownTeam and Decathlon to RugMorph.</p></li>
+    <li style="--c:var(--purple)"><span class="q">Q4 · Oct 2026 – now</span><h4>Connect it to Sales</h4><p>Lead handoff within 48 hours, nurture emails and every recording repurposed into articles, newsletters and clips.</p></li>
+  </ol>
+
+  <div class="grid2">
+    <div class="card"><h4>The problem</h4><p>Content brought in a small share of Tactful's leads, and the old community (Tagrobet El 3ameel) had reach without a path to Sales. A webinar counted as a success if people registered, even when none of them could buy.</p></div>
+    <div class="card"><h4>My role</h4><ul><li>Owned the CXLF program end to end: topics, speakers, promotion, registration, follow-up</li><li>Wrote the 90-day lead-gen plan and every sprint plan and review</li><li>Ran post-webinar emails and turned each recording into an article, newsletter item and clips</li><li>Reported results to Sales and leadership each sprint</li></ul></div>
+  </div>
+
+  <div class="sec-title"><span class="eyebrow">9 webinars · Jul – Sep 2026</span><div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between"><h2 style="font-size:clamp(24px,3vw,32px)">Watch the webinars</h2><a class="btn" href="https://youtube.com/playlist?list=PLGzTT6aGisfE&si=Hx5tpGPrHHmNBEZq" target="_blank" rel="noopener">▶ Watch the playlist</a></div></div>
+  <div class="card">
+    <h4>The funnel, Q3 2026 (8 of 9 webinars)</h4>
+    <div class="funnel" role="img" aria-label="Funnel: 507 registrations, 195 attendees, 82 raw leads, 43 ICP-fit MQLs">
+      <div class="fn"><span>Registrations</span><div class="bar" style="--c:var(--blue);width:100%"></div><b>507</b></div>
+      <div class="fn"><span>Attended live</span><div class="bar" style="--c:var(--purple);width:38.5%"></div><b>195</b></div>
+      <div class="fn"><span>Raw leads</span><div class="bar" style="--c:var(--pink);width:16.2%"></div><b>82</b></div>
+      <div class="fn"><span>ICP-fit MQLs</span><div class="bar" style="--c:var(--yellow);width:8.5%"></div><b>43</b></div>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Webinar</th><th>Sprint</th><th class="n">Registered</th><th class="n">Attended</th><th class="n">Raw leads</th><th class="n">ICP-fit MQLs</th></tr></thead>
+      <tbody>
+        <tr><td>The CX Investment: From Cost Center to Revenue Driver</td><td>1</td><td class="n">67</td><td class="n">32 (48%)</td><td class="n">1</td><td class="n">0</td></tr>
+        <tr><td>E-commerce Revenue Optimisation</td><td>2</td><td class="n">121</td><td class="n">46 (38%)</td><td class="n">28</td><td class="n">14</td></tr>
+        <tr><td>The Modern Shopify Playbook</td><td>3</td><td class="n">58</td><td class="n">17 (29%)</td><td class="n">14</td><td class="n">7</td></tr>
+        <tr><td>Both Sides of the Table</td><td>4</td><td class="n">45</td><td class="n">23 (51%)</td><td class="n">12</td><td class="n">7</td></tr>
+        <tr><td>From Traffic to Lifetime Value</td><td>5</td><td class="n">20</td><td class="n">14 (70%)</td><td class="n">7</td><td class="n">4</td></tr>
+        <tr class="hl"><td>Meta Will Charge Your Business for Each WhatsApp Message</td><td>5</td><td class="n">72</td><td class="n">37 (51%)</td><td class="n">0</td><td class="n">0</td></tr>
+        <tr><td>RugMorph Success Story</td><td>6</td><td class="n">66</td><td class="n">16 (24%)</td><td class="n">8</td><td class="n">2</td></tr>
+        <tr class="hl"><td>Proactive Customer Experience</td><td>6</td><td class="n">58</td><td class="n">10 (17%)</td><td class="n">12</td><td class="n">9</td></tr>
+        <tr class="total"><td>Total, 8 of 9 webinars</td><td></td><td class="n">507</td><td class="n">195 (38%)</td><td class="n">82</td><td class="n">43</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sec-title"><span class="eyebrow">What the sprints taught me</span><h2 style="font-size:clamp(24px,3vw,32px)">Decisions the data changed</h2></div>
+  <div class="learn">
+    <div class="card"><b>Fit &gt; reach</b><p>The WhatsApp pricing session drew 72 registrations and zero ICP-fit leads. A smaller session on proactive CX drew 58 and produced 9. I started choosing topics by who would show up, not how many.</p></div>
+    <div class="card"><b>33–54%</b><p>Open rates from warm audiences, against 18–25% from cold lists. Invitations moved to segmented lists (invited vs going) instead of one blast.</p></div>
+    <div class="card"><b>2× CTR</b><p>Plain-text headlines beat designed ones, and bullet-formatted newsletters doubled click-through. Sends moved to the best windows, around 10:00 and 21:30.</p></div>
+    <div class="card"><b>1:1 checkpoint</b><p>A "book a free consultation" step inside the Luma registration form raised 1:1 bookings, so registration stopped being the only conversion.</p></div>
+    <div class="card"><b>Two follow-ups</b><p>Attendees get a Free Consultation email within 24 hours; non-attendees get the recording with the same CTA. Sales gets the MQL list within 48 hours.</p></div>
+    <div class="card"><b>1 → 4 assets</b><p>Every recording becomes an article, a newsletter item, a carousel and short clips, so one hour of a speaker feeds two weeks of content.</p></div>
+  </div>
+
+  <div class="sec-title"><span class="eyebrow">Product marketing work behind it</span><h2 style="font-size:clamp(24px,3vw,32px)">The documents</h2></div>
+  <div class="docs">
+    <div class="doc"><span class="t">GTM plan</span><b>90-day lead generation plan</b><p>Two channels, four activities, a registration → attendance → MQL model, and a KPI dashboard with five auto-calculating sheets.</p></div>
+    <div class="doc"><span class="t">Operating system</span><b>Sprint plans &amp; reviews</b><p>Two-week sprints, each with targets, a review of target vs actual, and the next sprint's changes.</p></div>
+    <div class="doc"><span class="t">Analysis</span><b>Email &amp; newsletter performance study</b><p>Warm vs cold opens, headline formats and send windows, turned into copy rules for every invite.</p></div>
+    <div class="doc"><span class="t">Lifecycle</span><b>6-stage warming newsletter</b><p>A nurture sequence for e-commerce personas, from first touch to a consultation CTA.</p></div>
+    <div class="doc"><span class="t">Gated content</span><b>Post-Purchase Experience Guide</b><p>Market data, sourced case studies and a co-branded landing page built to capture leads.</p></div>
+    <div class="doc"><span class="t">Strategy</span><b>CXLF six-pillar growth plan</b><p>Brand relaunch, e-membership cards, CX Stories newsletter, webinars, a mini course and a retreat, toward 1,000 members.</p></div>
+  </div>
+
+    <div class="sp-cta"><a class="btn" href="#contact">Work with me →</a><a class="btn ghost" href="Salma-El-Ananii-CV.pdf" download>Download CV ↓</a></div>
+  </div>
+</div>
+<div class="subpage sp" id="cases">
+  <div class="wrap wp-top"><a href="#stories" class="wp-back">← Back home</a></div>
+  <div class="wrap sp-view">
+    <div class="sec-title"><span class="eyebrow">Campaign stories</span><h2>The idea behind the posts</h2></div>
+    <div class="camp-nav" role="group" aria-label="Choose a campaign">
+    <button type="button" data-c="sahl" aria-pressed="true">SahlPay</button>
+    <button type="button" data-c="tru" aria-pressed="false">TRU</button>
+    <button type="button" data-c="poa" aria-pressed="false">Piece of Art</button>
+    <button type="button" data-c="telda" aria-pressed="false">Telda Comics</button>
+  </div>
+
+  <article class="cs" data-case="sahl" style="--k:#3b5bff;--k3:#3b5bff">
+    <div class="cs-hero">
+      <div class="txt">
+        <span class="eyebrow">SahlPay · Fintech · 2023</span>
+        <h3>Everything is easy with Sahl</h3>
+        <p class="tag ar" style="text-align:left">مع سهل كله سهل</p>
+        <div class="meta"><span>Role: content creator, campaign copy</span><span>Facebook · Instagram · TikTok</span></div>
+      </div>
+      <div class="media"><img src="camp-sahl.webp" alt="SahlPay key visual: a man holding a football and a phone, with the line مع سهل كله سهل" loading="lazy"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="lab">Brief</span><p>Get people in Egypt to charge prepaid electricity and water cards and pay bills from the Sahl app instead of going to a kiosk.</p></div>
+      <div class="step"><span class="lab">Insight </span><p>Nobody hates paying a bill. They hate the trip: leaving the house in the heat, the queue, the card that runs out at the worst moment.</p></div>
+      <div class="step"><span class="lab">Idea</span><p>Turn every errand into a tap from the couch. One line carries it: <span class="ar">مع سهل كله سهل</span>, and every post shows a moment where the errand simply doesn't happen.</p></div>
+    </div>
+    <p class="big-quote ar" style="text-align:right">لو شحن كارت الكهرباء خلص فجأه، متقعدش ثانية في الحر!</p>
+    <div class="card"><h4>Execution</h4><ul><li>Key visual and campaign line, then sub-campaigns: <span class="ar">صيفك سهل</span> for summer and <span class="ar">سهل جوه كل بيت</span> for the whole family</li><li>Social posts for each service: electricity, water, landline, mobile credit, gaming vouchers, beIN, university fees</li><li>TikTok series and short reels written around everyday moments</li><li>Push notifications, SMS and in-app microcopy in the same voice</li></ul></div>
+    <div class="exec">
+      <figure><img src="70.jpg" alt="Sahl electricity card post" loading="lazy"><figcaption>Electricity card, launch post</figcaption></figure>
+      <figure><img src="71.jpg" alt="Sahl post about the card running out" loading="lazy"><figcaption>"Don't sit a second in the heat"</figcaption></figure>
+      <figure><img src="72.jpg" alt="Sahl water card post" loading="lazy"><figcaption>Water card, the kid in the shower</figcaption></figure>
+      <figure><img src="77.jpg" alt="Sahl family post" loading="lazy"><figcaption><span class="ar">سهل جوه كل بيت</span></figcaption></figure>
+    </div>
+    <div class="results"><div class="res" style="--k:#bfc9ff"><b>5M+</b><span>reach for the campaign</span></div><div class="res" style="--k:#bfc9ff"><b>2M</b><span>organic TikTok reach</span></div><div class="res" style="--k:#bfc9ff"><b>+500%</b><span>engagement</span></div></div>
+  </article>
+
+  <article class="cs" data-case="tru" hidden style="--k:#e9e9e9;--k3:#0d0b1a">
+    <div class="cs-hero">
+      <div class="txt">
+        <span class="eyebrow">TRU · Fintech · Aug 2025</span>
+        <h3>The most flexible installments in Egypt</h3>
+        <p class="tag ar" style="text-align:left">التقسيط الأكثر مرونة في مصر</p>
+        <div class="meta"><span>TVC + digital campaign</span><span>Facebook · Instagram</span></div>
+      </div>
+      <div class="media"><img src="tru-1.jpg" alt="TRU key visual: a man doing a headstand while paying on his phone" loading="lazy"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="lab">Brief</span><p>Launch TRU's flexible installments: after you buy, you can lower the monthly amount, shorten the duration or pay it off early, all from the app.</p></div>
+      <div class="step"><span class="lab">Insight </span><p>An installment plan feels like a contract you sign once and live with. Life changes after the purchase, and the plan never does.</p></div>
+      <div class="step"><span class="lab">Idea</span><p>Show flexibility literally. Our hero bends into impossible poses at home, a headstand, a leg on the counter, while he adjusts his installment on the phone.</p></div>
+    </div>
+    <p class="big-quote ar" style="text-align:right">قسط تقلله، تتجزه، تخلصه في أي وقت بعد ما تشتري!</p>
+    <div class="card"><h4>Execution</h4><ul><li>A TVC built on the flexible-poses idea</li><li>Three key visuals, one per feature: change the amount, shorten the duration, settle any time</li><li>Two product reels showing TRU Ctrl and TRU limit inside the app</li></ul></div>
+    <div class="exec">
+      <figure><img src="tru-1.jpg" alt="Headstand key visual" loading="lazy"><figcaption>Lower your installment</figcaption></figure>
+      <figure><img src="tru-2.jpg" alt="Gaming on the couch key visual" loading="lazy"><figcaption>Shorten the duration</figcaption></figure>
+      <figure><img src="tru-3.jpg" alt="Leg on the kitchen counter key visual" loading="lazy"><figcaption>Change it any time</figcaption></figure>
+      <figure><img src="tru-5.jpg" alt="Reel frame of the TRU Ctrl screen" loading="lazy"><figcaption>TRU Ctrl reel</figcaption></figure>
+    </div>
+    <div class="results"><div class="res q"><b>?</b><span>Results: reach, views, downloads. محتاجين الأرقام منك</span></div></div>
+  </article>
+
+  <article class="cs" data-case="poa" hidden style="--k:#f08a1c;--k3:#b8600a">
+    <div class="cs-hero">
+      <div class="txt">
+        <span class="eyebrow">Piece of Art · Furniture · BSocial Egypt · Oct 2021</span>
+        <h3>Your home is a piece of art</h3>
+        <p class="tag ar" style="text-align:left">خلي بيتك Piece Of Art</p>
+        <div class="meta"><span>Role: copywriter (agency)</span><span>Featured on Ads of the World</span></div>
+      </div>
+      <div class="media"><img src="57.jpg" alt="Piece of Art post: furniture placed inside a classic painting" loading="lazy"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="lab">Brief</span><p>Position Piece of Art's classic and modern furniture as crafted pieces, not catalogue items.</p></div>
+      <div class="step"><span class="lab">Insight</span><p>People stop in front of old paintings and study every detail. They rarely look at a sofa that way.</p></div>
+      <div class="step"><span class="lab">Idea</span><p>Place the furniture inside classic paintings, so it gets the same slow look as the art around it.</p></div>
+    </div>
+    <p class="big-quote ar" style="text-align:right">ماتتنزليش عن الجمال و #خلي_بيتك Piece Of Art</p>
+    <div class="exec">
+      <figure><img src="57.jpg" alt="Campaign post 1" loading="lazy"><figcaption>Hero post</figcaption></figure>
+      <figure><img src="58.jpg" alt="Campaign post 2" loading="lazy"><figcaption>Choose your piece</figcaption></figure>
+      <figure><img src="59.jpg" alt="Campaign post 3" loading="lazy"><figcaption>Classic meets modern salon</figcaption></figure>
+      <figure><img src="60.jpg" alt="Campaign post 4" loading="lazy"><figcaption>A bedroom painted in</figcaption></figure>
+    </div>
+    <div class="results"><div class="res" style="--k:#ffd3a6"><b>AotW</b><span>published on Ads of the World by Clios</span></div></div>
+  </article>
+
+  <article class="cs" data-case="telda" hidden style="--k:#ff2300;--k3:#ff2300">
+    <div class="cs-hero">
+      <div class="txt">
+        <span class="eyebrow">Telda · Fintech · Ramadan</span>
+        <h3>Telda Comics</h3>
+        <p class="tag ar" style="text-align:left">يوم مش عادي</p>
+        <div class="meta"><span>Role: social media executive, writer</span><span>Instagram Stories</span></div>
+      </div>
+      <div class="media" style="background:#0d0b1a"><img src="c-1_1.jpg" alt="Cover of Telda Comics issue 1" loading="lazy" style="object-fit:contain"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="lab">Brief</span><p>Keep Telda's young audience opening Instagram Stories through Ramadan, when every brand is fighting for the same screen.</p></div>
+      <div class="step"><span class="lab">Insight </span><p>In Ramadan people come back to a story every day: the series on TV, the same family table. A brand can earn that habit if it has a story worth coming back to.</p></div>
+      <div class="step"><span class="lab">Idea</span><p>A serialized comic told one Instagram Story at a time, with original characters and polls where readers choose what happens next.</p></div>
+    </div>
+    <div class="card"><h4>Execution</h4><ul><li>Four weekly issues, 18 to 56 frames each</li><li>Each tap is the next frame; polls decide the plot</li><li>Characters and dialogue in Egyptian Arabic, written in Telda's voice</li></ul></div>
+    <div class="results"><div class="res" style="--k:#ffc2b5"><b>+100%</b><span>Instagram Stories engagement in Ramadan</span></div></div>
+  </article>
+
+    <div class="sp-cta"><a class="btn" href="#contact">Work with me →</a><a class="btn ghost" href="#work">See all the work</a></div>
+  </div>
+</div>
+<div class="workpage subpage" id="work">
   <div class="wrap wp-top"><a href="#top" class="wp-back">← Back home</a></div>
 <section class="block accounts" id="accounts">
   <div class="wrap">
@@ -1685,16 +2132,26 @@ document.querySelectorAll('.hx [data-drag]').forEach(st=>{let sx,sy,ox=0,oy=0;co
 
 <script>
 (function(){
- const WORK=h=>h==='work'||h==='accounts'||h==='samples'||h.startsWith('acc-');
- function apply(scroll){const h=location.hash.slice(1);const on=WORK(h);const was=document.body.classList.contains('work-mode');
-  document.body.classList.toggle('work-mode',on);
-  if(on&&!was){window.scrollTo({top:0,behavior:'instant'})}
-  else if(!on&&was&&h){const t=document.getElementById(h);if(t)requestAnimationFrame(()=>t.scrollIntoView({behavior:'instant'}))}
-  else if(!on&&was){window.scrollTo({top:0,behavior:'instant'})}
+ const PG=h=>(h==='work'||h==='accounts'||h==='samples'||h.startsWith('acc-'))?'work':h==='cxlf'?'cxlf':(h==='cases'||h.startsWith('case-'))?'cases':null;
+ function apply(){const h=location.hash.slice(1);const pg=PG(h);const was=document.body.classList.contains('page-mode');const prev=document.querySelector('.subpage.pg-on');
+  document.querySelectorAll('.subpage').forEach(x=>x.classList.toggle('pg-on',x.id===pg));
+  document.body.classList.toggle('page-mode',!!pg);document.body.classList.toggle('work-mode',pg==='work');
+  if(pg==='cases'){const c=h.startsWith('case-')?h.slice(5):'sahl';document.querySelectorAll('#cases .camp-nav button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.c===c));document.querySelectorAll('#cases [data-case]').forEach(x=>x.hidden=x.dataset.case!==c);}
+  if(pg&&(!was||(prev&&prev.id!==pg))){window.scrollTo({top:0,behavior:'instant'})}
+  else if(!pg&&was&&h){const t=document.getElementById(h);if(t)requestAnimationFrame(()=>t.scrollIntoView({behavior:'instant'}))}
+  else if(!pg&&was){window.scrollTo({top:0,behavior:'instant'})}
   window.dispatchEvent(new Event('resize'));}
  window.addEventListener('hashchange',()=>apply());apply();
  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const h=a.getAttribute('href').slice(1);
-   if(document.body.classList.contains('work-mode')&&!WORK(h)){e.preventDefault();history.pushState(null,'','#'+h);apply();const t=document.getElementById(h);if(h==='top'||!t)window.scrollTo({top:0,behavior:'instant'});else requestAnimationFrame(()=>t.scrollIntoView({behavior:'instant'}));}});
+   if(document.body.classList.contains('page-mode')&&!PG(h)){e.preventDefault();history.pushState(null,'','#'+h);apply();const t=document.getElementById(h);if(h==='top'||!t)window.scrollTo({top:0,behavior:'instant'});else requestAnimationFrame(()=>t.scrollIntoView({behavior:'instant'}));}});
+ const cn=document.querySelector('#cases .camp-nav');if(cn)cn.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;history.replaceState(null,'','#case-'+b.dataset.c);apply();});
+ const bf=document.getElementById('brief');if(bf)bf.addEventListener('submit',e=>{e.preventDefault();const v=id=>document.getElementById(id).value.trim();const err=document.getElementById('fErr');
+   if(!v('fName')||!v('fProd')){err.textContent='Add your name and what your product does.';return;}err.textContent='';
+   const needs=[...document.querySelectorAll('#fNeed input:checked')].map(i=>i.value);
+   const body=`Hi Salma,\n\nName: ${v('fName')}\nCompany: ${v('fCo')||'-'}\nProduct: ${v('fProd')}\nNeeds: ${needs.join(', ')||'-'}\nStart: ${v('fWhen')}\nMarket: ${v('fMkt')}\n\n${v('fMsg')}\n`;
+   const subj=`Project brief: ${v('fCo')||v('fName')}`;document.getElementById('fPre').textContent='Subject: '+subj+'\n\n'+body;
+   document.getElementById('fGo').href='https://mail.google.com/mail/?view=cm&fs=1&to=salma.elananii@gmail.com&su='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+   document.getElementById('fOut').classList.add('show');});
  const f=document.getElementById('egForm');if(f)f.addEventListener('submit',e=>{e.preventDefault();const m=document.getElementById('egMail').value;
    location.href='mailto:salma.elananii@gmail.com?subject='+encodeURIComponent('Egret launch list')+'&body='+encodeURIComponent('Add me to the Egret launch list: '+m);
    document.getElementById('egMsg').textContent='تمام! هيوصلك أول عدد أول ما يطلع.';});
