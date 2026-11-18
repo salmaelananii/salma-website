@@ -1049,10 +1049,10 @@ img.rec-ava{padding:0;background:#fff}
 .sb-tapes{pointer-events:auto}
 .sb-tape span.logo-link:hover{text-decoration:underline}
 .rec-dots{display:none}
-@media (max-width:760px){
+@media all{
  .rec-grid{columns:auto!important;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 4px 14px;scrollbar-width:none}
  .rec-grid::-webkit-scrollbar{display:none}
- .rec-grid .rec{flex:0 0 86%;scroll-snap-align:center;margin:0;max-height:none}
+ .rec-grid .rec{flex:0 0 min(86%,400px);scroll-snap-align:center;margin:0;max-height:none}
  .rec-grid .rec blockquote{display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical;overflow:hidden}
  .rec-dots{display:flex;justify-content:center;gap:8px;margin-top:8px}
  .rec-dots button{width:8px;height:8px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;padding:0;transition:all .25s}
@@ -1273,6 +1273,80 @@ body.page-mode main>.subpage.pg-on{display:block}
 @media (max-width:860px){.st-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 #now .sp .stats{margin:6px 0}
 .sp .form input,.sp .form select,.sp .form textarea{font-family:inherit}
+
+/* ===== v19 ===== */
+.hx-stk.s2{max-width:min(250px,48%);display:grid;gap:4px;line-height:1.3;cursor:grab}
+.hx-stk.s2 .hi{font-size:clamp(15px,1.5vw,19px)}
+.hx-stk.s2 .me{font-family:var(--body);font-weight:500;font-size:clamp(12px,1.05vw,14px);line-height:1.4}
+.hx-stk.s2 .me b{font-weight:800}
+.hx-awards{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.hx-awards li,.hx-awards a{display:flex;gap:8px;align-items:center;color:var(--ink);text-decoration:none}
+.hx-awards li{border:2px solid var(--ink);background:var(--surface);padding:7px 12px 7px 9px;box-shadow:3px 3px 0 var(--k)}
+.hx-awards svg{width:26px;height:26px;flex:none;color:var(--ink);animation:trBob 2.6s ease-in-out infinite}
+.hx-awards li:nth-child(2) svg{animation-delay:.4s}.hx-awards li:nth-child(3) svg{animation-delay:.8s}
+.hx-awards span{display:flex;flex-direction:column;line-height:1.2}
+.hx-awards b{font-family:var(--display);font-weight:900;font-size:13.5px}
+.hx-awards small{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+@keyframes trBob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-3px) rotate(4deg)}}
+.cert-stks{display:flex;flex-wrap:wrap;gap:18px;justify-content:flex-end;margin-top:6px}
+.cert-stk{display:flex;gap:12px;align-items:flex-start;max-width:330px;background:#fff;color:#0d0b1a;border:2.5px solid #0d0b1a;box-shadow:5px 5px 0 var(--k);padding:12px 14px;transform:rotate(var(--r));animation:certFloat 5s ease-in-out infinite}
+.cert-stk:nth-child(2){animation-delay:-2.5s}
+.cert-stk img{width:46px;height:46px;object-fit:contain;flex:none;border-radius:8px}
+.cert-stk div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cert-stk .cs-tag{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#48298f}
+.cert-stk b{font-family:var(--display);font-weight:900;font-size:15px;line-height:1.2}
+.cert-stk small{font-size:12.5px;color:#3b3852}
+.cert-stk .cs-sub{font-family:var(--mono);font-size:10.5px;color:#6b6880}
+.cert-stk a{margin-top:4px;font-weight:800;font-size:13px;color:#0d0b1a;text-decoration:underline;text-decoration-color:var(--k);text-decoration-thickness:3px;text-underline-offset:3px}
+.cert-stk em{margin-top:4px;font-style:normal;font-size:12px;color:#6b6880}
+@keyframes certFloat{0%,100%{transform:rotate(var(--r)) translateY(0)}50%{transform:rotate(calc(var(--r)*-1)) translateY(-6px)}}
+@media (max-width:700px){.cert-stks{justify-content:flex-start}.cert-stk{max-width:100%}}
+.lg-slider{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center}
+.lg-slider .sb-logos{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:12px;padding:4px 2px 8px}
+.lg-slider .sb-logos::-webkit-scrollbar{display:none}
+.lg-slider .sb-logos li{flex:0 0 160px;scroll-snap-align:start}
+.lg-arr{width:42px;height:42px;border-radius:50%;border:2px solid var(--ink);background:var(--surface);color:var(--ink);font-weight:900;font-size:18px;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+@media (max-width:620px){.lg-slider{grid-template-columns:minmax(0,1fr)}.lg-arr{display:none}.lg-slider .sb-logos li{flex-basis:140px}}
+.idea-cta{display:flex;flex-wrap:wrap;gap:10px 12px;align-items:center;border:2px dashed var(--ink);padding:14px 16px;background:color-mix(in srgb,var(--surface) 70%,transparent)}
+.idea-cta .eyebrow{flex-basis:100%}
+.idea-cta a{font-family:var(--display);font-weight:900;font-size:15px;color:#0d0b1a;background:var(--yellow);border:2px solid var(--ink);padding:9px 14px;text-decoration:none;box-shadow:3px 3px 0 var(--ink);transition:transform .15s}
+.idea-cta a:hover{transform:translate(-2px,-2px)}
+.see-camp{margin-top:4px}
+/* comic attention */
+.mag:not(.nav-used) .mag-nav:not(:disabled){animation:navPulse 1.4s ease-in-out infinite}
+.mag:not(.nav-used) .mag-nav.next:not(:disabled){--dx:-5px}.mag:not(.nav-used) .mag-nav.prev:not(:disabled){--dx:5px}
+@keyframes navPulse{0%,100%{transform:translateX(0);box-shadow:0 0 0 0 rgba(255,230,0,.7)}50%{transform:translateX(var(--dx));box-shadow:0 0 0 12px rgba(255,230,0,0)}}
+.mag:not(.used) .mag-tab[aria-selected="false"]{animation:tabBlink 1.6s ease-in-out infinite}
+.mag:not(.used) .mag-tab:nth-child(3){animation-delay:.4s}.mag:not(.used) .mag-tab:nth-child(4){animation-delay:.8s}
+@keyframes tabBlink{0%,100%{background:var(--bg);border-color:var(--line)}50%{background:color-mix(in srgb,var(--yellow) 55%,var(--bg));border-color:var(--ink)}}
+@media (max-width:520px){.mag-stage{grid-template-columns:auto minmax(0,1fr) auto!important;padding:10px}.mag-nav{display:grid!important;place-items:center;width:38px;height:38px;font-size:16px}}
+@media (prefers-reduced-motion:reduce){.mag-nav,.mag-tab,.cert-stk,.hx-awards svg{animation:none!important}}
+/* egret */
+.eg-en{font-family:var(--display)!important;display:block;margin-top:6px}
+/* contact */
+.fl-btn{display:inline-flex;align-items:center;background:#ffe600;color:#0d0b1a;font-family:var(--display);font-weight:900;font-size:16px;padding:14px 20px;border:2px solid #ffffff;box-shadow:5px 5px 0 #ff98d4;cursor:pointer}
+.fl-btn:hover,.btn-mail:hover,.cv-btn:hover{transform:translate(-2px,-2px)}
+.btn-mail{font-size:16px;cursor:pointer}
+.mail-reveal{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-top:18px}
+.mail-reveal .mail{font-family:var(--mono);font-size:16px;padding:10px 14px;border:1.5px dashed rgba(255,255,255,.7);color:#fff;user-select:all}
+.mail-reveal .copied{color:#ffe600;font-weight:700;font-size:14px}
+.mail-reveal .open-gm{color:#fff;font-size:14px}
+.mail-reveal.pop{animation:popIn .35s cubic-bezier(.2,.8,.2,1.2)}
+@keyframes popIn{from{transform:translateY(-6px);opacity:0}to{transform:none;opacity:1}}
+.li-line{display:inline-flex;align-items:center;gap:10px;margin-top:22px;color:#f2f1fa!important;text-decoration:none;font-family:var(--mono);font-size:14px}
+.li-line:hover{text-decoration:underline}
+.li-ic{width:36px;height:36px;display:grid;place-items:center;background:#0a66c2;border-radius:8px;color:#fff}
+.li-ic svg{width:18px;height:18px}
+.fl-panel{display:grid;gap:28px;margin-top:clamp(36px,5vw,64px);padding-top:clamp(28px,4vw,48px);border-top:2px dashed rgba(255,255,255,.35)}
+.fl-panel[hidden]{display:none}
+.fl-panel .sec-title h2{color:#fff}
+.fl-panel .sec-title p{color:#cfcce3!important}
+.fl-panel .how li{background:#fff;color:#0d0b1a}
+.fl-panel .how li p{color:#3b3852}
+.fl-panel .dark-band{border:2px solid rgba(255,255,255,.4)}
+.hx-stk.s2{top:4%!important;right:-1%!important}
+@media (max-width:900px){.hx-stk.s2{max-width:52%;right:-4%!important;top:2%!important;padding:8px 12px}.hx-stk.s2 .me{font-size:11.5px}.hx-stk.s3{bottom:12%!important;right:-2%!important}}
+@media (max-width:700px){.cert-stk{max-width:calc(100% - 14px)}}
 </style>
 </head>
 <body>
@@ -1297,12 +1371,16 @@ body.page-mode main>.subpage.pg-on{display:block}
     <div class="hx-copy">
       <div class="hx-pills"><span class="b">Product Marketing Associate</span><span>Content strategist</span><span>Cairo ↔ Riyadh</span></div>
       <h1 class="hx-h">Your product does something brilliant.<span class="l2">People still need to <span class="hx-rot" aria-live="polite"><span id="hxWord">get it.</span></span></span></h1>
-      <p class="hx-sub">I’m <b>Salma El-Ananii</b>. I write copy that touches hearts and speaks to minds.</p>
       <ul class="hx-stats">
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span><b>5+</b> years</span></li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span><b>100+</b> brands</span></li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V9l5 3V9l5 3V5h4v16"/></svg><span><b>10+</b> industries</span></li>
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h11v8H8l-4 3z"/><path d="M15 9h5v8l-3-2h-6v-2"/></svg><span><b>2</b> Arabic dialects + English</span></li>
+      </ul>
+      <ul class="hx-awards" aria-label="Awards">
+        <li style="--k:var(--yellow)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#f3d27a" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M10 13h4v4h-4zM8 20h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Star of the Quarter</b><small>Velents.ai · +280% organic engagement</small></span></li>
+        <li style="--k:var(--pink)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#f3d27a" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M10 13h4v4h-4zM8 20h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Jack of All Trades</b><small>Velents.ai · 2024</small></span></li>
+        <li style="--k:#e9c467"><a href="https://www.adsoftheworld.com/campaigns/your-home-is-piece-of-art" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0z" fill="#f3d27a" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M10 13h4v4h-4zM8 20h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span><b>Featured on Ads of the World</b><small>Piece of Art · 2021 ↗</small></span></a></li>
       </ul>
       <div class="sb-doors3">
         <a href="#work" class="d2">Look at my work →</a>
@@ -1314,7 +1392,7 @@ body.page-mode main>.subpage.pg-on{display:block}
       <div class="hx-blob" aria-hidden="true"></div>
       <div class="hx-arch"><img src="av3d-base.webp" alt="" width="806" height="1000"></div>
       <span class="hx-stk s1" data-drag aria-hidden="true"><b>100+</b><small>brands</small></span>
-      <span class="hx-stk s2" data-drag aria-hidden="true"><span class="ar">أهلاً</span> · Hello</span>
+      <span class="hx-stk s2" data-drag><span class="hi"><span class="ar">أهلاً</span> · Hello</span><span class="me">I’m <b>Salma El-Ananii</b>. I write copy that touches hearts and speaks to minds.</span></span>
       <span class="hx-stk s3" data-drag aria-hidden="true"><b>5+ yrs</b></span>
       <span class="hx-stk s4 egret" data-drag aria-hidden="true"><img src="egret-mascot.webp" alt="" draggable="false"></span>
       <span class="hx-stk s5" data-drag aria-hidden="true">✍︎ Writer by nature</span>
@@ -1381,6 +1459,7 @@ body.page-mode main>.subpage.pg-on{display:block}
         <text x="40" y="318" font-family="Montserrat,sans-serif" font-weight="900" font-size="34" fill="var(--ink)">2020</text>
       </svg>
     </div>
+    <div class="cert-stks"><div class="cert-stk" style="--k:#00a5ea;--r:-3deg"><img src="logo-udacity.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Nov 2020</span><b>Professional Digital Marketing</b><small>Udacity</small><small class="cs-sub">Social media · Content creation</small><em>Listed on LinkedIn</em></div></div></div>
   </section>
 
   <div class="sb-mk-head">
@@ -1401,13 +1480,15 @@ body.page-mode main>.subpage.pg-on{display:block}
       <div class="sb-av-wrap"><img class="sb-av" data-speed=".05" src="av3d-agency.webp" alt="3D avatar of Salma in a denim jacket holding sticky notes" loading="lazy" width="806" height="1000"></div>
     </div>
     <div class="sb-wall-head"><span class="eyebrow">Brands I wrote for at the agency</span></div>
-    <ul class="sb-logos" id="sbAgencyLogos"></ul>
+    <div class="lg-slider"><button class="lg-arr prev" aria-label="Previous brands">←</button><ul class="sb-logos" id="sbAgencyLogos"></ul><button class="lg-arr next" aria-label="Next brands">→</button></div>
     <div class="sb-photos">
       <a class="sb-photo gold" href="#acc-piece-of-art" data-acc="piece-of-art" data-camp="خلي بيتك Piece of Art"><span class="sb-ribbon"><span>★ Ads of the World</span></span><img src="57.jpg" alt="Piece of Art campaign post" loading="lazy"><span>Piece of Art ↗</span></a>
       <a class="sb-photo" href="#acc-oxi" data-acc="oxi" data-camp="ليكي ومعاكي"><img src="1.jpg" alt="Oxi content" loading="lazy"><span>Oxi · every platform ↗</span></a>
       <a class="sb-photo" href="#acc-champollion-nile-cruise" data-acc="champollion-nile-cruise" data-camp="The Journey of a Lifetime"><img src="132.jpg" alt="Champollion Nile cruise post" loading="lazy"><span>Champollion ↗</span></a>
       <a class="sb-photo" href="#acc-beit-el-ezz" data-acc="beit-el-ezz"><img src="18.jpg" alt="Beit El-Ezz post" loading="lazy"><span>Beit El-Ezz ↗</span></a>
     </div>
+    <div class="idea-cta"><span class="eyebrow">See the idea behind a campaign</span><a href="#case-poa">Piece of Art: brief, insight, idea →</a></div>
+    <div class="cert-stks"><div class="cert-stk" style="--k:#ffe600;--r:2deg"><img src="logo-udacity.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Jun 2021</span><b>Advanced Digital Marketing</b><small>Udacity</small><small class="cs-sub">Google Analytics · SEO</small><a href="https://drive.google.com/file/d/1T-yQKtaVMvCZuVaZHsRz9Eqx6CyZEvKP/view" target="_blank" rel="noopener">Show credential ↗</a></div></div><div class="cert-stk" style="--k:#48298f;--r:-2deg"><img src="logo-knowledgeofficer.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Aug 2021</span><b>Marketing Career Accelerator-plus Program</b><small>Knowledge Officer</small><small class="cs-sub">Google Analytics · Customer experience</small><a href="https://drive.google.com/file/d/1t8fUERIVtA4wRnSwjAlA6Ap6eXp-yuAS/view" target="_blank" rel="noopener">Show credential ↗</a></div></div></div>
   </section>
 
   <section class="sb-scene sb-market" id="fintech" data-ch="02 · Fintech voice" data-acc="var(--blue)">
@@ -1432,6 +1513,8 @@ body.page-mode main>.subpage.pg-on{display:block}
         <div><span class="eyebrow">TRU · campaign 02</span><b class="ar">التقسيط الأكثر مرونة في مصر</b><p>Installments shown as the most flexible thing in the room, literally. A digital campaign for TRU.</p></div>
       </a>
     </div>
+    <div class="idea-cta"><span class="eyebrow">See the idea behind a campaign</span><a href="#case-sahl">SahlPay →</a><a href="#case-tru">TRU →</a><a href="#case-telda">Telda Comics →</a></div>
+    <div class="cert-stks"><div class="cert-stk" style="--k:#ff98d4;--r:2deg"><img src="logo-hubspot.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Mar 2023</span><b>Excel for Marketers</b><small>HubSpot</small><small class="cs-sub">Data visualization · Data cleaning</small><em>Listed on LinkedIn</em></div></div></div>
   </section>
 
   <section class="sb-scene sb-market" id="riyadh" data-ch="03 · Riyadh chapter" data-acc="var(--purple)">
@@ -1452,6 +1535,7 @@ body.page-mode main>.subpage.pg-on{display:block}
       <a class="sb-photo" href="#acc-velents-ai" data-acc="velents-ai" data-camp="Velents Buddy launch"><img src="118.jpg" alt="Velents Buddy launch reel" loading="lazy"><span>Velents Buddy launch ↗</span></a>
       <a class="sb-photo" href="#acc-velents-ai" data-acc="velents-ai"><img src="111.jpg" alt="Product marketing post" loading="lazy"><span>Product Marketing ↗</span></a>
     </div>
+    <div class="cert-stks"><div class="cert-stk" style="--k:#ff2300;--r:-2deg"><img src="logo-productschool.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Mar 2024</span><b>Product Launches Micro-Certification (PRLC)™</b><small>Product School</small><a href="https://drive.google.com/file/d/1NPAXfP1NdsYz_cQWs9rR2XKhpdJPUPcO/view" target="_blank" rel="noopener">Show credential ↗</a></div></div><div class="cert-stk" style="--k:#00a5ea;--r:2deg"><img src="logo-dmi.png" alt="" loading="lazy"><div><span class="cs-tag">✓ Certified · Oct 2024</span><b>Certified Digital Marketing Associate</b><small>Digital Marketing Institute</small><small class="cs-sub">Credential ID 117281546</small><a href="https://certs.digitalmarketinginstitute.com/05ba950a-8c75-4a1c-b7df-45520226c248" target="_blank" rel="noopener">Show credential ↗</a></div></div></div>
   </section>
 
   <section class="sb-scene sb-market" id="now" data-ch="04 · Product marketer" data-acc="var(--blue)">
@@ -1506,8 +1590,7 @@ body.page-mode main>.subpage.pg-on{display:block}
 
     <article class="fav fav-comic" style="--k:#ff2300">
       <header class="fav-head"><span class="fav-no">01</span><div><p class="eyebrow">Telda · Instagram stories · Ramadan</p><h3>Telda Comics</h3><p class="fav-desc">A serialized comic told through Instagram stories, where every tap was the next frame and some frames asked the reader to choose what happens next. Four weekly issues. Pick one and read it like a magazine.</p></div></header>
-      <div class="mag-hint"><b>How to read it</b><span>① Pick an issue</span><span>② Flip with the arrows, swipe, or drag the slider</span><span>③ Read right to left, like an Arabic comic</span></div>
-      <div class="mag" id="mag">
+            <div class="mag" id="mag">
         <div class="mag-issues" role="tablist" aria-label="Comic issues"></div>
         <div class="mag-stage"><button class="mag-nav prev" id="magPrev" aria-label="Previous page">→</button><div class="mag-book" id="magBook"></div><button class="mag-nav next" id="magNext" aria-label="Next page">←</button></div>
         <div class="mag-bar"><span class="mag-count" id="magCount"></span><input type="range" id="magRange" min="0" value="0" aria-label="Go to page"></div>
@@ -1516,8 +1599,9 @@ body.page-mode main>.subpage.pg-on{display:block}
 
     <article class="fav" style="--k:#e9c467">
       <header class="fav-head"><span class="fav-no">02</span><div><p class="eyebrow">Piece of Art · BSocial Egypt · Oct 2021</p><h3>Your Home Is Piece Of Art</h3><p class="fav-desc">People stop in front of old paintings to study the details. So we placed the furniture inside classic paintings: the pieces are as finely crafted as the art around them. The campaign was published on Ads of the World.</p></div></header>
-      <div class="fav-strip" id="favPoa"></div>
       <a class="aotw-strap" href="https://www.adsoftheworld.com/campaigns/your-home-is-piece-of-art?fbclid=IwAR0_ABJTfi_p8JaEgrUU4ZtZEv1ql9J_1JrsmcqPZDAIUhoEkgs-DX-Zm5s" target="_blank" rel="noopener"><span class="aotw-kicker">Featured on</span><img src="aotw.png" alt="Ads of the World by Clios"><span class="aotw-txt"><b>“Your Home Is Piece Of Art”</b><small>Agency: BSocial Egypt · Published in Egypt, October 2021</small></span><span class="aotw-go">View the campaign ↗</span></a>
+      <div class="fav-strip" id="favPoa"></div>
+      
     </article>
     <article class="fav fav-fest" style="--k:#2a8c82">
       <header class="fav-head"><span class="fav-no">03</span><div><p class="eyebrow">Luxor African · Fayoum International · 8 editions</p><h3>Film Festivals</h3><p class="fav-desc">Two festivals, eight editions, one job: making people want to sit in a dark room with strangers and watch something new. From Luxor’s African cinema to Fayoum’s environmental films, I wrote the social voice edition after edition.</p></div></header>
@@ -1530,26 +1614,15 @@ body.page-mode main>.subpage.pg-on{display:block}
   </div>
 </section>
 
-<section class="block sp stories" id="stories">
-  <div class="wrap" style="display:grid;gap:22px">
-    <div class="sec-head"><div><p class="eyebrow">Campaign stories</p><h2 style="margin-top:12px">The idea behind the posts</h2></div><p class="sub" style="max-width:44ch;color:var(--muted)">Four campaigns told the way agencies enter awards: the brief, the insight, the idea and what ran.</p></div>
-    <div class="st-grid">
-      <a class="st-card" href="#case-sahl" style="--k:#3b5bff"><img src="camp-sahl.webp" alt="" loading="lazy"><span class="eyebrow">SahlPay · 2023</span><b>Everything is easy with Sahl</b></a>
-      <a class="st-card" href="#case-tru" style="--k:#e9e9e9"><img src="tru-1.jpg" alt="" loading="lazy"><span class="eyebrow">TRU · 2025</span><b>The most flexible installments in Egypt</b></a>
-      <a class="st-card" href="#case-poa" style="--k:#f08a1c"><img src="57.jpg" alt="" loading="lazy"><span class="eyebrow">Piece of Art · 2021</span><b>Your home is a piece of art</b></a>
-      <a class="st-card" href="#case-telda" style="--k:#ff2300"><img src="c-1_1.jpg" alt="" loading="lazy"><span class="eyebrow">Telda · Ramadan</span><b>Telda Comics</b></a>
-    </div>
-  </div>
-</section>
 <section class="block sb-egret-sec" id="egret" aria-labelledby="egH">
   <div class="wrap">
     <div class="sb-egret">
       <img src="egret-salma.webp" alt="3D avatar of Salma in a denim jacket with an egret on her shoulder" loading="lazy" width="883" height="1100">
       <div class="txt" lang="ar">
         <span class="eyebrow" style="direction:ltr;text-align:right">Egret Insights · launching early 2027</span>
-        <h2 id="egH">إيجريت<br><span>رؤى من جوه المنطقة</span></h2>
-        <p>إيجريت منصة بتقدم Market Insights مبنية على بيانات حقيقية من داخل مصر والعالم العربي، لمساعدة الـ Marketers على فهم سلوك المستهلكين واتجاهات السوق واتخاذ قرارات تسويقية مبنية على واقع جمهورهم، مش على مؤشرات عالمية عامة.</p>
-        <form class="eg-form" id="egForm"><label for="egMail">سجّل دلوقتي عشان يوصلك أول نشرة الإطلاق</label><div><input id="egMail" type="email" required placeholder="you@company.com" dir="ltr"><button class="btn primary" type="submit">سجّلني</button></div><small id="egMsg" aria-live="polite"></small></form>
+        <h2 id="egH">إيجريت<br><span lang="en" dir="ltr" class="eg-en">Insights from this land</span></h2>
+        <p>إيجريت مدونة بتقدم Market Insights مبنية على بيانات حقيقية من داخل مصر والعالم العربي، عشان تساعد Marketers يفهموا سلوك المستهلكين واتجاهات السوق واتخاذ قرارات تسويقية مبنية على واقع جمهورهم، مش على مؤشرات عالمية عامة.</p>
+        <form class="eg-form" id="egForm"><label for="egMail">سجّل دلوقتي عشان تعرف إزاي تعمل Marketing مصري حقيقي!</label><div><input id="egMail" type="email" required placeholder="you@company.com" dir="ltr"><button class="btn primary" type="submit">سجّلني</button></div><small id="egMsg" aria-live="polite"></small></form>
       </div>
     </div>
   </div>
@@ -1560,7 +1633,7 @@ body.page-mode main>.subpage.pg-on{display:block}
 <section class="block recs" id="recommendations">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Recommendations · from LinkedIn</p><h2 style="margin-top:12px">Don’t take my word for it</h2></div>
+      <div><p class="eyebrow">Recommendations · from LinkedIn</p><h2 style="margin-top:12px">They said about me</h2></div>
       <div class="filters" id="recFilters" role="group" aria-label="Filter recommendations">
         <button class="chip" data-g="all" aria-pressed="true">All <small>18</small></button>
         <button class="chip" data-g="mgr" aria-pressed="false">Managers <small>9</small></button>
@@ -1572,15 +1645,27 @@ body.page-mode main>.subpage.pg-on{display:block}
     <p class="rec-more"><a href="https://www.linkedin.com/in/salmaelananii/details/recommendations/" target="_blank" rel="noopener">Read them all on LinkedIn ↗</a></p>
   </div>
 </section>
-<section class="block certs" id="certs">
-  <div class="wrap">
-    <div class="sec-head"><div><p class="eyebrow">Awards & certifications</p><h2 style="margin-top:12px">Homework, done</h2></div><p class="sub" style="max-width:44ch;color:var(--muted)">Two awards, one Ads of the World feature, and six certifications, from my first digital marketing course in 2020 to Product School and the Digital Marketing Institute.</p></div>
-    <h3 class="sub-h">Awards</h3><ul class="awards"><li class="award" style="--k:var(--yellow)"><div class="award-art"><svg class="trophy" viewBox="0 0 80 80" aria-hidden="true"><g class="tr-spark" style="--d:0s"><path transform="translate(14 16)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-spark" style="--d:.7s"><path transform="translate(66 22) scale(.7)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-bob"><path d="M24 14h32v14a16 16 0 0 1-32 0z" fill="#f3d27a" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><path d="M24 18h-8a8 8 0 0 0 8 12M56 18h8a8 8 0 0 1-8 12" fill="none" stroke="#0d0b1a" stroke-width="3" stroke-linecap="round"/><path d="M36 44h8v10h-8z" fill="#e0b250" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><rect x="26" y="54" width="28" height="9" rx="2" fill="#0d0b1a"/><path d="M40 20l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z" fill="#ffffff" stroke="#0d0b1a" stroke-width="1.5" stroke-linejoin="round"/></g></svg></div><div><span class="cert-date">Velents.ai</span><h3>Star of the Quarter</h3><p>For a 280% organic increase in engagement rate.</p></div></li><li class="award" style="--k:var(--pink)"><div class="award-art"><svg class="trophy" viewBox="0 0 80 80" aria-hidden="true"><g class="tr-spark" style="--d:0s"><path transform="translate(14 16)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-spark" style="--d:.7s"><path transform="translate(66 22) scale(.7)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-bob"><path d="M24 14h32v14a16 16 0 0 1-32 0z" fill="#f3d27a" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><path d="M24 18h-8a8 8 0 0 0 8 12M56 18h8a8 8 0 0 1-8 12" fill="none" stroke="#0d0b1a" stroke-width="3" stroke-linecap="round"/><path d="M36 44h8v10h-8z" fill="#e0b250" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><rect x="26" y="54" width="28" height="9" rx="2" fill="#0d0b1a"/><path d="M40 20l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z" fill="#ffffff" stroke="#0d0b1a" stroke-width="1.5" stroke-linejoin="round"/></g></svg></div><div><span class="cert-date">Velents.ai · End of 2024</span><h3>Jack of All Trades</h3><p>For taking part in many projects beyond my main role, and leading several of them.</p></div></li><li class="award" style="--k:#e9c467"><div class="award-art"><svg class="trophy" viewBox="0 0 80 80" aria-hidden="true"><g class="tr-spark" style="--d:0s"><path transform="translate(14 16)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-spark" style="--d:.7s"><path transform="translate(66 22) scale(.7)" d="M0-6L1.6-1.6L6 0L1.6 1.6L0 6L-1.6 1.6L-6 0L-1.6-1.6Z" fill="#ffffff"/></g><g class="tr-bob"><path d="M24 14h32v14a16 16 0 0 1-32 0z" fill="#f3d27a" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><path d="M24 18h-8a8 8 0 0 0 8 12M56 18h8a8 8 0 0 1-8 12" fill="none" stroke="#0d0b1a" stroke-width="3" stroke-linecap="round"/><path d="M36 44h8v10h-8z" fill="#e0b250" stroke="#0d0b1a" stroke-width="3" stroke-linejoin="round"/><rect x="26" y="54" width="28" height="9" rx="2" fill="#0d0b1a"/><path d="M40 20l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z" fill="#ffffff" stroke="#0d0b1a" stroke-width="1.5" stroke-linejoin="round"/></g></svg></div><div><span class="cert-date">Piece of Art · BSocial Egypt · Oct 2021</span><h3>Featured on Ads of the World</h3><p>“Your Home Is Piece Of Art”, an agency campaign I wrote for, published on Ads of the World by Clios.</p><a class="cert-link" href="https://www.adsoftheworld.com/campaigns/your-home-is-piece-of-art?fbclid=IwAR0_ABJTfi_p8JaEgrUU4ZtZEv1ql9J_1JrsmcqPZDAIUhoEkgs-DX-Zm5s" target="_blank" rel="noopener">View the campaign ↗</a></div></li></ul><h3 class="sub-h">Certifications</h3><ol class="cert-list"><li class="cert" style="--k:#00a5ea"><span class="cert-logo"><img src="logo-dmi.png" alt="Digital Marketing Institute logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Oct 2024</span><h3>Certified Digital Marketing Associate</h3><p class="cert-org">Digital Marketing Institute</p><p class=cert-sub>Credential ID 117281546</p><a class="cert-link" href="https://certs.digitalmarketinginstitute.com/05ba950a-8c75-4a1c-b7df-45520226c248" target="_blank" rel="noopener">Show credential ↗</a></div></li><li class="cert" style="--k:#ff2300"><span class="cert-logo"><img src="logo-productschool.png" alt="Product School logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Mar 2024</span><h3>Product Launches Micro-Certification (PRLC)™</h3><p class="cert-org">Product School</p><a class="cert-link" href="https://drive.google.com/file/d/1NPAXfP1NdsYz_cQWs9rR2XKhpdJPUPcO/view" target="_blank" rel="noopener">Show credential ↗</a></div></li><li class="cert" style="--k:#ff98d4"><span class="cert-logo"><img src="logo-hubspot.png" alt="HubSpot logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Mar 2023</span><h3>Excel for Marketers</h3><p class="cert-org">HubSpot</p><p class=cert-sub>Data visualization · Data cleaning</p><span class="cert-link none">Listed on LinkedIn</span></div></li><li class="cert" style="--k:#48298f"><span class="cert-logo"><img src="logo-knowledgeofficer.png" alt="Knowledge Officer logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Aug 2021</span><h3>Marketing Career Accelerator-plus Program</h3><p class="cert-org">Knowledge Officer</p><p class=cert-sub>Google Analytics · Customer experience</p><a class="cert-link" href="https://drive.google.com/file/d/1t8fUERIVtA4wRnSwjAlA6Ap6eXp-yuAS/view" target="_blank" rel="noopener">Show credential ↗</a></div></li><li class="cert" style="--k:#ffe600"><span class="cert-logo"><img src="logo-udacity.png" alt="Udacity logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Jun 2021</span><h3>Advanced Digital Marketing</h3><p class="cert-org">Udacity</p><p class=cert-sub>Google Analytics · SEO</p><a class="cert-link" href="https://drive.google.com/file/d/1T-yQKtaVMvCZuVaZHsRz9Eqx6CyZEvKP/view" target="_blank" rel="noopener">Show credential ↗</a></div></li><li class="cert" style="--k:#00a5ea"><span class="cert-logo"><img src="logo-udacity.png" alt="Udacity logo" width="64" height="64"><svg class="cert-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="var(--k)" stroke="#0d0b1a" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#0d0b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="cert-body"><span class="cert-date">Nov 2020</span><h3>Professional Digital Marketing</h3><p class="cert-org">Udacity</p><p class=cert-sub>Social media · Content creation</p><span class="cert-link none">Listed on LinkedIn</span></div></li></ol>
-  </div>
-</section>
 
-<section class="block sp" id="freelance">
-  <div class="wrap" style="display:grid;gap:28px"><div class="sec-title"><span class="eyebrow">Freelance · how we work</span><h2>No package fits all</h2><p style="max-width:62ch;color:var(--muted)">So I don't sell fixed packages. We talk first, then I send a proposal built around what your product needs.</p></div>
+<section class="block contact" id="contact">
+  <div class="wrap ct-grid">
+    <div>
+      <p class="eyebrow">Your turn</p>
+      <h2 style="margin-top:14px">Let’s make people <span>get it.</span></h2>
+      <p class="ct-sub">Tell me what your product does, and who still doesn’t get it. I’ll bring the words, in Arabic, English, or both.</p>
+      <p class="ct-label">I can help with</p>
+      <ul class="ct-tags"><li>Launch campaigns</li><li>Positioning & messaging</li><li>Arabic copy that sounds local</li><li>Content systems</li><li>Community & webinars</li></ul>
+      <div class="contact-row">
+        <button class="btn-mail" id="mailBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true" class="gm"><path fill="#fff" d="M2 6.5 12 13l10-6.5V18a2 2 0 0 1-2 2h-2.5V10.2L12 14.3 6.5 10.2V20H4a2 2 0 0 1-2-2z"/><path fill="#fff" opacity=".85" d="M4 4h16a2 2 0 0 1 1.6.8L12 11 2.4 4.8A2 2 0 0 1 4 4z"/></svg>Send me an email</button>
+        <a class="cv-btn" href="Salma-El-Ananii-CV.pdf" download>Download my CV ↓</a>
+        <button class="fl-btn" id="flBtn" type="button" aria-expanded="false" aria-controls="freelance">Book a freelance meeting →</button>
+      </div>
+      <div class="mail-reveal" id="mailReveal" hidden><span class="mail" id="mail">salma.elananii@gmail.com</span><span class="copied" id="copiedMsg" aria-live="polite"></span><a class="open-gm" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=salma.elananii@gmail.com&amp;su=Let%E2%80%99s%20work%20together" target="_blank" rel="noopener">Open in Gmail ↗</a></div>
+      <a class="li-line" href="https://www.linkedin.com/in/salmaelananii" target="_blank" rel="noopener"><span class="li-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg></span>linkedin.com/in/salmaelananii</a>
+    </div>
+    <figure class="ct-photo"><img src="contact-me.webp" alt="3D avatar of Salma sitting cross-legged with a laptop covered in stickers, an egret on her shoulder" loading="lazy" width="900" height="900"><figcaption>Let’s talk ✍︎</figcaption></figure>
+</div>
+  </div>
+  <div class="wrap sp fl-panel" id="freelance" hidden><div class="sec-title"><span class="eyebrow">Freelance · how we work</span><h2>No package fits all</h2><p style="max-width:62ch;color:var(--muted)">So I don't sell fixed packages. We talk first, then I send a proposal built around what your product needs.</p></div>
   <ol class="how" style="margin:0;padding:0">
     <li><span class="num">01</span><h4>Meeting</h4><p>A short call about your product, your audience and what isn't working yet.</p></li>
     <li><span class="num">02</span><h4>Proposal</h4><p>A strategy, an execution plan and the fees, written for your account.</p></li>
@@ -1589,7 +1674,7 @@ body.page-mode main>.subpage.pg-on{display:block}
 
   <div class="dark-band">
     <h3>Tell me about your <span>product.</span></h3>
-    <p>Send a short brief and it opens in Gmail, ready to send. Or write to me directly below.</p>
+    <p>Send a short brief and it opens in Gmail, ready to send. I reply with a time for our first meeting.</p>
     <form class="form" id="brief" novalidate>
       <label>Your name<input id="fName" required placeholder="Nour Hassan"></label>
       <label>Company<input id="fCo" placeholder="Brand or startup name"></label>
@@ -1610,25 +1695,6 @@ body.page-mode main>.subpage.pg-on{display:block}
     </form>
   </div>
 </div>
-</section>
-<section class="block contact" id="contact">
-  <div class="wrap ct-grid">
-    <div>
-      <p class="eyebrow">Your turn</p>
-      <h2 style="margin-top:14px">Let’s make people <span>get it.</span></h2>
-      <p class="ct-sub">Tell me what your product does, and who still doesn’t get it. I’ll bring the words, in Arabic, English, or both.</p>
-      <p class="ct-label">I can help with</p>
-      <ul class="ct-tags"><li>Launch campaigns</li><li>Positioning & messaging</li><li>Arabic copy that sounds local</li><li>Content systems</li><li>Community & webinars</li></ul>
-      <div class="contact-row">
-        <a class="btn-mail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=salma.elananii@gmail.com&amp;su=Let%E2%80%99s%20work%20together" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" class="gm"><path fill="#fff" d="M2 6.5 12 13l10-6.5V18a2 2 0 0 1-2 2h-2.5V10.2L12 14.3 6.5 10.2V20H4a2 2 0 0 1-2-2z"/><path fill="#fff" opacity=".85" d="M4 4h16a2 2 0 0 1 1.6.8L12 11 2.4 4.8A2 2 0 0 1 4 4z"/></svg>Write to me</a>
-        <a class="li-btn" href="https://www.linkedin.com/in/salmaelananii" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>LinkedIn ↗</a>
-        <a class="cv-btn" href="Salma-El-Ananii-CV.pdf" download>Download CV ↓</a>
-      </div>
-      <div class="contact-row2"><span class="mail" id="mail">salma.elananii@gmail.com</span><button class="copy" id="copyBtn">Copy email</button></div>
-    </div>
-    <figure class="ct-photo"><img src="contact-me.webp" alt="3D avatar of Salma sitting cross-legged with a laptop covered in stickers, an egret on her shoulder" loading="lazy" width="900" height="900"><figcaption>Let’s talk ✍︎</figcaption></figure>
-</div>
-  </div>
 </section>
 
 <div class="subpage sp" id="cxlf">
@@ -1704,7 +1770,7 @@ body.page-mode main>.subpage.pg-on{display:block}
   </div>
 </div>
 <div class="subpage sp" id="cases">
-  <div class="wrap wp-top"><a href="#stories" class="wp-back">← Back home</a></div>
+  <div class="wrap wp-top"><a href="#fintech" class="wp-back">← Back to the story</a></div>
   <div class="wrap sp-view">
     <div class="sec-title"><span class="eyebrow">Campaign stories</span><h2>The idea behind the posts</h2></div>
     <div class="camp-nav" role="group" aria-label="Choose a campaign">
@@ -1738,6 +1804,7 @@ body.page-mode main>.subpage.pg-on{display:block}
       <figure><img src="77.jpg" alt="Sahl family post" loading="lazy"><figcaption><span class="ar">سهل جوه كل بيت</span></figcaption></figure>
     </div>
     <div class="results"><div class="res" style="--k:#bfc9ff"><b>5M+</b><span>reach for the campaign</span></div><div class="res" style="--k:#bfc9ff"><b>2M</b><span>organic TikTok reach</span></div><div class="res" style="--k:#bfc9ff"><b>+500%</b><span>engagement</span></div></div>
+      <div class="sp-cta"><a class="btn primary see-camp" href="#acc-sahlpay" data-acc="sahlpay" data-camp="مع سهل كله سهل">See the campaign →</a></div>
   </article>
 
   <article class="cs" data-case="tru" hidden style="--k:#e9e9e9;--k3:#0d0b1a">
@@ -1764,6 +1831,7 @@ body.page-mode main>.subpage.pg-on{display:block}
       <figure><img src="tru-5.jpg" alt="Reel frame of the TRU Ctrl screen" loading="lazy"><figcaption>TRU Ctrl reel</figcaption></figure>
     </div>
     <div class="results"><div class="res q"><b>?</b><span>Results: reach, views, downloads. محتاجين الأرقام منك</span></div></div>
+      <div class="sp-cta"><a class="btn primary see-camp" href="#acc-tru" data-acc="tru">See the campaign →</a></div>
   </article>
 
   <article class="cs" data-case="poa" hidden style="--k:#f08a1c;--k3:#b8600a">
@@ -1789,6 +1857,7 @@ body.page-mode main>.subpage.pg-on{display:block}
       <figure><img src="60.jpg" alt="Campaign post 4" loading="lazy"><figcaption>A bedroom painted in</figcaption></figure>
     </div>
     <div class="results"><div class="res" style="--k:#ffd3a6"><b>AotW</b><span>published on Ads of the World by Clios</span></div></div>
+      <div class="sp-cta"><a class="btn primary see-camp" href="#acc-piece-of-art" data-acc="piece-of-art" data-camp="خلي بيتك Piece of Art">See the campaign →</a></div>
   </article>
 
   <article class="cs" data-case="telda" hidden style="--k:#ff2300;--k3:#ff2300">
@@ -1808,6 +1877,7 @@ body.page-mode main>.subpage.pg-on{display:block}
     </div>
     <div class="card"><h4>Execution</h4><ul><li>Four weekly issues, 18 to 56 frames each</li><li>Each tap is the next frame; polls decide the plot</li><li>Characters and dialogue in Egyptian Arabic, written in Telda's voice</li></ul></div>
     <div class="results"><div class="res" style="--k:#ffc2b5"><b>+100%</b><span>Instagram Stories engagement in Ramadan</span></div></div>
+      <div class="sp-cta"><a class="btn primary see-camp" href="#favourites">Read the comic →</a></div>
   </article>
 
     <div class="sp-cta"><a class="btn" href="#contact">Work with me →</a><a class="btn ghost" href="#work">See all the work</a></div>
@@ -1917,11 +1987,10 @@ $('#themeBtn').addEventListener('click',()=>{
 try{const t=localStorage.getItem('theme'); if(t) document.documentElement.dataset.theme=t;}catch(e){}
 
 /* copy */
-$('#copyBtn').addEventListener('click',()=>{
-  const b=$('#copyBtn'), t=$('#mail').textContent;
-  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent='Copied'}).catch(()=>{const r=document.createRange();r.selectNodeContents($('#mail'));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy'});
-  setTimeout(()=>b.textContent='Copy email',2200);
-});
+{const mb=$('#mailBtn'),mr=$('#mailReveal'),cm=$('#copiedMsg');mb.addEventListener('click',async()=>{mr.hidden=false;const t=$('#mail').textContent;let ok=false;try{await navigator.clipboard.writeText(t);ok=true}catch(e){try{const r=document.createRange();r.selectNodeContents($('#mail'));const s=getSelection();s.removeAllRanges();s.addRange(r);ok=document.execCommand('copy')}catch(_){}}cm.textContent=ok?'✓ Copied to your clipboard':'Select and copy it';mr.classList.remove('pop');void mr.offsetWidth;mr.classList.add('pop');});
+ const fb=$('#flBtn'),fp=$('#freelance');const openFl=()=>{fp.hidden=false;fb.setAttribute('aria-expanded','true');requestAnimationFrame(()=>fp.scrollIntoView({behavior:'smooth',block:'start'}))};fb.addEventListener('click',()=>{if(fp.hidden)openFl();else{fp.hidden=true;fb.setAttribute('aria-expanded','false')}});
+ if(location.hash==='#freelance')openFl();}
+
 
 
 /* ---- work samples feed ---- */
@@ -2062,7 +2131,7 @@ function openAccount(id){
 }
 function closeAccount(){ $('#accView').hidden=true; document.body.style.overflow=''; try{history.replaceState(null,'','#accounts')}catch(e){} if(accLastFocus)accLastFocus.focus(); }
 document.addEventListener('click',e=>{
-  const t=e.target.closest('[data-acc]'); if(t){e.preventDefault();openAccount(t.dataset.acc);if(t.dataset.camp){av.camp=t.dataset.camp;renderAccount();}return;}
+  const t=e.target.closest('a[data-acc],button[data-acc]'); if(t){e.preventDefault();openAccount(t.dataset.acc);if(t.dataset.camp){av.camp=t.dataset.camp;renderAccount();}return;}
 });
 $('#accView').addEventListener('click',e=>{
   if(e.target.closest('#avClose')) return closeAccount();
@@ -2190,7 +2259,7 @@ document.querySelectorAll('.hx [data-drag]').forEach(st=>{let sx,sy,ox=0,oy=0;co
  const dots=document.createElement('div');dots.className='rec-dots';grid.after(dots);
  let timer=null,idx=0;
  const cards=()=>[...grid.children].filter(c=>c.classList.contains('rec')&&c.offsetParent!==null);
- const mobile=()=>matchMedia('(max-width:760px)').matches;
+ const mobile=()=>true;
  function drawDots(){const n=cards().length;dots.innerHTML=mobile()?Array.from({length:n},(_,i)=>`<button aria-label="Recommendation ${i+1}" aria-current="${i===idx}"></button>`).join(''):'';}
  function go(i){const c=cards();if(!c.length)return;idx=(i+c.length)%c.length;grid.scrollTo({left:c[idx].offsetLeft-grid.offsetLeft-(grid.clientWidth-c[idx].clientWidth)/2,behavior:'smooth'});drawDots();}
  function start(){stop();if(mobile()&&!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>go(idx+1),5000);}
@@ -2201,6 +2270,20 @@ document.querySelectorAll('.hx [data-drag]').forEach(st=>{let sx,sy,ox=0,oy=0;co
  new MutationObserver(()=>{idx=0;grid.scrollLeft=0;drawDots();}).observe(grid,{childList:true});
  addEventListener('resize',()=>{drawDots();start();});
  drawDots();start();
+})();
+</script>
+
+<script>
+(function(){
+ const sl=document.querySelector('.lg-slider');if(sl){const ul=sl.querySelector('.sb-logos');let t=null;const step=()=>Math.max(160,ul.clientWidth*.6);
+  const mv=d=>{const max=ul.scrollWidth-ul.clientWidth-2;if(d>0&&ul.scrollLeft>=max)ul.scrollTo({left:0,behavior:'smooth'});else ul.scrollBy({left:d*step(),behavior:'smooth'})};
+  sl.querySelector('.prev').onclick=()=>{stop();mv(-1)};sl.querySelector('.next').onclick=()=>{stop();mv(1)};
+  const start=()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;stop();t=setInterval(()=>mv(1),2600)};function stop(){if(t)clearInterval(t);t=null}
+  sl.addEventListener('pointerenter',stop);sl.addEventListener('pointerleave',start);ul.addEventListener('touchstart',stop,{passive:true});
+  new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():stop())).observe(sl);}
+ const mag=document.getElementById('mag');if(mag){const calm=()=>mag.classList.add('used');
+  ['magNext','magPrev'].forEach(id=>{const b=document.getElementById(id);if(b)b.addEventListener('click',()=>mag.classList.add('nav-used'))});
+  mag.querySelector('.mag-issues').addEventListener('click',e=>{if(e.target.closest('.mag-tab'))calm()});}
 })();
 </script>
 
